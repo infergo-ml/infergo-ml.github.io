@@ -3,16 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://infergo.org/about/</loc>
+    <loc>http://infergo.org/</loc>
   </url>
   
   <url>
     <loc>http://infergo.org/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://infergo.org/</loc>
     <priority>0</priority>
   </url>
   
