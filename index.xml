@@ -1,12 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>About on Infergo — probabilistic programming in Go</title>
+    <title>Home on Infergo — Go programs that learn</title>
     <link>http://infergo.org/</link>
-    <description>Recent content in About on Infergo — probabilistic programming in Go</description>
+    <description>Recent content in Home on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 26 Nov 2018 14:19:13 +0300</lastBuildDate>
     <atom:link href="http://infergo.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Start</title>
+      <link>http://infergo.org/start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://infergo.org/start/</guid>
+      <description>
+
+&lt;h2 id=&#34;install&#34;&gt;Install&lt;/h2&gt;
+
+&lt;h2 id=&#34;hello-world&#34;&gt;Hello world&lt;/h2&gt;
+
+&lt;h2 id=&#34;compile-and-run&#34;&gt;Compile and run&lt;/h2&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Guide</title>
+      <link>http://infergo.org/guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://infergo.org/guide/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Examples</title>
+      <link>http://infergo.org/examples/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://infergo.org/examples/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Team</title>
+      <link>http://infergo.org/team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://infergo.org/team/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Why infergo</title>
+      <link>http://infergo.org/news/why/</link>
+      <pubDate>Mon, 26 Nov 2018 14:19:13 +0300</pubDate>
+      <guid>http://infergo.org/news/why/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

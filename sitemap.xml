@@ -3,11 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://infergo.org/</loc>
+    <loc>http://infergo.org/start/</loc>
   </url>
   
   <url>
-    <loc>http://infergo.org/categories/</loc>
+    <loc>http://infergo.org/guide/</loc>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/examples/</loc>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/team/</loc>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/news/why/</loc>
+    <lastmod>2018-11-26T14:19:13+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/</loc>
+    <lastmod>2018-11-26T14:19:13+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/news/</loc>
+    <lastmod>2018-11-26T14:19:13+03:00</lastmod>
     <priority>0</priority>
   </url>
   
