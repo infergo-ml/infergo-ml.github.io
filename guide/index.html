@@ -7,7 +7,7 @@
 <meta name="created" content="0001-01-01T00:00:00&#43;0000">
 <meta name="modified" content="0001-01-01T00:00:00&#43;0000">
 <meta name="author" content="David Tolpin">
-<meta name="description" content="Coding Model A model is defined in it&amp;rsquo;s own package. The model must implement interface model.Model. In the model&amp;rsquo;s source code:  Method Observe of interface model.Model is differentiated. All methods on the type implementing model.Model are differentiated. Within the methods, the following is differentiated:  assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.">
+<meta name="description" content="Code Model A model is defined in it&amp;rsquo;s own package. The model must implement interface model.Model. In the model&amp;rsquo;s source code:  Method Observe of interface model.Model is differentiated. All methods on the type implementing model.Model are differentiated. Within the methods, the following is differentiated:  assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.">
 <meta property="og:site_name" content="Infergo — Go programs that learn">
 <meta property="og:title" content="Guide">
 <meta property="og:url" content="http://infergo.org/guide/">
@@ -27,7 +27,7 @@
     "datePublished": "0001-01-01T00:00:00Z",
     "dateModified": "0001-01-01T00:00:00Z",
     "url" : "http://infergo.org/guide/",
-    "description": "Coding Model A model is defined in it\u0026rsquo;s own package. The model must implement interface model.Model. In the model\u0026rsquo;s source code:  Method Observe of interface model.Model is differentiated. All methods on the type implementing model.Model are differentiated. Within the methods, the following is differentiated:  assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.",
+    "description": "Code Model A model is defined in it\u0026rsquo;s own package. The model must implement interface model.Model. In the model\u0026rsquo;s source code:  Method Observe of interface model.Model is differentiated. All methods on the type implementing model.Model are differentiated. Within the methods, the following is differentiated:  assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.",
     "author": {
       "@type": "Person",
       "name": "David Tolpin"
@@ -85,12 +85,13 @@
 
 <p><a href="https://godoc.org/bitbucket.org/dtolpin/infergo"><img src="https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg" alt="GoDoc" /></a></p>
 
-<h2 id="coding">Coding</h2>
+<h2 id="code">Code</h2>
 
 <h3 id="model">Model</h3>
 
 <p>A model is defined in it&rsquo;s own package. The model must
-implement interface <code>model.Model</code>. In the model&rsquo;s source code:</p>
+implement interface
+<a href="https://godoc.org/bitbucket.org/dtolpin/infergo/model#Model"><code>model.Model</code></a>. In the model&rsquo;s source code:</p>
 
 <ol>
 <li>Method Observe of interface <code>model.Model</code> is
@@ -167,9 +168,34 @@ The command-line syntax is:</p>
 differentiated model is put into subpackage &ldquo;ad&rdquo; of the model&rsquo;s
 package, with the same name as the original package.</p>
 
-<h2 id="optimization">Optimization</h2>
-
 <h2 id="inference">Inference</h2>
+
+<p>For inference, <code>infergo</code> offers</p>
+
+<ul>
+<li>optimization via <a href="https://en.wikipedia.org/wiki/Gradient_descent">gradient
+ascent</a> methods.</li>
+<li>full posterior inference via <a href="https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo">Hamiltonian Monte Carlo</a> variants.</li>
+</ul>
+
+<h3 id="optimization">Optimization</h3>
+
+<p>An optimizer implements interface
+<a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Grad"><code>infer.Grad</code></a>.
+Interface implementations are <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Momentum">gradient ascent with
+momentum</a>
+and
+<a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Adam">Adam</a>.
+Both methods are capable to work with stochastic data (e.g.
+streams or batches).</p>
+
+<h3 id="full-posterior">Full posterior</h3>
+
+<p>A MCMC sampler for full posterior inference implements interface
+<a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#MCMC"><code>infer.MCMC</code></a>. Inteface implementations are <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#HMC">HMC</a> and <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#NUTS">NUTS</a>.</p>
+
+<p><a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#DepthAdapter"><code>DepthAdapter</code></a> enables adaption of NUTS step size with respect to the average
+tree depth.</p>
 
 
 </div>
