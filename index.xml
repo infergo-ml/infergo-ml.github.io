@@ -129,7 +129,7 @@ consideration in design or selection of probabilistic
 programming tools.  Probabilistic programming systems that are
 implemented or provide an interface in a popular programming
 language, e.g.  Python (&lt;a href=&#34;http://edwardlib.org/&#34;&gt;Edward&lt;/a&gt;,
-&lt;a href=&#34;http://pyro.ai/&#34;&gt;Pyro&lt;/a&gt; are easier to integrate and deploy, however
+&lt;a href=&#34;http://pyro.ai/&#34;&gt;Pyro&lt;/a&gt;) are easier to integrate and deploy, however
 the smaller the footprint of a probabilistic system, the easier
 is the adoption.&lt;/p&gt;
 
