@@ -7,12 +7,12 @@
 <meta name="created" content="2018-11-26T14:19:13&#43;0300">
 <meta name="modified" content="2018-11-26T14:19:13&#43;0300">
 <meta name="author" content="David Tolpin">
-<meta name="description" content="">
+<meta name="description" content="I share here my experiences from integrating probabilistic programming into a server-side software system and implementing a probabilistic programming facility for Go, a modern programming language of choice for server-side software development. Server-side application of probabilistic programming poses challenges for a probabilistic programming system. I discuss the challenges and my experience in overcoming them, and suggest guidelines that can help in a wider adoption of probabilistic programming in server-side software systems.">
 <meta property="og:site_name" content="Infergo — Go programs that learn">
 <meta property="og:title" content="Why infergo">
 <meta property="og:url" content="http://infergo.org/news/why/">
 
-<meta name="generator" content="Hugo 0.52-DEV" />
+<meta name="generator" content="Hugo 0.49-DEV" />
 
 <link rel="canonical" href="http://infergo.org/news/why/">
 <link rel="icon" href="/favicon.png">
@@ -27,7 +27,7 @@
     "datePublished": "2018-11-26T14:19:13+03:00",
     "dateModified": "2018-11-26T14:19:13+03:00",
     "url" : "http://infergo.org/news/why/",
-    "description": ,
+    "description": "I share here my experiences from integrating probabilistic programming into a server-side software system and implementing a probabilistic programming facility for Go, a modern programming language of choice for server-side software development. Server-side application of probabilistic programming poses challenges for a probabilistic programming system. I discuss the challenges and my experience in overcoming them, and suggest guidelines that can help in a wider adoption of probabilistic programming in server-side software systems.",
     "author": {
       "@type": "Person",
       "name": "David Tolpin"
@@ -81,6 +81,228 @@
 <header>
 </header>
 <div class="content">
+
+
+<blockquote>
+<p>I share here my experiences from integrating probabilistic
+programming into a server-side software system and
+implementing a  probabilistic programming facility for Go, a
+modern programming language of choice for server-side software
+development.  Server-side application of probabilistic
+programming poses challenges for a probabilistic programming
+system. I discuss the challenges and my experience in
+overcoming them, and suggest guidelines that can help in a
+wider adoption of probabilistic programming in server-side
+software systems.</p>
+</blockquote>
+
+<h2 id="challenges-of-server-side-probabilistic-programming">Challenges of Server-Side Probabilistic Programming</h2>
+
+<p>Incorporating a probabilistic program, or rather a probabilistic
+procedure, within a larger code body appears to be rather
+straightforward: one implements the model in the probabilistic
+programming language, fetches and preprocesses the data in the
+host programming language, passes the data and the model to an
+inference algorithm, and post-processes the results in the
+host programming language again to make algorithmic
+decisions based on inference outcomes. However, complex
+server-side software systems make integration of probabilistic
+inference challenging.</p>
+
+<h3 id="simulation-vs-inference">Simulation vs. inference</h3>
+
+<p>Probabilistic models often follow a design pattern of
+simulation-inference: a significant part of the model is a
+simulator, running an algorithm with fixed parameters; the
+optimal parameters, or their distribution, are to be inferred.
+The inferred parameters are then used by the software system to
+execute the simulation independently of inference for
+forecasting and decision making.</p>
+
+<p>This pattern suggests re-use of the simulator: instead of
+implementing the simulator twice, in the probabilistic model and
+in the host environment, the same code can serve both purposes.
+However to achieve this, the host language must coincide with
+the implementation language of the probabilistic model, on one
+hand, and allow a computationally efficient implementation of
+the simulation, on the other hand. Some probabilistic systems
+(<a href="https://www.cra.com/work/case-studies/figaro">Figaro</a>, <a href="http://anglican.ml/">Anglican</a>, <a href="http://turing.ml/">Turing</a>)
+are built with tight integration with the host environment in
+mind; more often than not though the probabilistic code is
+not trivial to re-use.</p>
+
+<h3 id="data-interface">Data interface</h3>
+
+<p>In a server-side application data for inference comes from a
+variety of sources: network, databases, distributed file
+systems, and in many different formats. Efficient inference
+depends on fast data access and updating. Libraries for data
+access and manipulation are available in the host environment.
+While the host environment can be used as a proxy retrieving and
+transforming the data, such as in the case of <a href="http://mc-stan.org/">Stan</a>
+integrations, sometimes direct access from the probabilistic
+code is the preferred option, for example when the data is
+streamed or retrieved conditionally.</p>
+
+<h3 id="integration-and-deployment">Integration and deployment</h3>
+
+<p>Deployment of server-side software systems is a delicate process
+involving automatic builds and maintenance of dependencies.
+Adding  a component, which possibly introduces additional
+software dependencies or even a separate runtime, complicates
+deployment. Minimizing the burden of probabilistic programming
+on the integration and deployment process should be a major
+consideration in design or selection of probabilistic
+programming tools.  Probabilistic programming systems that are
+implemented or provide an interface in a popular programming
+language, e.g.  Python (<a href="http://edwardlib.org/">Edward</a>,
+<a href="http://pyro.ai/">Pyro</a> are easier to integrate and deploy, however
+the smaller the footprint of a probabilistic system, the easier
+is the adoption.</p>
+
+<h2 id="probabilistic-programming-facility-for-go">Probabilistic Programming Facility for Go</h2>
+
+<p>Based on the experience of developing and deploying solutions
+using different probabilistic environments, I propose
+guidelines to implementation of a probabilistic programming
+facility for server-side applications. I believe that these
+guidelines, when followed, help easier integration of
+probabilistic programming inference into large-scale server-side
+software systems.</p>
+
+<ol>
+<li><p>A probabilistic model should be programmed in the host
+programming language. The facility may impose a discipline on
+model implementation, such as through interface constraints, but
+otherwise supporting unrestricted use of the host language for
+implementation of the model.</p></li>
+
+<li><p>Built-in and user-defined data structures and libraries
+should be accessible in the probabilistic programming model.
+Inference techniques relying on the code structure, such as
+those based on automatic differentiation, should support the
+use of common data structures of the host language.</p></li>
+
+<li><p>The model code should be reusable between inference and
+simulation. The code which is not required solely for inference
+should be written once for both inference of parameters and use
+of the parameters in the host environment.  It should be
+possible to run simulation outside the probabilistic model without
+runtime or memory overhead imposed by inference needs.</p></li>
+</ol>
+
+<p>In line with the guidelines, I have implemented a probabilistic
+programming facility for the Go programming language, <code>infergo</code>
+(<a href="http://infergo.org/">http://infergo.org/</a>). I have chosen Go
+because Go is a small but expressive programming language with
+efficient implementation, which has recently become quite
+popular for computation-intensive server-side programming.  This
+facility is already used in production environment for inference
+of mission-critical algorithm parameters.</p>
+
+<p>A probabilistic model in <code>infergo</code> is an implementation
+of the <code>Model</code> interface requiring a single method
+<code>Observe</code> which accepts a vector (a Go <em>slice</em>) of
+floats, the parameters to infer, and returns a single float,
+interpreted as unnormalized log-likelihood of the posterior
+distribution. Implementation of model methods can be written
+in virtually unrestricted Go and use any Go libraries.</p>
+
+<p>For inference, <code>infergo</code> relies on automatic
+differentiation. The source code of the model is
+translated by a command-line tool provided by <code>infergo</code>
+into an equivalent model with reverse-mode automatic
+differentiation of the log-likelihood with respect
+to the parameters applied. The differentiation operates
+on the built-in floating-point type and incurs only a small
+computational overhead. However, even this overhead is avoided
+when the model code is executed outside of inference algorithms:
+both the original and the differentiated model are
+simultaneously available to the rest of the program code, so
+the methods can be called on the differentiated model for
+inference, and on the original model for the most efficient
+execution with the inferred parameters.</p>
+
+<p>The Go programming language and development environment offer
+capabilities which made implementation of <code>infergo</code>
+affordable.</p>
+
+<ul>
+<li>The Go parser and abstract syntax tree serializer are
+a part of the standard library. Parsing, transforming,
+and generating Go source code is straightforward and
+effortless.</li>
+<li>Type inference (or <em>type checking</em> as it is
+called in the Go ecosystem), also provided in the
+standard library, augments parsing and allows to
+selectively apply transformation-based automatic
+differentiation  based on static expression types.</li>
+<li>Go compiles and runs fast. Fast compilation and
+execution speeds allow to use the same facility for both
+exploratory design of probabilistic models and for
+inference in production environment.</li>
+<li>Go offers efficient parallel execution as a
+first-class feature, via so-called <em>goroutines</em>.
+Goroutines streamline implementation of sampling-based
+inference algorithms. Sample generators and consumers
+are run in parallel, communicating through channels.
+Inference is easy to parallelize in order to exploit
+hardware multi-processing, and samples are retrieved
+lazily for postprocessing.</li>
+</ul>
+
+<p>Table 1 provides memory consumption and running time
+measurements on basic models to illustrate  <code>infergo</code>&rsquo;s
+performance.  The measurements were obtained on a 2.3GHz Intel
+Core 5 CPU with 8GB of memory for 1000 iterations of Hamiltonian
+Monte Carlo with 10 leapfrog steps. Note that log-likelihood
+computation for standard distributions is not optimized yet.
+Quite the opposite: since models in <code>infergo</code> are fully
+composable, primitive distributions are themselves implemented
+as <code>infergo</code> models and automatically differentiated.</p>
+
+<p><em>Table 1: Memory and running times for 1000 iterations of HMC with 10 leapfrog steps.</em></p>
+
+<table>
+<thead>
+<tr>
+<th>model</th>
+<th>compilation time</th>
+<th>execution time</th>
+<th>memory</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>8 schools</td>
+<td>0.15s</td>
+<td>0.6s</td>
+<td>5.5MB</td>
+</tr>
+
+<tr>
+<td>10D normal, 100 points</td>
+<td>0.15s</td>
+<td>2.0s</td>
+<td>5.7MB</td>
+</tr>
+
+<tr>
+<td>50D normal, 100 points</td>
+<td>0.15s</td>
+<td>9.0s</td>
+<td>5.8MB</td>
+</tr>
+</tbody>
+</table>
+
+<p>A lightweight probabilistic programming facility similar to
+<code>infergo</code> can be added to most modern general-purpose
+programming languages, in particular those used in implementing
+large-scale software systems, making probabilistic
+programming inference more accessible in server-side
+applications.</p>
 
 
 </div>
