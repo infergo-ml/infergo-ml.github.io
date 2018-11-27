@@ -7,7 +7,7 @@
 <meta name="created" content="0001-01-01T00:00:00&#43;0000">
 <meta name="modified" content="0001-01-01T00:00:00&#43;0000">
 <meta name="author" content="David Tolpin">
-<meta name="description" content="">
+<meta name="description" content="Coding Model A model is defined in it&amp;rsquo;s own package. The model must implement interface model.Model. In the model&amp;rsquo;s source code:  Method Observe of interface model.Model is differentiated. All methods on the type implementing model.Model are differentiated. Within the methods, the following is differentiated:  assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.">
 <meta property="og:site_name" content="Infergo — Go programs that learn">
 <meta property="og:title" content="Guide">
 <meta property="og:url" content="http://infergo.org/guide/">
@@ -27,7 +27,7 @@
     "datePublished": "0001-01-01T00:00:00Z",
     "dateModified": "0001-01-01T00:00:00Z",
     "url" : "http://infergo.org/guide/",
-    "description": ,
+    "description": "Coding Model A model is defined in it\u0026rsquo;s own package. The model must implement interface model.Model. In the model\u0026rsquo;s source code:  Method Observe of interface model.Model is differentiated. All methods on the type implementing model.Model are differentiated. Within the methods, the following is differentiated:  assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.",
     "author": {
       "@type": "Person",
       "name": "David Tolpin"
@@ -81,7 +81,95 @@
 <header>
 </header>
 <div class="content">
+
+
 <p><a href="https://godoc.org/bitbucket.org/dtolpin/infergo"><img src="https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg" alt="GoDoc" /></a></p>
+
+<h2 id="coding">Coding</h2>
+
+<h3 id="model">Model</h3>
+
+<p>A model is defined in it&rsquo;s own package. The model must
+implement interface <code>model.Model</code>. In the model&rsquo;s source code:</p>
+
+<ol>
+<li>Method Observe of interface <code>model.Model</code> is
+differentiated.</li>
+<li>All methods on the type implementing <code>model.Model</code>
+are differentiated.</li>
+<li>Within the methods, the following is differentiated:
+
+<ul>
+<li>assignments to <code>float64</code> (including parallel
+assignments if all values are of type <code>float64</code>);</li>
+<li>returns of float64;</li>
+<li>standalone calls to methods on the type implementing
+model.Model (apparently called for side  effects on
+the model).</li>
+</ul></li>
+<li>Imported package name <code>ad</code> is reserved.</li>
+<li>Non-dummy identifiers starting with the prefix for
+generated identifiers (<code>_</code> by default) are reserved.</li>
+</ol>
+
+<p>Derivatives do not propagate through a function that is not
+an elemental or a call to a model method. If a derivative is
+not registered for an elemental, calling the elemental in a
+differentiated context will cause a run-time error.</p>
+
+<h3 id="elementals">Elementals</h3>
+
+<p>Functions are considered elementals (and must have a
+registered derivative) if their signature is of kind</p>
+
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span><span style="color:#666">*</span>) <span style="color:#902000">float64</span></code></pre></div>
+
+<p>that is, one or more non-variadic <code>float64</code> argument and
+<code>float64</code> return value. For example, function</p>
+
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div>
+
+<p>is considered elemental, while functions</p>
+
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#666">...</span><span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
+        <span style="color:#007020;font-weight:bold">func</span> ([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
+        <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#902000">int</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div>
+
+<p>are not. Gradients for selected functions from the <code>math</code>
+package are pre-defined (<code>Sqrt</code>, <code>Exp</code>, <code>Log</code>, <code>Pow</code>, <code>Sin</code>,
+<code>Cos</code>, <code>Tan</code>). Auxiliary elemental functions with pre-defined
+gradients are in
+<a href="https://godoc.org/bitbucket.org/dtolpin/infergo/mathx">bitbucket.org/dtolpin/infergo/mathx</a>.</p>
+
+<h3 id="distributions">Distributions</h3>
+
+<p>Distributions are models. Several distributions are provided in
+<a href="https://godoc.org/bitbucket.org/dtolpin/infergo/dist">bitbucket.org/dtolpin/infergo/dist</a>.
+In addition to the <code>Observe</code> method, distributions have <code>Logp</code>
+(single observation) and <code>Logps</code> (multiple observations) methods
+which accept distribution parameters and observations as
+individual arguments rather than in a single slice.</p>
+
+<h2 id="differentiation">Differentiation</h2>
+
+<p>Command-line utility <code>deriv</code> is used to differentiate a model.
+The command-line syntax is:</p>
+
+<pre><code>deriv path/to/model/package
+</code></pre>
+
+<p>For example,</p>
+
+<pre><code>deriv examples/hello/model
+</code></pre>
+
+<p>Run <code>deriv -h</code> for the full list of command-line options.  The
+differentiated model is put into subpackage &ldquo;ad&rdquo; of the model&rsquo;s
+package, with the same name as the original package.</p>
+
+<h2 id="optimization">Optimization</h2>
+
+<h2 id="inference">Inference</h2>
 
 
 </div>

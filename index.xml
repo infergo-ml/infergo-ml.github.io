@@ -29,7 +29,95 @@
       <link>http://infergo.org/guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://infergo.org/guide/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo&#34;&gt;&lt;img src=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg&#34; alt=&#34;GoDoc&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo&#34;&gt;&lt;img src=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg&#34; alt=&#34;GoDoc&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;coding&#34;&gt;Coding&lt;/h2&gt;
+
+&lt;h3 id=&#34;model&#34;&gt;Model&lt;/h3&gt;
+
+&lt;p&gt;A model is defined in it&amp;rsquo;s own package. The model must
+implement interface &lt;code&gt;model.Model&lt;/code&gt;. In the model&amp;rsquo;s source code:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Method Observe of interface &lt;code&gt;model.Model&lt;/code&gt; is
+differentiated.&lt;/li&gt;
+&lt;li&gt;All methods on the type implementing &lt;code&gt;model.Model&lt;/code&gt;
+are differentiated.&lt;/li&gt;
+&lt;li&gt;Within the methods, the following is differentiated:
+
+&lt;ul&gt;
+&lt;li&gt;assignments to &lt;code&gt;float64&lt;/code&gt; (including parallel
+assignments if all values are of type &lt;code&gt;float64&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;returns of float64;&lt;/li&gt;
+&lt;li&gt;standalone calls to methods on the type implementing
+model.Model (apparently called for side  effects on
+the model).&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Imported package name &lt;code&gt;ad&lt;/code&gt; is reserved.&lt;/li&gt;
+&lt;li&gt;Non-dummy identifiers starting with the prefix for
+generated identifiers (&lt;code&gt;_&lt;/code&gt; by default) are reserved.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Derivatives do not propagate through a function that is not
+an elemental or a call to a model method. If a derivative is
+not registered for an elemental, calling the elemental in a
+differentiated context will cause a run-time error.&lt;/p&gt;
+
+&lt;h3 id=&#34;elementals&#34;&gt;Elementals&lt;/h3&gt;
+
+&lt;p&gt;Functions are considered elementals (and must have a
+registered derivative) if their signature is of kind&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;that is, one or more non-variadic &lt;code&gt;float64&lt;/code&gt; argument and
+&lt;code&gt;float64&lt;/code&gt; return value. For example, function&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;is considered elemental, while functions&lt;/p&gt;
+
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;...&lt;/span&gt;&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
+        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; ([]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
+        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;are not. Gradients for selected functions from the &lt;code&gt;math&lt;/code&gt;
+package are pre-defined (&lt;code&gt;Sqrt&lt;/code&gt;, &lt;code&gt;Exp&lt;/code&gt;, &lt;code&gt;Log&lt;/code&gt;, &lt;code&gt;Pow&lt;/code&gt;, &lt;code&gt;Sin&lt;/code&gt;,
+&lt;code&gt;Cos&lt;/code&gt;, &lt;code&gt;Tan&lt;/code&gt;). Auxiliary elemental functions with pre-defined
+gradients are in
+&lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/mathx&#34;&gt;bitbucket.org/dtolpin/infergo/mathx&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&#34;distributions&#34;&gt;Distributions&lt;/h3&gt;
+
+&lt;p&gt;Distributions are models. Several distributions are provided in
+&lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/dist&#34;&gt;bitbucket.org/dtolpin/infergo/dist&lt;/a&gt;.
+In addition to the &lt;code&gt;Observe&lt;/code&gt; method, distributions have &lt;code&gt;Logp&lt;/code&gt;
+(single observation) and &lt;code&gt;Logps&lt;/code&gt; (multiple observations) methods
+which accept distribution parameters and observations as
+individual arguments rather than in a single slice.&lt;/p&gt;
+
+&lt;h2 id=&#34;differentiation&#34;&gt;Differentiation&lt;/h2&gt;
+
+&lt;p&gt;Command-line utility &lt;code&gt;deriv&lt;/code&gt; is used to differentiate a model.
+The command-line syntax is:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deriv path/to/model/package
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For example,&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deriv examples/hello/model
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Run &lt;code&gt;deriv -h&lt;/code&gt; for the full list of command-line options.  The
+differentiated model is put into subpackage &amp;ldquo;ad&amp;rdquo; of the model&amp;rsquo;s
+package, with the same name as the original package.&lt;/p&gt;
+
+&lt;h2 id=&#34;optimization&#34;&gt;Optimization&lt;/h2&gt;
+
+&lt;h2 id=&#34;inference&#34;&gt;Inference&lt;/h2&gt;
 </description>
     </item>
     
