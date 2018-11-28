@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
 <title>Infergo — Go programs that learn</title>
 <link rel="alternate" type="application/rss&#43;xml" title="RSS" href="http://infergo.org/index.xml">
-<meta name="created" content="2018-11-26T14:19:13&#43;0300">
-<meta name="modified" content="2018-11-26T14:19:13&#43;0300">
+<meta name="created" content="2018-11-27T16:19:03&#43;0300">
+<meta name="modified" content="2018-11-27T16:19:03&#43;0300">
 <meta name="author" content="David Tolpin">
 <meta name="description" content="">
 <meta property="og:site_name" content="Infergo — Go programs that learn">
@@ -63,7 +63,7 @@
 <h2 class="visually-hidden">Main menu</h2>
 <ul class="navbar">
 <li><a class="active" href="/">Home</a></li>
-<li><a class="" href="/start/">Start</a></li>
+<li><a class="" href="/start/">Getting started</a></li>
 <li><a class="" href="/guide/">Guide</a></li>
 <li><a class="" href="/examples/">Examples</a></li>
 <li><a class="" href="/team/">Team</a></li>
@@ -77,12 +77,13 @@
 <div class="content">
 
 
-<p><a href="http://bitbucket.org/dtolpin/infergo">infergo</a> is a  probabilistic
+<p><a href="http://bitbucket.org/dtolpin/infergo"><code>infergo</code></a> is a  probabilistic
 programming facility for the <a href="http://golang.org/">Go language</a>.
 <code>infergo</code> allows to write probabilistic models in almost
 unrestricted Go and relies on <a href="https://en.wikipedia.org/wiki/Automatic_differentiation">automatic
 differentiation</a>
-for optimization and inference. Works anywhere where Go does.</p>
+for optimization and inference. Works anywhere where Go does.
+Licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
 
 <h2 id="example">Example</h2>
 
@@ -138,6 +139,22 @@ hmc.Sample(m, x, samples)
 }
 hmc.Stop()</code></pre></div>
 
+<h2 id="acknowledgements">Acknowledgements</h2>
+
+<p>I owe a debt of gratitude to <a href="https://www.cs.ubc.ca/~fwood/">Frank
+Wood</a> who introduced me to
+probabilistic programming and inspired me to pursue
+probabilistic programming paradigms and applications. I also
+want to thank <a href="http://www.ccs.neu.edu/home/jwvdm/">Jan-Willem van de
+Meent</a>, with whom I had
+fruitful discussions of motives, ideas, and implementation
+choices behind <code>infergo</code>, and whose thoughts and recommendations
+significantly influenced <code>infergo</code> design.  Finally, I want to
+thank <a href="http://pubplus.com/">PUB+</a>, the company I work for, for
+supporting me in development of <code>infergo</code> and letting me
+experiment with applying probabilistic programming to critical
+decision-making in production environment.</p>
+
 </div>
 </article>
 </main>
@@ -148,6 +165,7 @@ hmc.Stop()</code></pre></div>
 <section>
 <h4 class="menu"><a class="" href="/news/">News</a></h4>
 <ul class="menu">
+<li><a class="" href="/news/v0.2.1/">infergo v0.2.1</a></li>
 <li><a class="" href="/news/why/">Why infergo</a></li>
 </ul>
 </section>
