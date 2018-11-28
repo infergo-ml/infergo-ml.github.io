@@ -29,14 +29,16 @@ build and use &lt;code&gt;infergo&lt;/code&gt; with the &lt;code&gt;make&lt;/cod
 &lt;p&gt;There are two installation options:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If your Go project imports any of &lt;code&gt;infergo&lt;/code&gt; packages and
+&lt;li&gt;&lt;p&gt;If your Go project imports any of &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo&#34;&gt;&lt;code&gt;infergo&lt;/code&gt;
+packages&lt;/a&gt; and
 uses modules, &lt;code&gt;infergo&lt;/code&gt; will be installed for you. &lt;code&gt;deriv&lt;/code&gt;
 utility will be in &lt;code&gt;$GOPATH/bin&lt;/code&gt;. As a side effect of
 providing examples with the main repository, the example
 binaries will also be installed in &lt;code&gt;$GOPATH/bin&lt;/code&gt;. They are
 not needed there, you can remove them.&lt;/p&gt;&lt;/li&gt;
 
-&lt;li&gt;&lt;p&gt;Alternatively, you can clone the repository and build
+&lt;li&gt;&lt;p&gt;Alternatively, you can clone the
+&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo&#34;&gt;repository&lt;/a&gt; and build
 &lt;code&gt;infergo&lt;/code&gt; from the cloned directory:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;git clone https://bitbucket.org/dtolpin/infergo
