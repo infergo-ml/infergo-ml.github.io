@@ -6,7 +6,7 @@
     <description>Recent content in Home on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Nov 2018 16:19:03 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 09 Dec 2018 01:14:30 +0300</lastBuildDate>
     <atom:link href="http://infergo.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -223,6 +223,23 @@ repository,
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://infergo.org/images/infergopher.png&#34;&gt;Gehenna Gopher&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://offtopia.net/&#34;&gt;David Tolpin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>infergo v0.2.2</title>
+      <link>http://infergo.org/news/v0.2.2/</link>
+      <pubDate>Sun, 09 Dec 2018 01:14:30 +0300</pubDate>
+      <guid>http://infergo.org/news/v0.2.2/</guid>
+      <description>&lt;p&gt;&lt;code&gt;infergo v0.2.2&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.2.2/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Constant folding.&lt;/li&gt;
+&lt;li&gt;Automatic import of packages required for short variable declarations
+(see &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/issues/10&#34;&gt;issue #10&lt;/a&gt;).&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
