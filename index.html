@@ -13,7 +13,7 @@
 <meta property="og:title" content="Home">
 <meta property="og:url" content="http://infergo.org/">
 
-<meta name="generator" content="Hugo 0.49-DEV" />
+<meta name="generator" content="Hugo 0.53-DEV" />
 
 <link rel="canonical" href="http://infergo.org/">
 <link rel="icon" href="/favicon.png">
@@ -100,11 +100,11 @@ observations:</p>
 }
 
 <span style="color:#60a0b0;font-style:italic">// x[0] is the mean, x[1] is the log stddev of the distribution
-</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> (m <span style="color:#666">*</span>Model) Observe(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span> {
+</span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">func</span> (m <span style="color:#666">*</span>Model) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span> {
     <span style="color:#60a0b0;font-style:italic">// Our prior is a unit normal ...
-</span><span style="color:#60a0b0;font-style:italic"></span>    ll <span style="color:#666">:=</span> Normal.Logps(<span style="color:#40a070">0</span>, <span style="color:#40a070">1</span>, x<span style="color:#666">...</span>)
+</span><span style="color:#60a0b0;font-style:italic"></span>    ll <span style="color:#666">:=</span> Normal.<span style="color:#06287e">Logps</span>(<span style="color:#40a070">0</span>, <span style="color:#40a070">1</span>, x<span style="color:#666">...</span>)
     <span style="color:#60a0b0;font-style:italic">// ... but the posterior is based on data observations.
-</span><span style="color:#60a0b0;font-style:italic"></span>	ll <span style="color:#666">+=</span> Normal.Logps(x[<span style="color:#40a070">0</span>], math.Exp(x[<span style="color:#40a070">1</span>]), m.Data<span style="color:#666">...</span>)
+</span><span style="color:#60a0b0;font-style:italic"></span>	ll <span style="color:#666">+=</span> Normal.<span style="color:#06287e">Logps</span>(x[<span style="color:#40a070">0</span>], math.<span style="color:#06287e">Exp</span>(x[<span style="color:#40a070">1</span>]), m.Data<span style="color:#666">...</span>)
     <span style="color:#007020;font-weight:bold">return</span> ll
 }</code></pre></div>
 
@@ -125,7 +125,7 @@ x <span style="color:#666">:=</span> []<span style="color:#902000">float64</span
     Decay: <span style="color:#40a070">0.998</span>,
 }
 <span style="color:#007020;font-weight:bold">for</span> iter <span style="color:#666">:=</span> <span style="color:#40a070">0</span>; iter <span style="color:#666">!=</span> <span style="color:#40a070">1000</span>; iter<span style="color:#666">++</span> {
-    opt.Step(m, x)
+    opt.<span style="color:#06287e">Step</span>(m, x)
 }
 mean, logs = x[<span style="color:#40a070">0</span>], x[<span style="color:#40a070">1</span>]
 
@@ -134,11 +134,11 @@ mean, logs = x[<span style="color:#40a070">0</span>], x[<span style="color:#40a0
 	Eps: <span style="color:#40a070">0.1</span>,
 }
 samples <span style="color:#666">:=</span> <span style="color:#007020">make</span>(<span style="color:#007020;font-weight:bold">chan</span> []<span style="color:#902000">float64</span>)
-hmc.Sample(m, x, samples)
+hmc.<span style="color:#06287e">Sample</span>(m, x, samples)
 <span style="color:#007020;font-weight:bold">for</span> i <span style="color:#666">:=</span> <span style="color:#40a070">0</span>; i <span style="color:#666">!=</span> <span style="color:#40a070">1000</span>; i<span style="color:#666">++</span> {
 	x = <span style="color:#666">&lt;-</span>samples
 }
-hmc.Stop()</code></pre></div>
+hmc.<span style="color:#06287e">Stop</span>()</code></pre></div>
 
 <h2 id="acknowledgements">Acknowledgements</h2>
 
