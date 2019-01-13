@@ -192,7 +192,7 @@ streams or batches).&lt;/p&gt;
 
 &lt;h3 id=&#34;full-posterior&#34;&gt;Full posterior&lt;/h3&gt;
 
-&lt;p&gt;A MCMC sampler for full posterior inference implements interface
+&lt;p&gt;An MCMC sampler for full posterior inference implements interface
 &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#MCMC&#34;&gt;&lt;code&gt;infer.MCMC&lt;/code&gt;&lt;/a&gt;. Inteface implementations are &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#HMC&#34;&gt;HMC&lt;/a&gt; and &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#NUTS&#34;&gt;NUTS&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#DepthAdapter&#34;&gt;&lt;code&gt;DepthAdapter&lt;/code&gt;&lt;/a&gt; enables adaption of NUTS step size with respect to the average
