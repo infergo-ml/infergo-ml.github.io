@@ -253,7 +253,7 @@ studies include:
 
 &lt;ul&gt;
 &lt;li&gt;linear regression, solved using either stochastic gradient descent and BFGS;&lt;/li&gt;
-&lt;li&gt;compilation of &lt;code&gt;infergo&lt;/code&gt; models and inference into Web assembly and running in
+&lt;li&gt;compilation of &lt;code&gt;infergo&lt;/code&gt; models and inference into WebAssembly and running in
 the browser;&lt;/li&gt;
 &lt;li&gt;integration with Gonum;&lt;/li&gt;
 &lt;li&gt;Neal&amp;rsquo;s funnel, a re-parameterization example borrowed from &lt;a href=&#34;https://mc-stan.org/users/documentation/&#34;&gt;Stan documentation&lt;/a&gt;.&lt;/li&gt;
