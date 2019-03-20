@@ -7,7 +7,7 @@
 <meta name="created" content="2019-03-20T02:04:30&#43;0200">
 <meta name="modified" content="2019-03-20T02:04:30&#43;0200">
 <meta name="author" content="David Tolpin">
-<meta name="description" content="infergo v0.3.0 is out. What&amp;rsquo;s new:  Only methods returning float64 or nothing are differentiated. This allows to define helper methods on the model, such as returning the number of parameters, and call the methods outside of differentiated context. infergo models can be optimized using Gonum optimization algorithms. This includes BFGS and variants. Case study lr-gonum applies BFGS to linear regression. Case studies have been extended. New studies include:  linear regression, solved using either stochastic gradient descent and BFGS; compilation of infergo models and inference into WebAssembly and running in the browser; integration with Gonum; Neal&amp;rsquo;s funnel, a re-parameterization example borrowed from Stan documentation.">
+<meta name="description" content="infergo v0.3.0 is out. What&amp;rsquo;s new:  Only methods returning float64 or nothing are differentiated. This allows to define helper methods on the model, such as returning the number of parameters, and call the methods outside of differentiated context. infergo models can be optimized using Gonum optimization algorithms. This includes BFGS and variants. Case study lr-gonum applies L-BFGS to linear regression. Case studies have been extended. New studies include:  linear regression, solved using either stochastic gradient descent and BFGS; compilation of infergo models and inference into WebAssembly and running in the browser; integration with Gonum; Neal&amp;rsquo;s funnel, a re-parameterization example borrowed from Stan documentation.">
 <meta property="og:site_name" content="Infergo — Go programs that learn">
 <meta property="og:title" content="infergo v0.3.0">
 <meta property="og:url" content="http://infergo.org/news/v0.3.0/">
@@ -27,7 +27,7 @@
     "datePublished": "2019-03-20T02:04:30+02:00",
     "dateModified": "2019-03-20T02:04:30+02:00",
     "url" : "http://infergo.org/news/v0.3.0/",
-    "description": "infergo v0.3.0 is out. What\u0026rsquo;s new:  Only methods returning float64 or nothing are differentiated. This allows to define helper methods on the model, such as returning the number of parameters, and call the methods outside of differentiated context. infergo models can be optimized using Gonum optimization algorithms. This includes BFGS and variants. Case study lr-gonum applies BFGS to linear regression. Case studies have been extended. New studies include:  linear regression, solved using either stochastic gradient descent and BFGS; compilation of infergo models and inference into WebAssembly and running in the browser; integration with Gonum; Neal\u0026rsquo;s funnel, a re-parameterization example borrowed from Stan documentation.",
+    "description": "infergo v0.3.0 is out. What\u0026rsquo;s new:  Only methods returning float64 or nothing are differentiated. This allows to define helper methods on the model, such as returning the number of parameters, and call the methods outside of differentiated context. infergo models can be optimized using Gonum optimization algorithms. This includes BFGS and variants. Case study lr-gonum applies L-BFGS to linear regression. Case studies have been extended. New studies include:  linear regression, solved using either stochastic gradient descent and BFGS; compilation of infergo models and inference into WebAssembly and running in the browser; integration with Gonum; Neal\u0026rsquo;s funnel, a re-parameterization example borrowed from Stan documentation.",
     "author": {
       "@type": "Person",
       "name": "David Tolpin"
@@ -93,7 +93,7 @@ parameters, and call the methods outside of differentiated context.</li>
 algorithms</a>. This includes
 BFGS and variants. Case study
 <a href="https://bitbucket.org/dtolpin/infergo-studies/src/master/lr-gonum/">lr-gonum</a>
-applies BFGS to linear regression.</li>
+applies L-BFGS to linear regression.</li>
 <li><a href="https://bitbucket.org/dtolpin/infergo-studies">Case studies</a> have been extended. New
 studies include:
 

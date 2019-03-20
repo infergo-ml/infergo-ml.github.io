@@ -26,7 +26,7 @@ parameters, and call the methods outside of differentiated context.&lt;/li&gt;
 algorithms&lt;/a&gt;. This includes
 BFGS and variants. Case study
 &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/lr-gonum/&#34;&gt;lr-gonum&lt;/a&gt;
-applies BFGS to linear regression.&lt;/li&gt;
+applies L-BFGS to linear regression.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies&#34;&gt;Case studies&lt;/a&gt; have been extended. New
 studies include:
 
