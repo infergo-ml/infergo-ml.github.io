@@ -6,7 +6,7 @@
     <description>Recent content in Home on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Dec 2018 01:14:30 +0300</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2019 02:04:30 +0200</lastBuildDate>
     <atom:link href="http://infergo.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -18,11 +18,14 @@
 
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;infergo&lt;/code&gt; requires at least Go 1.11 to build and run, because it
-relies on &lt;a href=&#34;https://github.com/golang/go/wiki/Modules&#34;&gt;modules&lt;/a&gt;,
-and on &lt;code&gt;go/packages&lt;/code&gt; to import packages in a module-aware way.
-&lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Install Go&lt;/a&gt;. It is easier to
-build and use &lt;code&gt;infergo&lt;/code&gt; with the &lt;code&gt;make&lt;/code&gt; utility.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;infergo&lt;/code&gt; benefits from
+&lt;a href=&#34;https://github.com/golang/go/wiki/Modules&#34;&gt;modules&lt;/a&gt; introduced
+in Go 1.11, and relies on
+&lt;a href=&#34;https://godoc.org/golang.org/x/tools/go/packages&#34;&gt;&lt;code&gt;go/packages&lt;/code&gt;&lt;/a&gt;
+to import packages in a module-aware way, but will work with
+earlier versions of Go.  &lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Install
+Go&lt;/a&gt;. It is easier to build and
+use &lt;code&gt;infergo&lt;/code&gt; with the &lt;code&gt;make&lt;/code&gt; utility.&lt;/p&gt;
 
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
 
@@ -94,8 +97,8 @@ implement interface
 &lt;ol&gt;
 &lt;li&gt;Method Observe of interface &lt;code&gt;model.Model&lt;/code&gt; is
 differentiated.&lt;/li&gt;
-&lt;li&gt;All methods on the type implementing &lt;code&gt;model.Model&lt;/code&gt;
-are differentiated.&lt;/li&gt;
+&lt;li&gt;Methods on the type implementing &lt;code&gt;model.Model&lt;/code&gt; returning a
+single float or nothing are differentiated.&lt;/li&gt;
 &lt;li&gt;Within the methods, the following is differentiated:
 
 &lt;ul&gt;
@@ -223,6 +226,38 @@ repository,
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://infergo.org/images/infergopher.png&#34;&gt;Gehenna Gopher&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://offtopia.net/&#34;&gt;David Tolpin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>infergo v0.3.0</title>
+      <link>http://infergo.org/news/v0.3.0/</link>
+      <pubDate>Wed, 20 Mar 2019 02:04:30 +0200</pubDate>
+      <guid>http://infergo.org/news/v0.3.0/</guid>
+      <description>&lt;p&gt;&lt;code&gt;infergo v0.3.0&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.3.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Only methods returning float64 or nothing are differentiated. This allows
+to define helper methods on the model, such as returning the number of
+parameters, and call the methods outside of differentiated context.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;infergo&lt;/code&gt; models can be optimized using &lt;a href=&#34;https://godoc.org/gonum.org/v1/gonum/optimize&#34;&gt;Gonum optimization
+algorithms&lt;/a&gt;. This includes
+BFGS and variants. Case study
+&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/lr-gonum/&#34;&gt;lr-gonum&lt;/a&gt;
+applies BFGS to linear regression.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies&#34;&gt;Case studies&lt;/a&gt; have been extended. New
+studies include:
+
+&lt;ul&gt;
+&lt;li&gt;linear regression, solved using either stochastic gradient descent and BFGS;&lt;/li&gt;
+&lt;li&gt;compilation of &lt;code&gt;infergo&lt;/code&gt; models and inference into Web assembly and running in
+the browser;&lt;/li&gt;
+&lt;li&gt;integration with Gonum;&lt;/li&gt;
+&lt;li&gt;Neal&amp;rsquo;s funnel, a re-parameterization example borrowed from &lt;a href=&#34;https://mc-stan.org/users/documentation/&#34;&gt;Stan documentation&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

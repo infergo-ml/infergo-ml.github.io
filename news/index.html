@@ -73,6 +73,18 @@
 <h1 class="title">News</h1>
 <article class="section-news list-view">
 <header>
+<h2 class="title "><a href="/news/v0.3.0/">infergo v0.3.0</a></h2>
+
+</header>
+<div class="content">
+infergo v0.3.0 is out.
+What&rsquo;s new:
+ Only methods returning float64 or nothing are differentiated. This allows to define helper methods on the model, such as returning the number of parameters, and call the methods outside of differentiated context. infergo models can be optimized using Gonum optimization algorithms. This includes BFGS and variants. Case study lr-gonum applies BFGS to linear regression. Case studies have been extended. New studies include:  linear regression, solved using either stochastic gradient descent and BFGS; compilation of infergo models and inference into Web assembly and running in the browser; integration with Gonum; Neal&rsquo;s funnel, a re-parameterization example borrowed from Stan documentation.
+</div>
+</article>
+
+<article class="section-news list-view">
+<header>
 <h2 class="title "><a href="/news/v0.2.2/">infergo v0.2.2</a></h2>
 
 </header>
@@ -114,6 +126,7 @@ I share here my experiences from integrating probabilistic programming into a se
 <section>
 <h4 class="menu"><a class="active" href="/news/">News</a></h4>
 <ul class="menu">
+<li><a class="" href="/news/v0.3.0/">infergo v0.3.0</a></li>
 <li><a class="" href="/news/v0.2.2/">infergo v0.2.2</a></li>
 <li><a class="" href="/news/v0.2.1/">infergo v0.2.1</a></li>
 <li><a class="" href="/news/why/">Why infergo</a></li>
