@@ -6,7 +6,7 @@
     <description>Recent content in Home on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Mar 2019 02:04:30 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 15:19:22 +0300</lastBuildDate>
     <atom:link href="http://infergo.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -225,6 +225,155 @@ repository,
 &lt;li&gt;&lt;a href=&#34;http://infergo.org/images/infergopher.png&#34;&gt;Gehenna Gopher&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://offtopia.net/&#34;&gt;David Tolpin&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>A Tale of GoIDs</title>
+      <link>http://infergo.org/news/tale-of-goids/</link>
+      <pubDate>Mon, 01 Apr 2019 15:19:22 +0300</pubDate>
+      <guid>http://infergo.org/news/tale-of-goids/</guid>
+      <description>
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;2.16&lt;/strong&gt; And the LORD God commanded the man, saying: &amp;lsquo;Of every tree of the garden
+thou mayest freely eat;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.17&lt;/strong&gt; but of the tree of the knowledge of good and evil,
+thou shalt not eat of it; for in the day that thou eatest thereof thou shalt
+surely die.&amp;rsquo;&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;The Book of Genesis&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; gives the programmer introspection into every aspect
+of &lt;a href=&#34;https://godoc.org/reflect&#34;&gt;the language&lt;/a&gt;, and of a &lt;a href=&#34;https://godoc.org/runtime&#34;&gt;running
+program&lt;/a&gt;. But to one thing the programmer does not
+have access, and it is the goroutine identifier. Because the day the
+programmers know the goroutine identifier, they create goroutine-local storage
+through shared access and mutexes, and shall surely die.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;However,&lt;/strong&gt; there are use cases beyond concurrent &lt;a href=&#34;https://blog.golang.org/context&#34;&gt;handling of HTTP
+requests&lt;/a&gt;, in which
+&lt;a href=&#34;https://blog.golang.org/share-memory-by-communicating&#34;&gt;sharing memory by
+communicating&lt;/a&gt;
+through channels or passing the context around is not going to
+work. One such case is &lt;a href=&#34;http://infergo.org/&#34;&gt;Infergo&lt;/a&gt;.  Infergo
+transforms Go source code to enable &lt;a href=&#34;https://en.wikipedia.org/wiki/Automatic_differentiation#Reverse_accumulation&#34;&gt;reverse-mode automatic
+differentiation&lt;/a&gt;.
+Function &lt;em&gt;signatures&lt;/em&gt; stay unchanged, but function &lt;em&gt;bodies&lt;/em&gt; are
+modified to write to a so-called &lt;em&gt;tape&lt;/em&gt; a trace of every
+floating point operation. A single tape must be accessible by
+all functions. If derivatives are computed concurrently in
+multiple goroutines, every goroutine must have its own tape.&lt;/p&gt;
+
+&lt;p&gt;The functions must know how to get to the tape. And getting to
+the tape must be very efficient: every floating point operation
+involves an access to the tape!&lt;/p&gt;
+
+&lt;p&gt;It is not that no one thought about goroutine identifiers
+before. There are Go programmers who need the identifiers, some
+of them admit the need, and a few find workarounds to actually
+obtain the identifiers.  I searched for the workarounds, I found
+several worthy attempts, and then I had a revelation, and then I
+discovered someone who had the same revelation before me. And
+that gave Infergo efficient goroutine-local storage for
+concurrent automatic differentiation and inference. Here is how
+it went.&lt;/p&gt;
+
+&lt;h2 id=&#34;worthy-attempts&#34;&gt;Worthy Attempts&lt;/h2&gt;
+
+&lt;h3 id=&#34;from-the-makers-of-go&#34;&gt;From the makers of Go&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://bradfitz.com/&#34;&gt;Brad Fitzpatrick&lt;/a&gt; is a member of the Go
+programming language team at Google. Brad created a
+&lt;a href=&#34;https://github.com/bradfitz/http2/blob/master/gotrack.go&#34;&gt;function&lt;/a&gt;
+which obtains the goroutine identifier. The function creates a
+stack trace and parses the identifier out of string
+representation of the trace. Brad needed this for debugging, &amp;ldquo;to
+track that functions run on the goroutine  that they&amp;rsquo;re supposed
+to&amp;rdquo;. The function uses public API calls and an undocumented but
+stable format of the serialized stack trace.&lt;/p&gt;
+
+&lt;p&gt;Somewhat cumbersome but working. Unfortunately, too inefficient
+for Infergo use case. Collecting, serializing, and parsing the
+stack trace on every operation makes automatic differentiation
+2,000 (&lt;strong&gt;two thousand&lt;/strong&gt;) times slower!&lt;/p&gt;
+
+&lt;h3 id=&#34;from-the-users-of-go&#34;&gt;From the users of Go&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://jtolio.com/&#34;&gt;JT Olio&lt;/a&gt; wrote a &lt;a href=&#34;https://github.com/jtolds/gls&#34;&gt;goroutine-local storage
+library&lt;/a&gt;. The library &amp;ldquo;defines 16
+special functions and embed base-16 tags into the stack using
+the call order of those 16 functions.&amp;rdquo; Then, this embedding is
+used to produce an unique goroutine identifier and establish
+goroutine-local storage. The idea blew me away! However, the
+library requires that Go routines are created through a library
+call.  I could modify Infergo&amp;rsquo;s own inference algorithms, however I
+would not be able to pass functions and gradients to third-party
+code. Infergo
+&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/lr-gonum/&#34;&gt;integrates&lt;/a&gt;
+with &lt;a href=&#34;http://gonum.org/&#34;&gt;Gonum&lt;/a&gt; optimization nicely, and by
+enabling goroutine-local tapes I strived to improve this
+integration, rather than sacrifice it.&lt;/p&gt;
+
+&lt;h2 id=&#34;revelation&#34;&gt;Revelation&lt;/h2&gt;
+
+&lt;p&gt;I was almost ready to give up, that is, to write code that
+adds an extra &amp;lsquo;context&amp;rsquo; parameter to every differentiated function.
+But then it came down onto me that maybe Go does not want to
+prevent me from using the goroutine identifier.  Maybe it is
+there, and I just do not see it.&lt;/p&gt;
+
+&lt;p&gt;Indeed, Go has an &lt;a href=&#34;https://golang.org/doc/asm&#34;&gt;assembly
+language&lt;/a&gt;. The language is
+documented, Go functions can be implemented in Go assembly.  If
+I wanted a system feature not available through a library, I
+would write an assembly function bringing that feature to me.&lt;/p&gt;
+
+&lt;p&gt;Not only Go has an assembler, the assembler has a dedicated
+register &lt;code&gt;g&lt;/code&gt; pointing at &lt;code&gt;runtime.g&lt;/code&gt;, the goroutine descriptor.
+&lt;code&gt;goid&lt;/code&gt;, the Go routine identifier is just one of the fields of
+the descriptor. I can just use the contents of &lt;code&gt;g&lt;/code&gt; to get
+the goroutine identifier, and it will only be a couple
+instructions!&lt;/p&gt;
+
+&lt;p&gt;It is much easier to find something if you know what you are
+looking for. &lt;a href=&#34;https://zhuanlan.zhihu.com/taowen&#34;&gt;Tao Wen&lt;/a&gt; wrote
+yet another &lt;a href=&#34;https://github.com/modern-go/gls&#34;&gt;GLS library&lt;/a&gt;; and
+this library does exactly what I just described: uses Go
+assembler to access register &lt;code&gt;g&lt;/code&gt;, and retrieves field &lt;code&gt;goid&lt;/code&gt;
+from the structure pointed to by the register. I somewhat
+simplified the code, added support for all platforms where
+Go is available, and now Infergo has fast and straightforward
+support for multithreading.&lt;/p&gt;
+
+&lt;h2 id=&#34;lessons-learned&#34;&gt;Lessons Learned&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;It is sometimes easier to find a hole in the fence than to
+jump over.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can do anything with Go. You just must prove (to yourself
+more than to others) that you are brave and skilled enough.
+For example, by diving into Go intervals and coding in Go
+assembly.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;My Samsung Tab S4 tablet is amazingly well fit for
+multithreading, in Go in particular. I did most of the
+development on the tablet, in &lt;a href=&#34;https://termux.com&#34;&gt;Termux&lt;/a&gt;.
+The tablet&amp;rsquo;s CPU  has 8 cores, and Go runs multiple
+goroutines in parallel with very little overhead: 8 inference
+threads in parallel take roughly the same time as a single
+thread with local goroutine storage, and only 20% slower than
+a single thread with a global tape, for the same amount of
+computation per thread.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;You can run &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/wasm/&#34;&gt;multiple goroutines in parallel in a
+browser&lt;/a&gt; via
+WebAssembly. WebAssembly is slower than other targets, but
+still quite fast.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
