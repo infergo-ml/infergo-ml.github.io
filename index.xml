@@ -6,7 +6,7 @@
     <description>Recent content in Home on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Apr 2019 15:19:22 +0300</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 19:45:20 +0300</lastBuildDate>
     <atom:link href="http://infergo.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -224,6 +224,25 @@ repository,
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://infergo.org/images/infergopher.png&#34;&gt;Gehenna Gopher&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://offtopia.net/&#34;&gt;David Tolpin&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>infergo v0.3.0</title>
+      <link>http://infergo.org/news/v0.5.0/</link>
+      <pubDate>Mon, 01 Apr 2019 19:45:20 +0300</pubDate>
+      <guid>http://infergo.org/news/v0.5.0/</guid>
+      <description>&lt;p&gt;&lt;code&gt;infergo v0.5.0&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.5.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Multithreading support. Differentiation can be performed concurrently in
+multiple goroutines without locking of calls to Observe or Gradient,
+and with little contention.&lt;/li&gt;
+&lt;li&gt;Examples and case studies performing inference in parallel, both using
+Infergo&amp;rsquo;s own inference algorithm, or through integration in Gonum.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
