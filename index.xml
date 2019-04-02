@@ -241,7 +241,7 @@ repository,
 multiple goroutines without locking of calls to Observe or Gradient,
 and with little contention.&lt;/li&gt;
 &lt;li&gt;Examples and case studies performing inference in parallel, both using
-Infergo&amp;rsquo;s own inference algorithm, or through integration in Gonum.&lt;/li&gt;
+Infergo&amp;rsquo;s own inference algorithms, or through integration in Gonum.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
