@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="nojs" lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+<title>The Tale of GoIDs – Infergo — Go programs that learn</title>
+<meta name="created" content="2019-04-01T15:19:22&#43;0300">
+<meta name="modified" content="2019-04-01T15:19:22&#43;0300">
+<meta name="author" content="David Tolpin">
+<meta name="description" content="2.16 And the LORD God commanded the man, saying: &amp;lsquo;Of every tree of the garden thou mayest freely eat; 2.17 but of the tree of the knowledge of good and evil, thou shalt not eat of it; for in the day that thou eatest thereof thou shalt surely die.&amp;rsquo; The Book of Genesis  Go gives the programmer introspection into every aspect of the language, and of a running program.">
+<meta property="og:site_name" content="Infergo — Go programs that learn">
+<meta property="og:title" content="The Tale of GoIDs">
+<meta property="og:url" content="http://infergo.org/news/tale-of-goids/">
+
+<meta name="generator" content="Hugo 0.55.0-DEV" />
+
+<link rel="canonical" href="http://infergo.org/news/tale-of-goids/">
+<link rel="icon" href="/favicon.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/print.css" media="print">
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "\"The Tale of GoIDs\"",
+    "datePublished": "2019-04-01T15:19:22\x2b03:00",
+    "dateModified": "2019-04-01T15:19:22\x2b03:00",
+    "url" : "http:\/\/infergo.org\/news\/tale-of-goids\/",
+    "description": "\"2.16 And the LORD God commanded the man, saying: \\u0026lsquo;Of every tree of the garden thou mayest freely eat; 2.17 but of the tree of the knowledge of good and evil, thou shalt not eat of it; for in the day that thou eatest thereof thou shalt surely die.\\u0026rsquo; The Book of Genesis  Go gives the programmer introspection into every aspect of the language, and of a running program.\"",
+    "author": {
+      "@type": "Person",
+      "name": "\"David Tolpin\""
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "http:\/\/infergo.org\/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "\"Infergo — Go programs that learn\"",
+      "url": "http:\/\/infergo.org\/",
+    }
+  }
+</script>
+
+</head>
+
+<body>
+<div class="page layout__page layout__sidebar-second">
+<header class="header layout__header" role="banner">
+<h1 class="header__site-name">
+<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Infergo — Go programs that learn</span></a>
+</h1>
+<div class="region header__region">
+
+
+</div>
+</header>
+
+
+
+
+<nav class="main-menu layout__navigation" role="navigation">
+<h2 class="visually-hidden">Main menu</h2>
+<ul class="navbar">
+<li><a class="" href="/">Home</a></li>
+<li><a class="" href="/start/">Getting started</a></li>
+<li><a class="" href="/guide/">Guide</a></li>
+<li><a class="" href="/examples/">Examples</a></li>
+<li><a class="" href="/team/">Team</a></li>
+<li><a class="active" href="/news/">News</a></li>
+</ul>
+</nav>
+
+
+<main class="main layout__main" role="main">
+<h1 class="title ">The Tale of GoIDs</h1>
+<article class="section-news single-view">
+<header>
+</header>
+<div class="content">
+
+
+<blockquote>
+<p><strong>2.16</strong> And the LORD God commanded the man, saying: &lsquo;Of every tree of the garden
+thou mayest freely eat;</p>
+
+<p><strong>2.17</strong> but of the tree of the knowledge of good and evil,
+thou shalt not eat of it; for in the day that thou eatest thereof thou shalt
+surely die.&rsquo;</p>
+
+<p><em>The Book of Genesis</em></p>
+</blockquote>
+
+<p><a href="http://golang.org/">Go</a> gives the programmer introspection into every aspect
+of <a href="https://godoc.org/reflect">the language</a>, and of a <a href="https://godoc.org/runtime">running
+program</a>. But to one thing the programmer does not
+have access, and it is the goroutine identifier. Because the day the
+programmers know the goroutine identifier, they create goroutine-local storage
+through shared access and mutexes, and shall surely die.</p>
+
+<p><strong>However,</strong> there are use cases beyond concurrent <a href="https://blog.golang.org/context">handling of HTTP
+requests</a>, in which
+<a href="https://blog.golang.org/share-memory-by-communicating">sharing memory by
+communicating</a>
+through channels or passing the context around is not going to
+work. One such case is <a href="http://infergo.org/">Infergo</a>.  Infergo
+transforms Go source code to enable <a href="https://en.wikipedia.org/wiki/Automatic_differentiation#Reverse_accumulation">reverse-mode automatic
+differentiation</a>.
+Function <em>signatures</em> stay unchanged, but function <em>bodies</em> are
+modified to write to a so-called <em>tape</em> a trace of every
+floating point operation. A single tape must be accessible by
+all functions. If derivatives are computed concurrently in
+multiple goroutines, every goroutine must have its own tape.</p>
+
+<p>The functions must know how to get to the tape. And getting to
+the tape must be very efficient: every floating point operation
+involves an access to the tape!</p>
+
+<p>It is not that no one thought about goroutine identifiers
+before. There are Go programmers who need the identifiers, some
+of them admit the need, and a few find workarounds to actually
+obtain the identifiers.  I searched for the workarounds, I found
+several worthy attempts, and then I had a revelation, and then I
+discovered someone who had the same revelation before me. And
+that gave Infergo efficient goroutine-local storage for
+concurrent automatic differentiation and inference. Here is how
+it went.</p>
+
+<h2 id="worthy-attempts">Worthy Attempts</h2>
+
+<h3 id="from-the-makers-of-go">From the makers of Go</h3>
+
+<p><a href="https://bradfitz.com/">Brad Fitzpatrick</a> is a member of the Go
+programming language team at Google. Brad created a
+<a href="https://github.com/bradfitz/http2/blob/master/gotrack.go">function</a>
+which obtains the goroutine identifier. The function creates a
+stack trace and parses the identifier out of string
+representation of the trace. Brad needed this for debugging, &ldquo;to
+track that functions run on the goroutine  that they&rsquo;re supposed
+to&rdquo;. The function uses public API calls and an undocumented but
+stable format of the serialized stack trace.</p>
+
+<p>Somewhat cumbersome but working. Unfortunately, too inefficient
+for Infergo use case. Collecting, serializing, and parsing the
+stack trace on every operation makes automatic differentiation
+2,000 (<strong>two thousand</strong>) times slower!</p>
+
+<h3 id="from-the-users-of-go">From the users of Go</h3>
+
+<p><a href="https://jtolio.com/">JT Olio</a> wrote a <a href="https://github.com/jtolds/gls">goroutine-local storage
+library</a>. The library &ldquo;defines 16
+special functions and embed base-16 tags into the stack using
+the call order of those 16 functions.&rdquo; Then, this embedding is
+used to produce an unique goroutine identifier and establish
+goroutine-local storage. The idea blew me away! However, the
+library requires that Go routines are created through a library
+call.  I could modify Infergo&rsquo;s own inference algorithms, however I
+would not be able to pass functions and gradients to third-party
+code. Infergo
+<a href="https://bitbucket.org/dtolpin/infergo-studies/src/master/lr-gonum/">integrates</a>
+with <a href="http://gonum.org/">Gonum</a> optimization nicely, and by
+enabling goroutine-local tapes I strived to improve this
+integration, rather than sacrifice it.</p>
+
+<h2 id="revelation">Revelation</h2>
+
+<p>I was almost ready to give up, that is, to write code that
+adds an extra &lsquo;context&rsquo; parameter to every differentiated function.
+But then it came down onto me that maybe Go does not want to
+prevent me from using the goroutine identifier.  Maybe it is
+there, and I just do not see it.</p>
+
+<p>Indeed, Go has an <a href="https://golang.org/doc/asm">assembly
+language</a>. The language is
+documented, Go functions can be implemented in Go assembly.  If
+I wanted a system feature not available through a library, I
+would write an assembly function bringing that feature to me.</p>
+
+<p>The same goes for Go.</p>
+
+<p>Not only Go has an assembler, the assembler has a dedicated
+register <code>g</code> pointing at <code>runtime.g</code>, the goroutine descriptor.
+<code>goid</code>, the Go routine identifier is just one of the fields of
+the descriptor. I can just use the contents of <code>g</code> to get
+the goroutine identifier, and it will only be a couple
+instructions!</p>
+
+<p>It is much easier to find something if you know what you are
+looking for. <a href="https://zhuanlan.zhihu.com/taowen">Tao Wen</a> wrote
+yet another <a href="https://github.com/modern-go/gls">GLS library</a>; and
+this library does exactly what I just described: uses Go
+assembler to access register <code>g</code>, and retrieves field <code>goid</code>
+from the structure pointed to by the register. I somewhat
+simplified the code, added support for all platforms where
+Go is available, and now Infergo has fast and straightforward
+support for multithreading.</p>
+
+<h2 id="lessons-learned">Lessons Learned</h2>
+
+<ol>
+<li><p>It is sometimes easier to find a hole in the fence than to
+jump over.</p></li>
+
+<li><p>You can do anything with Go. You just must prove (to yourself
+more than to others) that you are brave and skilled enough.
+For example, by diving into Go intervals and coding in Go
+assembly.</p></li>
+
+<li><p>My Samsung Tab S4 tablet is amazingly well fit for
+multithreading, in Go in particular. I did most of the
+development on the tablet, in <a href="https://termux.com">Termux</a>.
+The tablet&rsquo;s CPU  has 8 cores, and Go runs multiple
+goroutines in parallel with very little overhead: 8 inference
+threads in parallel take roughly the same time as a single
+thread with local goroutine storage, and only 20% slower than
+a single thread with a global tape, for the same amount of
+computation per thread.</p></li>
+
+<li><p>You can run <a href="https://bitbucket.org/dtolpin/infergo-studies/src/master/wasm/">multiple goroutines in parallel in a
+browser</a> via
+WebAssembly. WebAssembly is slower than other targets, but
+still quite fast.</p></li>
+</ol>
+
+
+</div>
+</article>
+</main>
+
+
+
+<aside class="sidebar layout__second-sidebar" role="complementary">
+<section>
+<h4 class="menu"><a class="" href="/news/">News</a></h4>
+<ul class="menu">
+<li><a class="" href="/news/v0.5.0/">infergo v0.5.0</a></li>
+<li><a class="active" href="/news/tale-of-goids/">The Tale of GoIDs</a></li>
+<li><a class="" href="/news/v0.3.0/">infergo v0.3.0</a></li>
+<li><a class="" href="/news/v0.2.2/">infergo v0.2.2</a></li>
+<li><a class="" href="/news/v0.2.1/">infergo v0.2.1</a></li>
+<li><a class="" href="/news/why/">Why infergo</a></li>
+</ul>
+</section>
+</aside>
+
+
+<footer class="footer layout__footer" role="contentinfo">
+<p><span>© Infergo — Go programs that learn</span></p>
+
+
+</footer>
+
+</div>
+
+
+
+</body>
+</html>
