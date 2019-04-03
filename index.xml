@@ -304,7 +304,7 @@ it went.&lt;/p&gt;
 &lt;h3 id=&#34;from-the-makers-of-go&#34;&gt;From the makers of Go&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://bradfitz.com/&#34;&gt;Brad Fitzpatrick&lt;/a&gt; is a member of the Go
-programming language team at Google. Brad created a
+programming language team at Google. Brad wrote a
 &lt;a href=&#34;https://github.com/bradfitz/http2/blob/master/gotrack.go&#34;&gt;function&lt;/a&gt;
 which obtains the goroutine identifier. The function creates a
 stack trace and parses the identifier out of string
