@@ -23,13 +23,13 @@
 multiple goroutines without locking of calls to Observe or Gradient,
 and with little contention.&lt;/li&gt;
 &lt;li&gt;Examples and case studies performing inference in parallel, both using
-Infergo&amp;rsquo;s own inference algorithm, or through integration in Gonum.&lt;/li&gt;
+Infergo&amp;rsquo;s own inference algorithms, or through integration in Gonum.&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
     
     <item>
-      <title>A Tale of GoIDs</title>
+      <title>The Tale of GoIDs</title>
       <link>http://infergo.org/news/tale-of-goids/</link>
       <pubDate>Mon, 01 Apr 2019 15:19:22 +0300</pubDate>
       <guid>http://infergo.org/news/tale-of-goids/</guid>
@@ -86,7 +86,7 @@ it went.&lt;/p&gt;
 &lt;h3 id=&#34;from-the-makers-of-go&#34;&gt;From the makers of Go&lt;/h3&gt;
 
 &lt;p&gt;&lt;a href=&#34;https://bradfitz.com/&#34;&gt;Brad Fitzpatrick&lt;/a&gt; is a member of the Go
-programming language team at Google. Brad created a
+programming language team at Google. Brad wrote a
 &lt;a href=&#34;https://github.com/bradfitz/http2/blob/master/gotrack.go&#34;&gt;function&lt;/a&gt;
 which obtains the goroutine identifier. The function creates a
 stack trace and parses the identifier out of string
@@ -158,7 +158,7 @@ jump over.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;You can do anything with Go. You just must prove (to yourself
 more than to others) that you are brave and skilled enough.
-For example, by diving into Go intervals and coding in Go
+For example, by diving into Go internals and coding in Go
 assembly.&lt;/p&gt;&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;My Samsung Tab S4 tablet is amazingly well fit for
