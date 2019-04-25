@@ -10,7 +10,7 @@
 <meta property="og:title" content="News">
 <meta property="og:url" content="http://infergo.org/news/">
 
-<meta name="generator" content="Hugo 0.53-DEV" />
+<meta name="generator" content="Hugo 0.55.0-DEV" />
 
 <link rel="canonical" href="http://infergo.org/news/">
 <link rel="icon" href="/favicon.png">
@@ -21,20 +21,20 @@
   {
     "@context": "http://schema.org",
     "@type": "WebSite",
-    "url" : "http://infergo.org/news/",
-    "name": "News",
+    "url" : "http:\/\/infergo.org\/news\/",
+    "name": "\"News\"",
     "author": {
       "@type": "Person",
-      "name": "David Tolpin"
+      "name": "\"David Tolpin\""
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http://infergo.org/"
+      "@id": "http:\/\/infergo.org\/"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Infergo — Go programs that learn",
-      "url": "http://infergo.org/",
+      "name": "\"Infergo — Go programs that learn\"",
+      "url": "http:\/\/infergo.org\/",
     }
 </script>
 
@@ -71,6 +71,18 @@
 
 <main class="main layout__main" role="main">
 <h1 class="title">News</h1>
+<article class="section-news list-view">
+<header>
+<h2 class="title "><a href="/news/v0.6.1/">infergo v0.6.1</a></h2>
+
+</header>
+<div class="content">
+Infergo v0.6.1 is out.
+What&rsquo;s new:
+ I moved many things around, some in a backward-incompatible way, but should only affect a minority of users. As a side-effect of using Infergo for a rather involved model, I fixed two bugs in the automatic differentiation transformation. The bugs manifested in edge cases I didn&rsquo;t even think they exist. The accompanying repository infergo-studies now contains a new case study &mdash; a rewrite of Stan&rsquo;s LDA example.
+</div>
+</article>
+
 <article class="section-news list-view">
 <header>
 <h2 class="title "><a href="/news/v0.5.0/">infergo v0.5.0</a></h2>
@@ -151,6 +163,7 @@ I share here my experiences from integrating probabilistic programming into a se
 <section>
 <h4 class="menu"><a class="active" href="/news/">News</a></h4>
 <ul class="menu">
+<li><a class="" href="/news/v0.6.1/">infergo v0.6.1</a></li>
 <li><a class="" href="/news/v0.5.0/">infergo v0.5.0</a></li>
 <li><a class="" href="/news/tale-of-goids/">The Tale of GoIDs</a></li>
 <li><a class="" href="/news/v0.3.0/">infergo v0.3.0</a></li>

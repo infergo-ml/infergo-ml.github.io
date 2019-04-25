@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News on Infergo — Go programs that learn</title>
@@ -6,8 +5,31 @@
     <description>Recent content in News on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Apr 2019 19:45:20 +0300</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2019 10:56:00 +0300</lastBuildDate>
     <atom:link href="http://infergo.org/news/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>infergo v0.6.1</title>
+      <link>http://infergo.org/news/v0.6.1/</link>
+      <pubDate>Thu, 25 Apr 2019 10:56:00 +0300</pubDate>
+      <guid>http://infergo.org/news/v0.6.1/</guid>
+      <description>&lt;p&gt;Infergo v0.6.1 is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.6.1/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I moved many things around, some in a backward-incompatible way, but should
+only affect a minority of users.&lt;/li&gt;
+&lt;li&gt;As a side-effect of using Infergo for a rather involved model, I fixed two
+bugs in the automatic differentiation transformation. The bugs manifested
+in edge cases I didn&amp;rsquo;t even think they exist.&lt;/li&gt;
+&lt;li&gt;The accompanying repository
+&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies&#34;&gt;infergo-studies&lt;/a&gt;
+now contains a new case study &amp;mdash; a rewrite of Stan&amp;rsquo;s LDA
+example.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>infergo v0.5.0</title>

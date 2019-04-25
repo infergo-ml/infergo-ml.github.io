@@ -19,6 +19,22 @@
   </url>
   
   <url>
+    <loc>http://infergo.org/</loc>
+    <lastmod>2019-04-25T10:56:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/news/</loc>
+    <lastmod>2019-04-25T10:56:00+03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/news/v0.6.1/</loc>
+    <lastmod>2019-04-25T10:56:00+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://infergo.org/news/v0.5.0/</loc>
     <lastmod>2019-04-01T19:45:20+03:00</lastmod>
   </url>
@@ -46,17 +62,6 @@
   <url>
     <loc>http://infergo.org/news/why/</loc>
     <lastmod>2018-11-26T14:19:13+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://infergo.org/</loc>
-    <lastmod>2019-04-01T19:45:20+03:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://infergo.org/news/</loc>
-    <lastmod>2019-04-01T19:45:20+03:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
