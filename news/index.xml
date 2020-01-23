@@ -6,8 +6,34 @@
     <description>Recent content in News on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Apr 2019 10:56:00 +0300</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jan 2020 00:43:00 +0200</lastBuildDate>
     <atom:link href="http://infergo.org/news/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>infergo v0.7.0</title>
+      <link>http://infergo.org/news/v0.7.0/</link>
+      <pubDate>Fri, 24 Jan 2020 00:43:00 +0200</pubDate>
+      <guid>http://infergo.org/news/v0.7.0/</guid>
+      <description>&lt;p&gt;Infergo v0.7.0 is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.7.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This release is a result of improving and extending Infergo
+along with development of &lt;a href=&#34;http://infergo.org/piers/gogp&#34;&gt;GoGP&lt;/a&gt;,
+a library for Gaussian process regression.&lt;/p&gt;
+
+&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;model&amp;rsquo;s gradient can be explicitly specified as the
+&lt;code&gt;Gradient()&lt;/code&gt; method, instead of through automatic
+differentation.&lt;/li&gt;
+&lt;li&gt;An elemental may also be a function which accepts a slice of
+floats (in addition to functions which accept one or more
+float scalars as parameters).&lt;/li&gt;
+&lt;li&gt;More kernels in the supplied kernel library.&lt;/li&gt;
+&lt;li&gt;As usual, fixes and performance improvements.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>infergo v0.6.1</title>
