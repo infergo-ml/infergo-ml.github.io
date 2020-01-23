@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Piers on Infergo — Go programs that learn</title>
+    <title>Peers on Infergo — Go programs that learn</title>
     <link>http://infergo.org/peers/</link>
-    <description>Recent content in Piers on Infergo — Go programs that learn</description>
+    <description>Recent content in Peers on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <atom:link href="http://infergo.org/peers/index.xml" rel="self" type="application/rss+xml" />
