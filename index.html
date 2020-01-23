@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
 <title>Infergo — Go programs that learn</title>
 <link rel="alternate" type="application/rss&#43;xml" title="RSS" href="http://infergo.org/index.xml">
-<meta name="created" content="2018-12-09T01:14:30&#43;0300">
-<meta name="modified" content="2018-12-09T01:14:30&#43;0300">
+<meta name="created" content="2019-04-25T10:56:00&#43;0300">
+<meta name="modified" content="2019-04-25T10:56:00&#43;0300">
 <meta name="author" content="David Tolpin">
 <meta name="description" content="">
 <meta property="og:site_name" content="Infergo — Go programs that learn">
@@ -24,20 +24,20 @@
   {
     "@context": "http://schema.org",
     "@type": "WebSite",
-    "url" : "http://infergo.org/",
-    "name": "Home",
+    "url" : "http:\/\/infergo.org\/",
+    "name": "\"Home\"",
     "author": {
       "@type": "Person",
-      "name": "David Tolpin"
+      "name": "\"David Tolpin\""
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http://infergo.org/"
+      "@id": "http:\/\/infergo.org\/"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Infergo — Go programs that learn",
-      "url": "http://infergo.org/",
+      "name": "\"Infergo — Go programs that learn\"",
+      "url": "http:\/\/infergo.org\/",
     }
 </script>
 
@@ -67,6 +67,7 @@
 <li><a class="" href="/guide/">Guide</a></li>
 <li><a class="" href="/examples/">Examples</a></li>
 <li><a class="" href="/team/">Team</a></li>
+<li><a class="" href="/piers/">Piers</a></li>
 <li><a class="" href="/news/">News</a></li>
 </ul>
 </nav>
@@ -77,7 +78,7 @@
 <div class="content">
 
 
-<p><a href="http://bitbucket.org/dtolpin/infergo"><code>infergo</code></a> is a  probabilistic
+<p><a href="http://bitbucket.org/dtolpin/infergo"><code>Infergo</code></a> is a  probabilistic
 programming facility for the <a href="http://golang.org/">Go language</a>.
 <code>infergo</code> allows to write probabilistic models in almost
 unrestricted Go and relies on <a href="https://en.wikipedia.org/wiki/Automatic_differentiation">automatic
@@ -119,7 +120,7 @@ observations:</p>
 </span><span style="color:#60a0b0;font-style:italic"></span>mean, logs <span style="color:#666">:=</span> <span style="color:#40a070">0</span>, <span style="color:#40a070">0</span>
 x <span style="color:#666">:=</span> []<span style="color:#902000">float64</span>{mean, logs}
 	
-<span style="color:#60a0b0;font-style:italic">// Optimiziation
+<span style="color:#60a0b0;font-style:italic">// Optimization
 </span><span style="color:#60a0b0;font-style:italic"></span>opt <span style="color:#666">:=</span> <span style="color:#666">&amp;</span>infer.Momentum{
     Rate:  <span style="color:#40a070">0.01</span>,
     Decay: <span style="color:#40a070">0.998</span>,
@@ -164,8 +165,18 @@ decision-making in production environment.</p>
 
 <aside class="sidebar layout__second-sidebar" role="complementary">
 <section>
+<h4 class="menu"><a class="" href="/piers/">Piers</a></h4>
+<ul class="menu">
+<li><a class="" href="/piers/gogp/">GoGP</a></li>
+</ul>
+</section>
+<section>
 <h4 class="menu"><a class="" href="/news/">News</a></h4>
 <ul class="menu">
+<li><a class="" href="/news/v0.6.1/">infergo v0.6.1</a></li>
+<li><a class="" href="/news/v0.5.0/">infergo v0.5.0</a></li>
+<li><a class="" href="/news/tale-of-goids/">The Tale of GoIDs</a></li>
+<li><a class="" href="/news/v0.3.0/">infergo v0.3.0</a></li>
 <li><a class="" href="/news/v0.2.2/">infergo v0.2.2</a></li>
 <li><a class="" href="/news/v0.2.1/">infergo v0.2.1</a></li>
 <li><a class="" href="/news/why/">Why infergo</a></li>

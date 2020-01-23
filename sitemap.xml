@@ -7,6 +7,10 @@
   </url>
   
   <url>
+    <loc>http://infergo.org/piers/</loc>
+  </url>
+  
+  <url>
     <loc>http://infergo.org/guide/</loc>
   </url>
   
@@ -15,7 +19,32 @@
   </url>
   
   <url>
+    <loc>http://infergo.org/news/</loc>
+    <lastmod>2019-04-25T10:56:00+03:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://infergo.org/team/</loc>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/news/v0.6.1/</loc>
+    <lastmod>2019-04-25T10:56:00+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/news/v0.5.0/</loc>
+    <lastmod>2019-04-01T19:45:20+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/news/tale-of-goids/</loc>
+    <lastmod>2019-04-01T15:19:22+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://infergo.org/news/v0.3.0/</loc>
+    <lastmod>2019-03-20T02:04:30+02:00</lastmod>
   </url>
   
   <url>
@@ -34,14 +63,12 @@
   </url>
   
   <url>
-    <loc>http://infergo.org/</loc>
-    <lastmod>2018-12-09T01:14:30+03:00</lastmod>
+    <loc>http://infergo.org/piers/gogp/</loc>
   </url>
   
   <url>
-    <loc>http://infergo.org/news/</loc>
-    <lastmod>2018-12-09T01:14:30+03:00</lastmod>
-    <priority>0</priority>
+    <loc>http://infergo.org/</loc>
+    <lastmod>2019-04-25T10:56:00+03:00</lastmod>
   </url>
   
   <url>
