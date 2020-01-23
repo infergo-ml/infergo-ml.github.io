@@ -174,7 +174,7 @@ expressing beliefs about hyperparameters. A &lt;code&gt;Model&lt;/code&gt;
 instance is used for inference on hyperparameters, a
 &lt;code&gt;GP&lt;/code&gt; instance &amp;mdash; for prediction.&lt;/p&gt;
 
-&lt;h4 id=&#34;uncertain-observation-inputs&#34;&gt;Uncertain observation inputs&lt;/h4&gt;
+&lt;h3 id=&#34;uncertain-observation-inputs&#34;&gt;Uncertain observation inputs&lt;/h3&gt;
 
 &lt;p&gt;When observation inputs are uncertain, beliefs about inputs can
 be specified, and the log-likelihood gradient can be computed
@@ -184,7 +184,7 @@ inputs come from a renewal process and let the inputs move
 relative to each other. Then, forecasting can be performed
 relative to posterior observation inputs.&lt;/p&gt;
 
-&lt;h4 id=&#34;non-gaussian-noise&#34;&gt;Non-Gaussian noise&lt;/h4&gt;
+&lt;h3 id=&#34;non-gaussian-noise&#34;&gt;Non-Gaussian noise&lt;/h3&gt;
 
 &lt;p&gt;In basic usage, the observation noise is assumed to be Gaussian.
 This usage is supported by initializing &lt;code&gt;GP&lt;/code&gt; with a noise
