@@ -103,15 +103,15 @@ kernel receives concatenation of kernel parameters and
 coordinates of a single point. Here is an example implementation
 of the RBF (or normal) kernel:&lt;/p&gt;
 
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; rbf &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; RBF &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
 
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (k rbf) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
+&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (RBF) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
 	l, xa, xb &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; x[&lt;span style=&#34;color:#40a070&#34;&gt;0&lt;/span&gt;], x[&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;], x[&lt;span style=&#34;color:#40a070&#34;&gt;2&lt;/span&gt;]
 	d &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; (xa &lt;span style=&#34;color:#666&#34;&gt;-&lt;/span&gt; xb) &lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt; l
 	&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; math.&lt;span style=&#34;color:#06287e&#34;&gt;Exp&lt;/span&gt;(&lt;span style=&#34;color:#666&#34;&gt;-&lt;/span&gt;d &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt; d &lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#40a070&#34;&gt;2&lt;/span&gt;)
 }
 
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (rbf) &lt;span style=&#34;color:#06287e&#34;&gt;NTheta&lt;/span&gt;() &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt; { &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (RBF) &lt;span style=&#34;color:#06287e&#34;&gt;NTheta&lt;/span&gt;() &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt; { &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;h2 id=&#34;case-studies&#34;&gt;Case studies&lt;/h2&gt;
 

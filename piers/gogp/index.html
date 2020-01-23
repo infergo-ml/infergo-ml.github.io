@@ -172,15 +172,15 @@ kernel receives concatenation of kernel parameters and
 coordinates of a single point. Here is an example implementation
 of the RBF (or normal) kernel:</p>
 
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> rbf <span style="color:#007020;font-weight:bold">struct</span>{}
+<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> RBF <span style="color:#007020;font-weight:bold">struct</span>{}
 
-<span style="color:#007020;font-weight:bold">func</span> (k rbf) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span> {
+<span style="color:#007020;font-weight:bold">func</span> (RBF) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span> {
 	l, xa, xb <span style="color:#666">:=</span> x[<span style="color:#40a070">0</span>], x[<span style="color:#40a070">1</span>], x[<span style="color:#40a070">2</span>]
 	d <span style="color:#666">:=</span> (xa <span style="color:#666">-</span> xb) <span style="color:#666">/</span> l
 	<span style="color:#007020;font-weight:bold">return</span> math.<span style="color:#06287e">Exp</span>(<span style="color:#666">-</span>d <span style="color:#666">*</span> d <span style="color:#666">/</span> <span style="color:#40a070">2</span>)
 }
 
-<span style="color:#007020;font-weight:bold">func</span> (rbf) <span style="color:#06287e">NTheta</span>() <span style="color:#902000">int</span> { <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">1</span> }</code></pre></div>
+<span style="color:#007020;font-weight:bold">func</span> (RBF) <span style="color:#06287e">NTheta</span>() <span style="color:#902000">int</span> { <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">1</span> }</code></pre></div>
 
 <h2 id="case-studies">Case studies</h2>
 
