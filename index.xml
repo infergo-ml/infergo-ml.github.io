@@ -6,7 +6,7 @@
     <description>Recent content in Home on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jan 2020 00:43:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 24 Jan 2020 01:17:00 +0200</lastBuildDate>
     <atom:link href="http://infergo.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -242,6 +242,17 @@ repository,
     </item>
     
     <item>
+      <title>gogp v0.1.0</title>
+      <link>http://infergo.org/news/gogp/</link>
+      <pubDate>Fri, 24 Jan 2020 01:17:00 +0200</pubDate>
+      <guid>http://infergo.org/news/gogp/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://infergo.org/peers/gogp&#34;&gt;GoGP&lt;/a&gt; is &lt;a href=&#34;http://bitbucket.org/dtolpin/gogp&#34;&gt;out&lt;/a&gt;.
+GoGP is a library for Gaussian process regression in Go and uses
+Infergo for automatic differentiation and inference.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>infergo v0.7.0</title>
       <link>http://infergo.org/news/v0.7.0/</link>
       <pubDate>Fri, 24 Jan 2020 00:43:00 +0200</pubDate>
@@ -249,7 +260,7 @@ repository,
       <description>&lt;p&gt;Infergo v0.7.0 is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.7.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This release is a result of improving and extending Infergo
-along with development of &lt;a href=&#34;http://infergo.org/piers/gogp&#34;&gt;GoGP&lt;/a&gt;,
+along with development of &lt;a href=&#34;http://infergo.org/peers/gogp&#34;&gt;GoGP&lt;/a&gt;,
 a library for Gaussian process regression.&lt;/p&gt;
 
 &lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
@@ -756,9 +767,9 @@ applications.&lt;/p&gt;
     
     <item>
       <title>GoGP</title>
-      <link>http://infergo.org/piers/gogp/</link>
+      <link>http://infergo.org/peers/gogp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://infergo.org/piers/gogp/</guid>
+      <guid>http://infergo.org/peers/gogp/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;http://bitbucket.org/dtolpin/gogp&#34;&gt;GoGP&lt;/a&gt; is a
