@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>News on Infergo — Go programs that learn</title>
@@ -6,8 +5,35 @@
     <description>Recent content in News on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jan 2020 01:17:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jul 2021 18:07:04 +0300</lastBuildDate>
     <atom:link href="http://infergo.org/news/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>gogp v1.0.1</title>
+      <link>http://infergo.org/news/gogp-v1.0.1/</link>
+      <pubDate>Sun, 11 Jul 2021 18:07:04 +0300</pubDate>
+      <guid>http://infergo.org/news/gogp-v1.0.1/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;http://infergo.org/peers/gogp&#34;&gt;GoGP v1.0.1&lt;/a&gt; is
+&lt;a href=&#34;http://bitbucket.org/dtolpin/gogp/srv/v1.0.1&#34;&gt;out&lt;/a&gt;. This is the
+first stable (v1) release of GoGP, a library for Gaussian
+process regression. GoGP has been used in production for over a
+year, and has undergone many changes improving performance and
+robustness.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>infergo v1.0.1</title>
+      <link>http://infergo.org/news/v1.0.1/</link>
+      <pubDate>Sun, 11 Jul 2021 18:07:04 +0300</pubDate>
+      <guid>http://infergo.org/news/v1.0.1/</guid>
+      <description>&lt;p&gt;Infergo v1.0.1 is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v1.0.1/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This is the first stable (v1) release of Infergo. Infergo has
+undergone many changes during the past year, and has been
+used in production for mission-critical computations in the
+cloud.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>gogp v0.1.0</title>
@@ -26,13 +52,10 @@ Infergo for automatic differentiation and inference.&lt;/p&gt;
       <pubDate>Fri, 24 Jan 2020 00:43:00 +0200</pubDate>
       <guid>http://infergo.org/news/v0.7.0/</guid>
       <description>&lt;p&gt;Infergo v0.7.0 is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.7.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;This release is a result of improving and extending Infergo
 along with development of &lt;a href=&#34;http://infergo.org/peers/gogp&#34;&gt;GoGP&lt;/a&gt;,
 a library for Gaussian process regression.&lt;/p&gt;
-
 &lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;model&amp;rsquo;s gradient can be explicitly specified as the
 &lt;code&gt;Gradient()&lt;/code&gt; method, instead of through automatic
@@ -52,9 +75,7 @@ float scalars as parameters).&lt;/li&gt;
       <pubDate>Thu, 25 Apr 2019 10:56:00 +0300</pubDate>
       <guid>http://infergo.org/news/v0.6.1/</guid>
       <description>&lt;p&gt;Infergo v0.6.1 is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.6.1/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;I moved many things around, some in a backward-incompatible way, but should
 only affect a minority of users.&lt;/li&gt;
@@ -75,9 +96,7 @@ example.&lt;/li&gt;
       <pubDate>Mon, 01 Apr 2019 19:45:20 +0300</pubDate>
       <guid>http://infergo.org/news/v0.5.0/</guid>
       <description>&lt;p&gt;&lt;code&gt;infergo v0.5.0&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.5.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Multithreading support. Differentiation can be performed concurrently in
 multiple goroutines without locking of calls to Observe or Gradient,
@@ -93,26 +112,22 @@ Infergo&amp;rsquo;s own inference algorithms, or through integration in Gonum.&l
       <link>http://infergo.org/news/tale-of-goids/</link>
       <pubDate>Mon, 01 Apr 2019 15:19:22 +0300</pubDate>
       <guid>http://infergo.org/news/tale-of-goids/</guid>
-      <description>
-
-&lt;blockquote&gt;
+      <description>&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;2.16&lt;/strong&gt; And the LORD God commanded the man, saying: &amp;lsquo;Of every tree of the garden
 thou mayest freely eat;&lt;/p&gt;
-
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;2.17&lt;/strong&gt; but of the tree of the knowledge of good and evil,
 thou shalt not eat of it; for in the day that thou eatest thereof thou shalt
 surely die.&amp;rsquo;&lt;/p&gt;
-
 &lt;p&gt;&lt;em&gt;The Book of Genesis&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;p&gt;&lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; gives the programmer introspection into every aspect
 of &lt;a href=&#34;https://godoc.org/reflect&#34;&gt;the language&lt;/a&gt;, and of a &lt;a href=&#34;https://godoc.org/runtime&#34;&gt;running
 program&lt;/a&gt;. But to one thing the programmer does not
 have access, and it is the goroutine identifier. Because the day the
 programmers know the goroutine identifier, they create goroutine-local storage
 through shared access and mutexes, and shall surely die.&lt;/p&gt;
-
 &lt;p&gt;&lt;strong&gt;However,&lt;/strong&gt; there are use cases beyond concurrent &lt;a href=&#34;https://blog.golang.org/context&#34;&gt;handling of HTTP
 requests&lt;/a&gt;, in which
 &lt;a href=&#34;https://blog.golang.org/share-memory-by-communicating&#34;&gt;sharing memory by
@@ -126,11 +141,9 @@ modified to write to a so-called &lt;em&gt;tape&lt;/em&gt; a trace of every
 floating point operation. A single tape must be accessible by
 all functions. If derivatives are computed concurrently in
 multiple goroutines, every goroutine must have its own tape.&lt;/p&gt;
-
 &lt;p&gt;The functions must know how to get to the tape. And getting to
 the tape must be very efficient: every floating point operation
 involves an access to the tape!&lt;/p&gt;
-
 &lt;p&gt;It is not that no one thought about goroutine identifiers
 before. There are Go programmers who need the identifiers, some
 of them admit the need, and a few find workarounds to actually
@@ -140,11 +153,8 @@ discovered someone who had the same revelation before me. And
 that gave Infergo efficient goroutine-local storage for
 concurrent automatic differentiation and inference. Here is how
 it went.&lt;/p&gt;
-
 &lt;h2 id=&#34;worthy-attempts&#34;&gt;Worthy Attempts&lt;/h2&gt;
-
 &lt;h3 id=&#34;from-the-makers-of-go&#34;&gt;From the makers of Go&lt;/h3&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://bradfitz.com/&#34;&gt;Brad Fitzpatrick&lt;/a&gt; is a member of the Go
 programming language team at Google. Brad wrote a
 &lt;a href=&#34;https://github.com/bradfitz/http2/blob/master/gotrack.go&#34;&gt;function&lt;/a&gt;
@@ -154,14 +164,11 @@ representation of the trace. Brad needed this for debugging, &amp;ldquo;to
 track that functions run on the goroutine  that they&amp;rsquo;re supposed
 to&amp;rdquo;. The function uses public API calls and an undocumented but
 stable format of the serialized stack trace.&lt;/p&gt;
-
 &lt;p&gt;Somewhat cumbersome but working. Unfortunately, too inefficient
 for Infergo use case. Collecting, serializing, and parsing the
 stack trace on every operation makes automatic differentiation
 2,000 (&lt;strong&gt;two thousand&lt;/strong&gt;) times slower!&lt;/p&gt;
-
 &lt;h3 id=&#34;from-the-users-of-go&#34;&gt;From the users of Go&lt;/h3&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://jtolio.com/&#34;&gt;JT Olio&lt;/a&gt; wrote a &lt;a href=&#34;https://github.com/jtolds/gls&#34;&gt;goroutine-local storage
 library&lt;/a&gt;. The library &amp;ldquo;defines 16
 special functions and embed base-16 tags into the stack using
@@ -176,30 +183,24 @@ code. Infergo
 with &lt;a href=&#34;http://gonum.org/&#34;&gt;Gonum&lt;/a&gt; optimization nicely, and by
 enabling goroutine-local tapes I strived to improve this
 integration, rather than sacrifice it.&lt;/p&gt;
-
 &lt;h2 id=&#34;revelation&#34;&gt;Revelation&lt;/h2&gt;
-
 &lt;p&gt;I was almost ready to give up, that is, to write code that
 adds an extra &amp;lsquo;context&amp;rsquo; parameter to every differentiated function.
 But then it came down onto me that maybe Go does not want to
 prevent me from using the goroutine identifier.  Maybe it is
 there, and I just do not see it.&lt;/p&gt;
-
 &lt;p&gt;Indeed, Go has an &lt;a href=&#34;https://golang.org/doc/asm&#34;&gt;assembly
 language&lt;/a&gt;. The language is
 documented, Go functions can be implemented in Go assembly.  If
 I wanted a system feature not available through a library, I
 would write an assembly function bringing that feature to me.&lt;/p&gt;
-
 &lt;p&gt;The same goes for Go.&lt;/p&gt;
-
 &lt;p&gt;Not only Go has an assembler, the assembler has a dedicated
 register &lt;code&gt;g&lt;/code&gt; pointing at &lt;code&gt;runtime.g&lt;/code&gt;, the goroutine descriptor.
 &lt;code&gt;goid&lt;/code&gt;, the Go routine identifier is just one of the fields of
 the descriptor. I can just use the contents of &lt;code&gt;g&lt;/code&gt; to get
 the goroutine identifier, and it will only be a couple
 instructions!&lt;/p&gt;
-
 &lt;p&gt;It is much easier to find something if you know what you are
 looking for. &lt;a href=&#34;https://zhuanlan.zhihu.com/taowen&#34;&gt;Tao Wen&lt;/a&gt; wrote
 yet another &lt;a href=&#34;https://github.com/modern-go/gls&#34;&gt;GLS library&lt;/a&gt;; and
@@ -209,19 +210,20 @@ from the structure pointed to by the register. I somewhat
 simplified the code, added support for all platforms where
 Go is available, and now Infergo has fast and straightforward
 support for multithreading.&lt;/p&gt;
-
 &lt;h2 id=&#34;lessons-learned&#34;&gt;Lessons Learned&lt;/h2&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;It is sometimes easier to find a hole in the fence than to
-jump over.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;You can do anything with Go. You just must prove (to yourself
+&lt;li&gt;
+&lt;p&gt;It is sometimes easier to find a hole in the fence than to
+jump over.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can do anything with Go. You just must prove (to yourself
 more than to others) that you are brave and skilled enough.
 For example, by diving into Go internals and coding in Go
-assembly.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;My Samsung Tab S4 tablet is amazingly well fit for
+assembly.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;My Samsung Tab S4 tablet is amazingly well fit for
 multithreading, in Go in particular. I did most of the
 development on the tablet, in &lt;a href=&#34;https://termux.com&#34;&gt;Termux&lt;/a&gt;.
 The tablet&amp;rsquo;s CPU  has 8 cores, and Go runs multiple
@@ -229,12 +231,14 @@ goroutines in parallel with very little overhead: 8 inference
 threads in parallel take roughly the same time as a single
 thread with local goroutine storage, and only 20% slower than
 a single thread with a global tape, for the same amount of
-computation per thread.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;You can run &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/wasm/&#34;&gt;multiple goroutines in parallel in a
+computation per thread.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;You can run &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/wasm/&#34;&gt;multiple goroutines in parallel in a
 browser&lt;/a&gt; via
 WebAssembly. WebAssembly is slower than other targets, but
-still quite fast.&lt;/p&gt;&lt;/li&gt;
+still quite fast.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 </description>
     </item>
@@ -245,9 +249,7 @@ still quite fast.&lt;/p&gt;&lt;/li&gt;
       <pubDate>Wed, 20 Mar 2019 02:04:30 +0200</pubDate>
       <guid>http://infergo.org/news/v0.3.0/</guid>
       <description>&lt;p&gt;&lt;code&gt;infergo v0.3.0&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.3.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Only methods returning float64 or nothing are differentiated. This allows
 to define helper methods on the model, such as returning the number of
@@ -259,14 +261,14 @@ BFGS and variants. Case study
 applies L-BFGS to linear regression.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies&#34;&gt;Case studies&lt;/a&gt; have been extended. New
 studies include:
-
 &lt;ul&gt;
 &lt;li&gt;linear regression, solved using either stochastic gradient descent and BFGS;&lt;/li&gt;
 &lt;li&gt;compilation of &lt;code&gt;infergo&lt;/code&gt; models and inference into WebAssembly and running in
 the browser;&lt;/li&gt;
 &lt;li&gt;integration with Gonum;&lt;/li&gt;
 &lt;li&gt;Neal&amp;rsquo;s funnel, a re-parameterization example borrowed from &lt;a href=&#34;https://mc-stan.org/users/documentation/&#34;&gt;Stan documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>
@@ -277,9 +279,7 @@ the browser;&lt;/li&gt;
       <pubDate>Sun, 09 Dec 2018 01:14:30 +0300</pubDate>
       <guid>http://infergo.org/news/v0.2.2/</guid>
       <description>&lt;p&gt;&lt;code&gt;infergo v0.2.2&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.2.2/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;Constant folding.&lt;/li&gt;
 &lt;li&gt;Automatic import of packages required for short variable declarations
@@ -294,9 +294,7 @@ the browser;&lt;/li&gt;
       <pubDate>Tue, 27 Nov 2018 16:19:03 +0300</pubDate>
       <guid>http://infergo.org/news/v0.2.1/</guid>
       <description>&lt;p&gt;&lt;code&gt;infergo v0.2.1&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.2.1/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://infergo.org&#34;&gt;infergo.org&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -308,9 +306,7 @@ the browser;&lt;/li&gt;
       <link>http://infergo.org/news/why/</link>
       <pubDate>Mon, 26 Nov 2018 14:19:13 +0300</pubDate>
       <guid>http://infergo.org/news/why/</guid>
-      <description>
-
-&lt;blockquote&gt;
+      <description>&lt;blockquote&gt;
 &lt;p&gt;I share here my experiences from integrating probabilistic
 programming into a server-side software system and
 implementing a  probabilistic programming facility for Go, a
@@ -322,9 +318,7 @@ overcoming them, and suggest guidelines that can help in a
 wider adoption of probabilistic programming in server-side
 software systems.&lt;/p&gt;
 &lt;/blockquote&gt;
-
 &lt;h2 id=&#34;challenges-of-server-side-probabilistic-programming&#34;&gt;Challenges of Server-Side Probabilistic Programming&lt;/h2&gt;
-
 &lt;p&gt;Incorporating a probabilistic program, or rather a probabilistic
 procedure, within a larger code body appears to be rather
 straightforward: one implements the model in the probabilistic
@@ -335,9 +329,7 @@ host programming language again to make algorithmic
 decisions based on inference outcomes. However, complex
 server-side software systems make integration of probabilistic
 inference challenging.&lt;/p&gt;
-
 &lt;h3 id=&#34;simulation-vs-inference&#34;&gt;Simulation vs. inference&lt;/h3&gt;
-
 &lt;p&gt;Probabilistic models often follow a design pattern of
 simulation-inference: a significant part of the model is a
 simulator, running an algorithm with fixed parameters; the
@@ -345,7 +337,6 @@ optimal parameters, or their distribution, are to be inferred.
 The inferred parameters are then used by the software system to
 execute the simulation independently of inference for
 forecasting and decision making.&lt;/p&gt;
-
 &lt;p&gt;This pattern suggests re-use of the simulator: instead of
 implementing the simulator twice, in the probabilistic model and
 in the host environment, the same code can serve both purposes.
@@ -357,9 +348,7 @@ the simulation, on the other hand. Some probabilistic systems
 are built with tight integration with the host environment in
 mind; more often than not though the probabilistic code is
 not trivial to re-use.&lt;/p&gt;
-
 &lt;h3 id=&#34;data-interface&#34;&gt;Data interface&lt;/h3&gt;
-
 &lt;p&gt;In a server-side application data for inference comes from a
 variety of sources: network, databases, distributed file
 systems, and in many different formats. Efficient inference
@@ -370,9 +359,7 @@ transforming the data, such as in the case of &lt;a href=&#34;http://mc-stan.org
 integrations, sometimes direct access from the probabilistic
 code is the preferred option, for example when the data is
 streamed or retrieved conditionally.&lt;/p&gt;
-
 &lt;h3 id=&#34;integration-and-deployment&#34;&gt;Integration and deployment&lt;/h3&gt;
-
 &lt;p&gt;Deployment of server-side software systems is a delicate process
 involving automatic builds and maintenance of dependencies.
 Adding  a component, which possibly introduces additional
@@ -386,9 +373,7 @@ language, e.g.  Python (&lt;a href=&#34;http://edwardlib.org/&#34;&gt;Edward&lt;
 &lt;a href=&#34;http://pyro.ai/&#34;&gt;Pyro&lt;/a&gt;) are easier to integrate and deploy, however
 the smaller the footprint of a probabilistic system, the easier
 is the adoption.&lt;/p&gt;
-
 &lt;h2 id=&#34;probabilistic-programming-facility-for-go&#34;&gt;Probabilistic Programming Facility for Go&lt;/h2&gt;
-
 &lt;p&gt;Based on the experience of developing and deploying solutions
 using different probabilistic environments, I propose
 guidelines to implementation of a probabilistic programming
@@ -396,28 +381,30 @@ facility for server-side applications. I believe that these
 guidelines, when followed, help easier integration of
 probabilistic programming inference into large-scale server-side
 software systems.&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;A probabilistic model should be programmed in the host
+&lt;li&gt;
+&lt;p&gt;A probabilistic model should be programmed in the host
 programming language. The facility may impose a discipline on
 model implementation, such as through interface constraints, but
 otherwise supporting unrestricted use of the host language for
-implementation of the model.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Built-in and user-defined data structures and libraries
+implementation of the model.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Built-in and user-defined data structures and libraries
 should be accessible in the probabilistic programming model.
 Inference techniques relying on the code structure, such as
 those based on automatic differentiation, should support the
-use of common data structures of the host language.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The model code should be reusable between inference and
+use of common data structures of the host language.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The model code should be reusable between inference and
 simulation. The code which is not required solely for inference
 should be written once for both inference of parameters and use
 of the parameters in the host environment.  It should be
 possible to run simulation outside the probabilistic model without
-runtime or memory overhead imposed by inference needs.&lt;/p&gt;&lt;/li&gt;
+runtime or memory overhead imposed by inference needs.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;In line with the guidelines, I have implemented a probabilistic
 programming facility for the Go programming language, &lt;code&gt;infergo&lt;/code&gt;
 (&lt;a href=&#34;http://infergo.org/&#34;&gt;http://infergo.org/&lt;/a&gt;). I have chosen Go
@@ -426,7 +413,6 @@ efficient implementation, which has recently become quite
 popular for computation-intensive server-side programming.  This
 facility is already used in production environment for inference
 of mission-critical algorithm parameters.&lt;/p&gt;
-
 &lt;p&gt;A probabilistic model in &lt;code&gt;infergo&lt;/code&gt; is an implementation
 of the &lt;code&gt;Model&lt;/code&gt; interface requiring a single method
 &lt;code&gt;Observe&lt;/code&gt; which accepts a vector (a Go &lt;em&gt;slice&lt;/em&gt;) of
@@ -434,7 +420,6 @@ floats, the parameters to infer, and returns a single float,
 interpreted as unnormalized log-likelihood of the posterior
 distribution. Implementation of model methods can be written
 in virtually unrestricted Go and use any Go libraries.&lt;/p&gt;
-
 &lt;p&gt;For inference, &lt;code&gt;infergo&lt;/code&gt; relies on automatic
 differentiation. The source code of the model is
 translated by a command-line tool provided by &lt;code&gt;infergo&lt;/code&gt;
@@ -449,11 +434,9 @@ simultaneously available to the rest of the program code, so
 the methods can be called on the differentiated model for
 inference, and on the original model for the most efficient
 execution with the inferred parameters.&lt;/p&gt;
-
 &lt;p&gt;The Go programming language and development environment offer
 capabilities which made implementation of &lt;code&gt;infergo&lt;/code&gt;
 affordable.&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;The Go parser and abstract syntax tree serializer are
 a part of the standard library. Parsing, transforming,
@@ -477,7 +460,6 @@ Inference is easy to parallelize in order to exploit
 hardware multi-processing, and samples are retrieved
 lazily for postprocessing.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;p&gt;Table 1 provides memory consumption and running time
 measurements on basic models to illustrate  &lt;code&gt;infergo&lt;/code&gt;&amp;rsquo;s
 performance.  The measurements were obtained on a 2.3GHz Intel
@@ -487,9 +469,7 @@ computation for standard distributions is not optimized yet.
 Quite the opposite: since models in &lt;code&gt;infergo&lt;/code&gt; are fully
 composable, primitive distributions are themselves implemented
 as &lt;code&gt;infergo&lt;/code&gt; models and automatically differentiated.&lt;/p&gt;
-
 &lt;p&gt;&lt;em&gt;Table 1: Memory and running times for 1000 iterations of HMC with 10 leapfrog steps.&lt;/em&gt;&lt;/p&gt;
-
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -499,7 +479,6 @@ as &lt;code&gt;infergo&lt;/code&gt; models and automatically differentiated.&lt;
 &lt;th&gt;memory&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
-
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;8 schools&lt;/td&gt;
@@ -507,14 +486,12 @@ as &lt;code&gt;infergo&lt;/code&gt; models and automatically differentiated.&lt;
 &lt;td&gt;0.6s&lt;/td&gt;
 &lt;td&gt;5.5MB&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;10D normal, 100 points&lt;/td&gt;
 &lt;td&gt;0.15s&lt;/td&gt;
 &lt;td&gt;2.0s&lt;/td&gt;
 &lt;td&gt;5.7MB&lt;/td&gt;
 &lt;/tr&gt;
-
 &lt;tr&gt;
 &lt;td&gt;50D normal, 100 points&lt;/td&gt;
 &lt;td&gt;0.15s&lt;/td&gt;
@@ -523,7 +500,6 @@ as &lt;code&gt;infergo&lt;/code&gt; models and automatically differentiated.&lt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
 &lt;p&gt;A lightweight probabilistic programming facility similar to
 &lt;code&gt;infergo&lt;/code&gt; can be added to most modern general-purpose
 programming languages, in particular those used in implementing

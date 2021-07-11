@@ -7,12 +7,12 @@
 <meta name="created" content="0001-01-01T00:00:00&#43;0000">
 <meta name="modified" content="0001-01-01T00:00:00&#43;0000">
 <meta name="author" content="David Tolpin">
-<meta name="description" content="Code Model A model is defined in it&amp;rsquo;s own package. The model must implement interface model.Model, consisting of a single method Observe([]float64) float64. In the model&amp;rsquo;s source code:  Methods on the type implementing model.Model returning a single float or nothing are differentiated. Within the methods, the following is differentiated:  assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.">
+<meta name="description" content="Code Model A model is defined in it&amp;rsquo;s own package. The model must implement interface model.Model, consisting of a single method Observe([]float64) float64. In the model&amp;rsquo;s source code:  Methods on the type implementing model.Model returning a single float or nothing are differentiated. Within the methods, the following is differentiated:   assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.">
 <meta property="og:site_name" content="Infergo — Go programs that learn">
 <meta property="og:title" content="Guide">
 <meta property="og:url" content="http://infergo.org/guide/">
 
-<meta name="generator" content="Hugo 0.53-DEV" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <link rel="canonical" href="http://infergo.org/guide/">
 <link rel="icon" href="/favicon.png">
@@ -27,7 +27,7 @@
     "datePublished": "0001-01-01T00:00:00Z",
     "dateModified": "0001-01-01T00:00:00Z",
     "url" : "http:\/\/infergo.org\/guide\/",
-    "description": "\"Code Model A model is defined in it\\u0026rsquo;s own package. The model must implement interface model.Model, consisting of a single method Observe([]float64) float64. In the model\\u0026rsquo;s source code:  Methods on the type implementing model.Model returning a single float or nothing are differentiated. Within the methods, the following is differentiated:  assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.\"",
+    "description": "\"Code Model A model is defined in it\\u0026rsquo;s own package. The model must implement interface model.Model, consisting of a single method Observe([]float64) float64. In the model\\u0026rsquo;s source code:  Methods on the type implementing model.Model returning a single float or nothing are differentiated. Within the methods, the following is differentiated:   assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.\"",
     "author": {
       "@type": "Person",
       "name": "\"David Tolpin\""
@@ -82,25 +82,19 @@
 <header>
 </header>
 <div class="content">
-
-
-<p><a href="https://godoc.org/bitbucket.org/dtolpin/infergo"><img src="https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg" alt="GoDoc" /></a></p>
-
+<p><a href="https://godoc.org/bitbucket.org/dtolpin/infergo"><img src="https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg" alt="GoDoc"></a></p>
 <h2 id="code">Code</h2>
-
 <h3 id="model">Model</h3>
-
 <p>A model is defined in it&rsquo;s own package. The model must implement
 interface
 <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/model#Model"><code>model.Model</code></a>,
 consisting of a single method <code>Observe([]float64) float64</code>. In
 the model&rsquo;s source code:</p>
-
 <ol>
 <li>Methods on the type implementing <code>model.Model</code> returning a
 single float or nothing are differentiated.</li>
-<li>Within the methods, the following is differentiated:
-
+<li>Within the methods, the following is differentiated:</li>
+</ol>
 <ul>
 <li>assignments to <code>float64</code> (including parallel
 assignments if all values are of type <code>float64</code>);</li>
@@ -108,90 +102,66 @@ assignments if all values are of type <code>float64</code>);</li>
 <li>standalone calls to methods on the type implementing
 model.Model (apparently called for side  effects on
 the model).</li>
-</ul></li>
+</ul>
+<ol start="3">
 <li>Imported package name <code>ad</code> is reserved.</li>
 <li>Non-dummy identifiers starting with the prefix for
 generated identifiers (<code>_</code> by default) are reserved.</li>
 </ol>
-
 <p>Derivatives do not propagate through a function that is not
 an elemental or a call to a model method. If a derivative is
 not registered for an elemental, calling the elemental in a
 differentiated context will cause a run-time error.</p>
-
 <h4 id="elemental-model">Elemental model</h4>
-
 <p>If method <code>Gradient() []float64</code> is provided for a model type,
 the model is treated as an &lsquo;elemental&rsquo; model, and the gradient
 returned by <code>Gradient()</code> is used by inference algorithms. This
 allows to code the gradient by hand instead of relying on
 automatic differentiation.</p>
-
 <h3 id="elementals">Elementals</h3>
-
 <p>Functions are considered elementals (and must have a
 registered derivative) if their signature is either of kind</p>
-
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span><span style="color:#666">*</span>) <span style="color:#902000">float64</span></code></pre></div>
-
 <p>that is, one or more non-variadic <code>float64</code> arguments and
 <code>float64</code> return value, or
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> ([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div></p>
-
 <p>For example, functions</p>
-
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">foo</span>(<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
         <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">bar</span>([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div>
-
 <p>are considered elementals, while functions</p>
-
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">fee</span>(<span style="color:#666">...</span><span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
         <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">buz</span>(<span style="color:#902000">int</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div>
-
 <p>are not. Gradients for selected functions from the <code>math</code>
 package are pre-defined (<code>Sqrt</code>, <code>Exp</code>, <code>Log</code>, <code>Pow</code>, <code>Sin</code>,
 <code>Cos</code>, <code>Tan</code>, <code>Erf</code>, <code>Erfc</code>). Auxiliary elemental functions with
 pre-defined gradients are in
 <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/mathx">bitbucket.org/dtolpin/infergo/mathx</a>.</p>
-
 <h3 id="distributions">Distributions</h3>
-
 <p>Distributions are models. Several distributions are provided in
 <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/dist">bitbucket.org/dtolpin/infergo/dist</a>.
 In addition to the <code>Observe</code> method, distributions have <code>Logp</code>
 (single observation) and <code>Logps</code> (multiple observations) methods
 which accept distribution parameters and observations as
 individual arguments rather than in a single slice.</p>
-
 <h2 id="differentiation">Differentiation</h2>
-
 <p>Command-line utility <code>deriv</code> is used to differentiate a model.
 The command-line syntax is:</p>
-
 <pre><code>deriv path/to/model/package
 </code></pre>
-
 <p>For example,</p>
-
 <pre><code>deriv examples/hello/model
 </code></pre>
-
 <p>Run <code>deriv -h</code> for the full list of command-line options.  The
 differentiated model is put into subpackage &ldquo;ad&rdquo; of the model&rsquo;s
 package, with the same name as the original package.</p>
-
 <h2 id="inference">Inference</h2>
-
 <p>For inference, <code>infergo</code> offers</p>
-
 <ul>
 <li>optimization via <a href="https://en.wikipedia.org/wiki/Gradient_descent">gradient
 ascent</a> methods.</li>
 <li>full posterior inference via <a href="https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo">Hamiltonian Monte Carlo</a> variants.</li>
 </ul>
-
 <h3 id="optimization">Optimization</h3>
-
 <p>An optimizer implements interface
 <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Grad"><code>infer.Grad</code></a>.
 Interface implementations are <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Momentum">gradient ascent with
@@ -200,12 +170,9 @@ and
 <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Adam">Adam</a>.
 Both methods are capable to work with stochastic data (e.g.
 streams or batches).</p>
-
 <h3 id="full-posterior">Full posterior</h3>
-
 <p>An MCMC sampler for full posterior inference implements interface
 <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#MCMC"><code>infer.MCMC</code></a>. Inteface implementations are <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#HMC">HMC</a> and <a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#NUTS">NUTS</a>.</p>
-
 <p><a href="https://godoc.org/bitbucket.org/dtolpin/infergo/infer#DepthAdapter"><code>DepthAdapter</code></a> enables adaption of NUTS step size with respect to the average
 tree depth.</p>
 
@@ -226,6 +193,8 @@ tree depth.</p>
 <section>
 <h4 class="menu"><a class="" href="/news/">News</a></h4>
 <ul class="menu">
+<li><a class="" href="/news/gogp-v1.0.1/">gogp v1.0.1</a></li>
+<li><a class="" href="/news/v1.0.1/">infergo v1.0.1</a></li>
 <li><a class="" href="/news/gogp/">gogp v0.1.0</a></li>
 <li><a class="" href="/news/v0.7.0/">infergo v0.7.0</a></li>
 <li><a class="" href="/news/v0.6.1/">infergo v0.6.1</a></li>

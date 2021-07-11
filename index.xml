@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Home on Infergo — Go programs that learn</title>
@@ -6,7 +5,7 @@
     <description>Recent content in Home on Infergo — Go programs that learn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Jan 2020 01:17:00 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jul 2021 18:07:04 +0300</lastBuildDate>
     <atom:link href="http://infergo.org/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
@@ -14,10 +13,7 @@
       <link>http://infergo.org/start/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://infergo.org/start/</guid>
-      <description>
-
-&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-
+      <description>&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;infergo&lt;/code&gt; benefits from
 &lt;a href=&#34;https://github.com/golang/go/wiki/Modules&#34;&gt;modules&lt;/a&gt; introduced
 in Go 1.11, and relies on
@@ -26,39 +22,32 @@ to import packages in a module-aware way, but will work with
 earlier versions of Go.  &lt;a href=&#34;https://golang.org/doc/install&#34;&gt;Install
 Go&lt;/a&gt;. It is easier to build and
 use &lt;code&gt;infergo&lt;/code&gt; with the &lt;code&gt;make&lt;/code&gt; utility.&lt;/p&gt;
-
 &lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-
 &lt;p&gt;There are two installation options:&lt;/p&gt;
-
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;If your Go project imports any of &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo&#34;&gt;&lt;code&gt;infergo&lt;/code&gt;
+&lt;li&gt;
+&lt;p&gt;If your Go project imports any of &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo&#34;&gt;&lt;code&gt;infergo&lt;/code&gt;
 packages&lt;/a&gt; and
 uses modules, &lt;code&gt;infergo&lt;/code&gt; will be installed for you. &lt;code&gt;deriv&lt;/code&gt;
 utility will be in &lt;code&gt;$GOPATH/bin&lt;/code&gt;. As a side effect of
 providing examples with the main repository, the example
 binaries will also be installed in &lt;code&gt;$GOPATH/bin&lt;/code&gt;. They are
-not needed there, you can remove them.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Alternatively, you can clone the
+not needed there, you can remove them.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Alternatively, you can clone the
 &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo&#34;&gt;repository&lt;/a&gt; and build
 &lt;code&gt;infergo&lt;/code&gt; from the cloned directory:&lt;/p&gt;
-
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;git clone https://bitbucket.org/dtolpin/infergo
 cd infergo
 make install
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This will install only &lt;code&gt;deriv&lt;/code&gt; but not any example binaries.
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;This will install only &lt;code&gt;deriv&lt;/code&gt; but not any example binaries.
 To build examples (and run each of them on the embedded
 self-check dataset), run&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;make examples
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;hello-world&#34;&gt;Hello world&lt;/h2&gt;
-
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;hello-world&#34;&gt;Hello world&lt;/h2&gt;
 &lt;p&gt;The &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/master/examples/hello&#34;&gt;probabilistic &amp;ldquo;Hello
 world&amp;rdquo;&lt;/a&gt;
 example from the &lt;code&gt;infergo&lt;/code&gt; repository shows a typical project
@@ -66,7 +55,6 @@ layout and commands to build a Go program with an &lt;code&gt;infergo&lt;/code&g
 model. Explore the example&amp;rsquo;s source code and
 &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/master/examples/hello/Makefile&#34;&gt;Makefile&lt;/a&gt;.
 In a nutshell, one needs to:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;implement the model in a separate package,&lt;/li&gt;
 &lt;li&gt;differentiate the model&amp;rsquo;s package with &lt;code&gt;deriv&lt;/code&gt;,&lt;/li&gt;
@@ -78,29 +66,31 @@ In a nutshell, one needs to:&lt;/p&gt;
     </item>
     
     <item>
+      <title>Peers</title>
+      <link>http://infergo.org/peers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://infergo.org/peers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Guide</title>
       <link>http://infergo.org/guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://infergo.org/guide/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo&#34;&gt;&lt;img src=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg&#34; alt=&#34;GoDoc&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
+      <description>&lt;p&gt;&lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo&#34;&gt;&lt;img src=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg&#34; alt=&#34;GoDoc&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;code&#34;&gt;Code&lt;/h2&gt;
-
 &lt;h3 id=&#34;model&#34;&gt;Model&lt;/h3&gt;
-
 &lt;p&gt;A model is defined in it&amp;rsquo;s own package. The model must implement
 interface
 &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/model#Model&#34;&gt;&lt;code&gt;model.Model&lt;/code&gt;&lt;/a&gt;,
 consisting of a single method &lt;code&gt;Observe([]float64) float64&lt;/code&gt;. In
 the model&amp;rsquo;s source code:&lt;/p&gt;
-
 &lt;ol&gt;
 &lt;li&gt;Methods on the type implementing &lt;code&gt;model.Model&lt;/code&gt; returning a
 single float or nothing are differentiated.&lt;/li&gt;
-&lt;li&gt;Within the methods, the following is differentiated:
-
+&lt;li&gt;Within the methods, the following is differentiated:&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;assignments to &lt;code&gt;float64&lt;/code&gt; (including parallel
 assignments if all values are of type &lt;code&gt;float64&lt;/code&gt;);&lt;/li&gt;
@@ -108,90 +98,66 @@ assignments if all values are of type &lt;code&gt;float64&lt;/code&gt;);&lt;/li&
 &lt;li&gt;standalone calls to methods on the type implementing
 model.Model (apparently called for side  effects on
 the model).&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Imported package name &lt;code&gt;ad&lt;/code&gt; is reserved.&lt;/li&gt;
 &lt;li&gt;Non-dummy identifiers starting with the prefix for
 generated identifiers (&lt;code&gt;_&lt;/code&gt; by default) are reserved.&lt;/li&gt;
 &lt;/ol&gt;
-
 &lt;p&gt;Derivatives do not propagate through a function that is not
 an elemental or a call to a model method. If a derivative is
 not registered for an elemental, calling the elemental in a
 differentiated context will cause a run-time error.&lt;/p&gt;
-
 &lt;h4 id=&#34;elemental-model&#34;&gt;Elemental model&lt;/h4&gt;
-
 &lt;p&gt;If method &lt;code&gt;Gradient() []float64&lt;/code&gt; is provided for a model type,
 the model is treated as an &amp;lsquo;elemental&amp;rsquo; model, and the gradient
 returned by &lt;code&gt;Gradient()&lt;/code&gt; is used by inference algorithms. This
 allows to code the gradient by hand instead of relying on
 automatic differentiation.&lt;/p&gt;
-
 &lt;h3 id=&#34;elementals&#34;&gt;Elementals&lt;/h3&gt;
-
 &lt;p&gt;Functions are considered elementals (and must have a
 registered derivative) if their signature is either of kind&lt;/p&gt;
-
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;p&gt;that is, one or more non-variadic &lt;code&gt;float64&lt;/code&gt; arguments and
 &lt;code&gt;float64&lt;/code&gt; return value, or
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; ([]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
-
 &lt;p&gt;For example, functions&lt;/p&gt;
-
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#06287e&#34;&gt;foo&lt;/span&gt;(&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
         &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#06287e&#34;&gt;bar&lt;/span&gt;([]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;p&gt;are considered elementals, while functions&lt;/p&gt;
-
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;        &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#06287e&#34;&gt;fee&lt;/span&gt;(&lt;span style=&#34;color:#666&#34;&gt;...&lt;/span&gt;&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
         &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#06287e&#34;&gt;buz&lt;/span&gt;(&lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt;, &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
 &lt;p&gt;are not. Gradients for selected functions from the &lt;code&gt;math&lt;/code&gt;
 package are pre-defined (&lt;code&gt;Sqrt&lt;/code&gt;, &lt;code&gt;Exp&lt;/code&gt;, &lt;code&gt;Log&lt;/code&gt;, &lt;code&gt;Pow&lt;/code&gt;, &lt;code&gt;Sin&lt;/code&gt;,
 &lt;code&gt;Cos&lt;/code&gt;, &lt;code&gt;Tan&lt;/code&gt;, &lt;code&gt;Erf&lt;/code&gt;, &lt;code&gt;Erfc&lt;/code&gt;). Auxiliary elemental functions with
 pre-defined gradients are in
 &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/mathx&#34;&gt;bitbucket.org/dtolpin/infergo/mathx&lt;/a&gt;.&lt;/p&gt;
-
 &lt;h3 id=&#34;distributions&#34;&gt;Distributions&lt;/h3&gt;
-
 &lt;p&gt;Distributions are models. Several distributions are provided in
 &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/dist&#34;&gt;bitbucket.org/dtolpin/infergo/dist&lt;/a&gt;.
 In addition to the &lt;code&gt;Observe&lt;/code&gt; method, distributions have &lt;code&gt;Logp&lt;/code&gt;
 (single observation) and &lt;code&gt;Logps&lt;/code&gt; (multiple observations) methods
 which accept distribution parameters and observations as
 individual arguments rather than in a single slice.&lt;/p&gt;
-
 &lt;h2 id=&#34;differentiation&#34;&gt;Differentiation&lt;/h2&gt;
-
 &lt;p&gt;Command-line utility &lt;code&gt;deriv&lt;/code&gt; is used to differentiate a model.
 The command-line syntax is:&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;deriv path/to/model/package
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;For example,&lt;/p&gt;
-
 &lt;pre&gt;&lt;code&gt;deriv examples/hello/model
 &lt;/code&gt;&lt;/pre&gt;
-
 &lt;p&gt;Run &lt;code&gt;deriv -h&lt;/code&gt; for the full list of command-line options.  The
 differentiated model is put into subpackage &amp;ldquo;ad&amp;rdquo; of the model&amp;rsquo;s
 package, with the same name as the original package.&lt;/p&gt;
-
 &lt;h2 id=&#34;inference&#34;&gt;Inference&lt;/h2&gt;
-
 &lt;p&gt;For inference, &lt;code&gt;infergo&lt;/code&gt; offers&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;optimization via &lt;a href=&#34;https://en.wikipedia.org/wiki/Gradient_descent&#34;&gt;gradient
 ascent&lt;/a&gt; methods.&lt;/li&gt;
 &lt;li&gt;full posterior inference via &lt;a href=&#34;https://en.wikipedia.org/wiki/Hamiltonian_Monte_Carlo&#34;&gt;Hamiltonian Monte Carlo&lt;/a&gt; variants.&lt;/li&gt;
 &lt;/ul&gt;
-
 &lt;h3 id=&#34;optimization&#34;&gt;Optimization&lt;/h3&gt;
-
 &lt;p&gt;An optimizer implements interface
 &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Grad&#34;&gt;&lt;code&gt;infer.Grad&lt;/code&gt;&lt;/a&gt;.
 Interface implementations are &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Momentum&#34;&gt;gradient ascent with
@@ -200,12 +166,9 @@ and
 &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#Adam&#34;&gt;Adam&lt;/a&gt;.
 Both methods are capable to work with stochastic data (e.g.
 streams or batches).&lt;/p&gt;
-
 &lt;h3 id=&#34;full-posterior&#34;&gt;Full posterior&lt;/h3&gt;
-
 &lt;p&gt;An MCMC sampler for full posterior inference implements interface
 &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#MCMC&#34;&gt;&lt;code&gt;infer.MCMC&lt;/code&gt;&lt;/a&gt;. Inteface implementations are &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#HMC&#34;&gt;HMC&lt;/a&gt; and &lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#NUTS&#34;&gt;NUTS&lt;/a&gt;.&lt;/p&gt;
-
 &lt;p&gt;&lt;a href=&#34;https://godoc.org/bitbucket.org/dtolpin/infergo/infer#DepthAdapter&#34;&gt;&lt;code&gt;DepthAdapter&lt;/code&gt;&lt;/a&gt; enables adaption of NUTS step size with respect to the average
 tree depth.&lt;/p&gt;
 </description>
@@ -220,11 +183,18 @@ tree depth.&lt;/p&gt;
 examples&lt;/a&gt;.
 An example is a good starting point for a new &lt;code&gt;infergo&lt;/code&gt;
 project.&lt;/p&gt;
-
 &lt;p&gt;Advanced examples and case studies go into a separate
 repository,
 &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies&#34;&gt;https://bitbucket.org/dtolpin/infergo-studies&lt;/a&gt;.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>News</title>
+      <link>http://infergo.org/news/</link>
+      <pubDate>Sun, 11 Jul 2021 18:07:04 +0300</pubDate>
+      <guid>http://infergo.org/news/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -233,733 +203,10 @@ repository,
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://infergo.org/team/</guid>
       <description>&lt;p&gt;Contributors:&lt;/p&gt;
-
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://infergo.org/images/infergopher.png&#34;&gt;Gehenna Gopher&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://offtopia.net/&#34;&gt;David Tolpin&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>gogp v0.1.0</title>
-      <link>http://infergo.org/news/gogp/</link>
-      <pubDate>Fri, 24 Jan 2020 01:17:00 +0200</pubDate>
-      <guid>http://infergo.org/news/gogp/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;http://infergo.org/peers/gogp&#34;&gt;GoGP&lt;/a&gt; is &lt;a href=&#34;http://bitbucket.org/dtolpin/gogp&#34;&gt;out&lt;/a&gt;.
-GoGP is a library for Gaussian process regression in Go and uses
-Infergo for automatic differentiation and inference.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>infergo v0.7.0</title>
-      <link>http://infergo.org/news/v0.7.0/</link>
-      <pubDate>Fri, 24 Jan 2020 00:43:00 +0200</pubDate>
-      <guid>http://infergo.org/news/v0.7.0/</guid>
-      <description>&lt;p&gt;Infergo v0.7.0 is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.7.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;This release is a result of improving and extending Infergo
-along with development of &lt;a href=&#34;http://infergo.org/peers/gogp&#34;&gt;GoGP&lt;/a&gt;,
-a library for Gaussian process regression.&lt;/p&gt;
-
-&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;model&amp;rsquo;s gradient can be explicitly specified as the
-&lt;code&gt;Gradient()&lt;/code&gt; method, instead of through automatic
-differentation.&lt;/li&gt;
-&lt;li&gt;An elemental may also be a function which accepts a slice of
-floats (in addition to functions which accept one or more
-float scalars as parameters).&lt;/li&gt;
-&lt;li&gt;More kernels in the supplied kernel library.&lt;/li&gt;
-&lt;li&gt;As usual, fixes and performance improvements.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>infergo v0.6.1</title>
-      <link>http://infergo.org/news/v0.6.1/</link>
-      <pubDate>Thu, 25 Apr 2019 10:56:00 +0300</pubDate>
-      <guid>http://infergo.org/news/v0.6.1/</guid>
-      <description>&lt;p&gt;Infergo v0.6.1 is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.6.1/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;I moved many things around, some in a backward-incompatible way, but should
-only affect a minority of users.&lt;/li&gt;
-&lt;li&gt;As a side-effect of using Infergo for a rather involved model, I fixed two
-bugs in the automatic differentiation transformation. The bugs manifested
-in edge cases I didn&amp;rsquo;t even think they exist.&lt;/li&gt;
-&lt;li&gt;The accompanying repository
-&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies&#34;&gt;infergo-studies&lt;/a&gt;
-now contains a new case study &amp;mdash; a rewrite of Stan&amp;rsquo;s LDA
-example.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>infergo v0.5.0</title>
-      <link>http://infergo.org/news/v0.5.0/</link>
-      <pubDate>Mon, 01 Apr 2019 19:45:20 +0300</pubDate>
-      <guid>http://infergo.org/news/v0.5.0/</guid>
-      <description>&lt;p&gt;&lt;code&gt;infergo v0.5.0&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.5.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Multithreading support. Differentiation can be performed concurrently in
-multiple goroutines without locking of calls to Observe or Gradient,
-and with little contention.&lt;/li&gt;
-&lt;li&gt;Examples and case studies performing inference in parallel, both using
-Infergo&amp;rsquo;s own inference algorithms, or through integration in Gonum.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Tale of GoIDs</title>
-      <link>http://infergo.org/news/tale-of-goids/</link>
-      <pubDate>Mon, 01 Apr 2019 15:19:22 +0300</pubDate>
-      <guid>http://infergo.org/news/tale-of-goids/</guid>
-      <description>
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;2.16&lt;/strong&gt; And the LORD God commanded the man, saying: &amp;lsquo;Of every tree of the garden
-thou mayest freely eat;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.17&lt;/strong&gt; but of the tree of the knowledge of good and evil,
-thou shalt not eat of it; for in the day that thou eatest thereof thou shalt
-surely die.&amp;rsquo;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;The Book of Genesis&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://golang.org/&#34;&gt;Go&lt;/a&gt; gives the programmer introspection into every aspect
-of &lt;a href=&#34;https://godoc.org/reflect&#34;&gt;the language&lt;/a&gt;, and of a &lt;a href=&#34;https://godoc.org/runtime&#34;&gt;running
-program&lt;/a&gt;. But to one thing the programmer does not
-have access, and it is the goroutine identifier. Because the day the
-programmers know the goroutine identifier, they create goroutine-local storage
-through shared access and mutexes, and shall surely die.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;However,&lt;/strong&gt; there are use cases beyond concurrent &lt;a href=&#34;https://blog.golang.org/context&#34;&gt;handling of HTTP
-requests&lt;/a&gt;, in which
-&lt;a href=&#34;https://blog.golang.org/share-memory-by-communicating&#34;&gt;sharing memory by
-communicating&lt;/a&gt;
-through channels or passing the context around is not going to
-work. One such case is &lt;a href=&#34;http://infergo.org/&#34;&gt;Infergo&lt;/a&gt;.  Infergo
-transforms Go source code to enable &lt;a href=&#34;https://en.wikipedia.org/wiki/Automatic_differentiation#Reverse_accumulation&#34;&gt;reverse-mode automatic
-differentiation&lt;/a&gt;.
-Function &lt;em&gt;signatures&lt;/em&gt; stay unchanged, but function &lt;em&gt;bodies&lt;/em&gt; are
-modified to write to a so-called &lt;em&gt;tape&lt;/em&gt; a trace of every
-floating point operation. A single tape must be accessible by
-all functions. If derivatives are computed concurrently in
-multiple goroutines, every goroutine must have its own tape.&lt;/p&gt;
-
-&lt;p&gt;The functions must know how to get to the tape. And getting to
-the tape must be very efficient: every floating point operation
-involves an access to the tape!&lt;/p&gt;
-
-&lt;p&gt;It is not that no one thought about goroutine identifiers
-before. There are Go programmers who need the identifiers, some
-of them admit the need, and a few find workarounds to actually
-obtain the identifiers.  I searched for the workarounds, I found
-several worthy attempts, and then I had a revelation, and then I
-discovered someone who had the same revelation before me. And
-that gave Infergo efficient goroutine-local storage for
-concurrent automatic differentiation and inference. Here is how
-it went.&lt;/p&gt;
-
-&lt;h2 id=&#34;worthy-attempts&#34;&gt;Worthy Attempts&lt;/h2&gt;
-
-&lt;h3 id=&#34;from-the-makers-of-go&#34;&gt;From the makers of Go&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://bradfitz.com/&#34;&gt;Brad Fitzpatrick&lt;/a&gt; is a member of the Go
-programming language team at Google. Brad wrote a
-&lt;a href=&#34;https://github.com/bradfitz/http2/blob/master/gotrack.go&#34;&gt;function&lt;/a&gt;
-which obtains the goroutine identifier. The function creates a
-stack trace and parses the identifier out of string
-representation of the trace. Brad needed this for debugging, &amp;ldquo;to
-track that functions run on the goroutine  that they&amp;rsquo;re supposed
-to&amp;rdquo;. The function uses public API calls and an undocumented but
-stable format of the serialized stack trace.&lt;/p&gt;
-
-&lt;p&gt;Somewhat cumbersome but working. Unfortunately, too inefficient
-for Infergo use case. Collecting, serializing, and parsing the
-stack trace on every operation makes automatic differentiation
-2,000 (&lt;strong&gt;two thousand&lt;/strong&gt;) times slower!&lt;/p&gt;
-
-&lt;h3 id=&#34;from-the-users-of-go&#34;&gt;From the users of Go&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://jtolio.com/&#34;&gt;JT Olio&lt;/a&gt; wrote a &lt;a href=&#34;https://github.com/jtolds/gls&#34;&gt;goroutine-local storage
-library&lt;/a&gt;. The library &amp;ldquo;defines 16
-special functions and embed base-16 tags into the stack using
-the call order of those 16 functions.&amp;rdquo; Then, this embedding is
-used to produce an unique goroutine identifier and establish
-goroutine-local storage. The idea blew me away! However, the
-library requires that Go routines are created through a library
-call.  I could modify Infergo&amp;rsquo;s own inference algorithms, however I
-would not be able to pass functions and gradients to third-party
-code. Infergo
-&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/lr-gonum/&#34;&gt;integrates&lt;/a&gt;
-with &lt;a href=&#34;http://gonum.org/&#34;&gt;Gonum&lt;/a&gt; optimization nicely, and by
-enabling goroutine-local tapes I strived to improve this
-integration, rather than sacrifice it.&lt;/p&gt;
-
-&lt;h2 id=&#34;revelation&#34;&gt;Revelation&lt;/h2&gt;
-
-&lt;p&gt;I was almost ready to give up, that is, to write code that
-adds an extra &amp;lsquo;context&amp;rsquo; parameter to every differentiated function.
-But then it came down onto me that maybe Go does not want to
-prevent me from using the goroutine identifier.  Maybe it is
-there, and I just do not see it.&lt;/p&gt;
-
-&lt;p&gt;Indeed, Go has an &lt;a href=&#34;https://golang.org/doc/asm&#34;&gt;assembly
-language&lt;/a&gt;. The language is
-documented, Go functions can be implemented in Go assembly.  If
-I wanted a system feature not available through a library, I
-would write an assembly function bringing that feature to me.&lt;/p&gt;
-
-&lt;p&gt;The same goes for Go.&lt;/p&gt;
-
-&lt;p&gt;Not only Go has an assembler, the assembler has a dedicated
-register &lt;code&gt;g&lt;/code&gt; pointing at &lt;code&gt;runtime.g&lt;/code&gt;, the goroutine descriptor.
-&lt;code&gt;goid&lt;/code&gt;, the Go routine identifier is just one of the fields of
-the descriptor. I can just use the contents of &lt;code&gt;g&lt;/code&gt; to get
-the goroutine identifier, and it will only be a couple
-instructions!&lt;/p&gt;
-
-&lt;p&gt;It is much easier to find something if you know what you are
-looking for. &lt;a href=&#34;https://zhuanlan.zhihu.com/taowen&#34;&gt;Tao Wen&lt;/a&gt; wrote
-yet another &lt;a href=&#34;https://github.com/modern-go/gls&#34;&gt;GLS library&lt;/a&gt;; and
-this library does exactly what I just described: uses Go
-assembler to access register &lt;code&gt;g&lt;/code&gt;, and retrieves field &lt;code&gt;goid&lt;/code&gt;
-from the structure pointed to by the register. I somewhat
-simplified the code, added support for all platforms where
-Go is available, and now Infergo has fast and straightforward
-support for multithreading.&lt;/p&gt;
-
-&lt;h2 id=&#34;lessons-learned&#34;&gt;Lessons Learned&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;It is sometimes easier to find a hole in the fence than to
-jump over.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;You can do anything with Go. You just must prove (to yourself
-more than to others) that you are brave and skilled enough.
-For example, by diving into Go internals and coding in Go
-assembly.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;My Samsung Tab S4 tablet is amazingly well fit for
-multithreading, in Go in particular. I did most of the
-development on the tablet, in &lt;a href=&#34;https://termux.com&#34;&gt;Termux&lt;/a&gt;.
-The tablet&amp;rsquo;s CPU  has 8 cores, and Go runs multiple
-goroutines in parallel with very little overhead: 8 inference
-threads in parallel take roughly the same time as a single
-thread with local goroutine storage, and only 20% slower than
-a single thread with a global tape, for the same amount of
-computation per thread.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;You can run &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/wasm/&#34;&gt;multiple goroutines in parallel in a
-browser&lt;/a&gt; via
-WebAssembly. WebAssembly is slower than other targets, but
-still quite fast.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>infergo v0.3.0</title>
-      <link>http://infergo.org/news/v0.3.0/</link>
-      <pubDate>Wed, 20 Mar 2019 02:04:30 +0200</pubDate>
-      <guid>http://infergo.org/news/v0.3.0/</guid>
-      <description>&lt;p&gt;&lt;code&gt;infergo v0.3.0&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.3.0/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Only methods returning float64 or nothing are differentiated. This allows
-to define helper methods on the model, such as returning the number of
-parameters, and call the methods outside of differentiated context.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;infergo&lt;/code&gt; models can be optimized using &lt;a href=&#34;https://godoc.org/gonum.org/v1/gonum/optimize&#34;&gt;Gonum optimization
-algorithms&lt;/a&gt;. This includes
-BFGS and variants. Case study
-&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies/src/master/lr-gonum/&#34;&gt;lr-gonum&lt;/a&gt;
-applies L-BFGS to linear regression.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://bitbucket.org/dtolpin/infergo-studies&#34;&gt;Case studies&lt;/a&gt; have been extended. New
-studies include:
-
-&lt;ul&gt;
-&lt;li&gt;linear regression, solved using either stochastic gradient descent and BFGS;&lt;/li&gt;
-&lt;li&gt;compilation of &lt;code&gt;infergo&lt;/code&gt; models and inference into WebAssembly and running in
-the browser;&lt;/li&gt;
-&lt;li&gt;integration with Gonum;&lt;/li&gt;
-&lt;li&gt;Neal&amp;rsquo;s funnel, a re-parameterization example borrowed from &lt;a href=&#34;https://mc-stan.org/users/documentation/&#34;&gt;Stan documentation&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>infergo v0.2.2</title>
-      <link>http://infergo.org/news/v0.2.2/</link>
-      <pubDate>Sun, 09 Dec 2018 01:14:30 +0300</pubDate>
-      <guid>http://infergo.org/news/v0.2.2/</guid>
-      <description>&lt;p&gt;&lt;code&gt;infergo v0.2.2&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.2.2/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Constant folding.&lt;/li&gt;
-&lt;li&gt;Automatic import of packages required for short variable declarations
-(see &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/issues/10&#34;&gt;issue #10&lt;/a&gt;).&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>infergo v0.2.1</title>
-      <link>http://infergo.org/news/v0.2.1/</link>
-      <pubDate>Tue, 27 Nov 2018 16:19:03 +0300</pubDate>
-      <guid>http://infergo.org/news/v0.2.1/</guid>
-      <description>&lt;p&gt;&lt;code&gt;infergo v0.2.1&lt;/code&gt; is &lt;a href=&#34;https://bitbucket.org/dtolpin/infergo/src/v0.2.1/&#34;&gt;out&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;What&amp;rsquo;s new:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://infergo.org&#34;&gt;infergo.org&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Why infergo</title>
-      <link>http://infergo.org/news/why/</link>
-      <pubDate>Mon, 26 Nov 2018 14:19:13 +0300</pubDate>
-      <guid>http://infergo.org/news/why/</guid>
-      <description>
-
-&lt;blockquote&gt;
-&lt;p&gt;I share here my experiences from integrating probabilistic
-programming into a server-side software system and
-implementing a  probabilistic programming facility for Go, a
-modern programming language of choice for server-side software
-development.  Server-side application of probabilistic
-programming poses challenges for a probabilistic programming
-system. I discuss the challenges and my experience in
-overcoming them, and suggest guidelines that can help in a
-wider adoption of probabilistic programming in server-side
-software systems.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;challenges-of-server-side-probabilistic-programming&#34;&gt;Challenges of Server-Side Probabilistic Programming&lt;/h2&gt;
-
-&lt;p&gt;Incorporating a probabilistic program, or rather a probabilistic
-procedure, within a larger code body appears to be rather
-straightforward: one implements the model in the probabilistic
-programming language, fetches and preprocesses the data in the
-host programming language, passes the data and the model to an
-inference algorithm, and post-processes the results in the
-host programming language again to make algorithmic
-decisions based on inference outcomes. However, complex
-server-side software systems make integration of probabilistic
-inference challenging.&lt;/p&gt;
-
-&lt;h3 id=&#34;simulation-vs-inference&#34;&gt;Simulation vs. inference&lt;/h3&gt;
-
-&lt;p&gt;Probabilistic models often follow a design pattern of
-simulation-inference: a significant part of the model is a
-simulator, running an algorithm with fixed parameters; the
-optimal parameters, or their distribution, are to be inferred.
-The inferred parameters are then used by the software system to
-execute the simulation independently of inference for
-forecasting and decision making.&lt;/p&gt;
-
-&lt;p&gt;This pattern suggests re-use of the simulator: instead of
-implementing the simulator twice, in the probabilistic model and
-in the host environment, the same code can serve both purposes.
-However to achieve this, the host language must coincide with
-the implementation language of the probabilistic model, on one
-hand, and allow a computationally efficient implementation of
-the simulation, on the other hand. Some probabilistic systems
-(&lt;a href=&#34;https://www.cra.com/work/case-studies/figaro&#34;&gt;Figaro&lt;/a&gt;, &lt;a href=&#34;http://anglican.ml/&#34;&gt;Anglican&lt;/a&gt;, &lt;a href=&#34;http://turing.ml/&#34;&gt;Turing&lt;/a&gt;)
-are built with tight integration with the host environment in
-mind; more often than not though the probabilistic code is
-not trivial to re-use.&lt;/p&gt;
-
-&lt;h3 id=&#34;data-interface&#34;&gt;Data interface&lt;/h3&gt;
-
-&lt;p&gt;In a server-side application data for inference comes from a
-variety of sources: network, databases, distributed file
-systems, and in many different formats. Efficient inference
-depends on fast data access and updating. Libraries for data
-access and manipulation are available in the host environment.
-While the host environment can be used as a proxy retrieving and
-transforming the data, such as in the case of &lt;a href=&#34;http://mc-stan.org/&#34;&gt;Stan&lt;/a&gt;
-integrations, sometimes direct access from the probabilistic
-code is the preferred option, for example when the data is
-streamed or retrieved conditionally.&lt;/p&gt;
-
-&lt;h3 id=&#34;integration-and-deployment&#34;&gt;Integration and deployment&lt;/h3&gt;
-
-&lt;p&gt;Deployment of server-side software systems is a delicate process
-involving automatic builds and maintenance of dependencies.
-Adding  a component, which possibly introduces additional
-software dependencies or even a separate runtime, complicates
-deployment. Minimizing the burden of probabilistic programming
-on the integration and deployment process should be a major
-consideration in design or selection of probabilistic
-programming tools.  Probabilistic programming systems that are
-implemented or provide an interface in a popular programming
-language, e.g.  Python (&lt;a href=&#34;http://edwardlib.org/&#34;&gt;Edward&lt;/a&gt;,
-&lt;a href=&#34;http://pyro.ai/&#34;&gt;Pyro&lt;/a&gt;) are easier to integrate and deploy, however
-the smaller the footprint of a probabilistic system, the easier
-is the adoption.&lt;/p&gt;
-
-&lt;h2 id=&#34;probabilistic-programming-facility-for-go&#34;&gt;Probabilistic Programming Facility for Go&lt;/h2&gt;
-
-&lt;p&gt;Based on the experience of developing and deploying solutions
-using different probabilistic environments, I propose
-guidelines to implementation of a probabilistic programming
-facility for server-side applications. I believe that these
-guidelines, when followed, help easier integration of
-probabilistic programming inference into large-scale server-side
-software systems.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;A probabilistic model should be programmed in the host
-programming language. The facility may impose a discipline on
-model implementation, such as through interface constraints, but
-otherwise supporting unrestricted use of the host language for
-implementation of the model.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Built-in and user-defined data structures and libraries
-should be accessible in the probabilistic programming model.
-Inference techniques relying on the code structure, such as
-those based on automatic differentiation, should support the
-use of common data structures of the host language.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The model code should be reusable between inference and
-simulation. The code which is not required solely for inference
-should be written once for both inference of parameters and use
-of the parameters in the host environment.  It should be
-possible to run simulation outside the probabilistic model without
-runtime or memory overhead imposed by inference needs.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;In line with the guidelines, I have implemented a probabilistic
-programming facility for the Go programming language, &lt;code&gt;infergo&lt;/code&gt;
-(&lt;a href=&#34;http://infergo.org/&#34;&gt;http://infergo.org/&lt;/a&gt;). I have chosen Go
-because Go is a small but expressive programming language with
-efficient implementation, which has recently become quite
-popular for computation-intensive server-side programming.  This
-facility is already used in production environment for inference
-of mission-critical algorithm parameters.&lt;/p&gt;
-
-&lt;p&gt;A probabilistic model in &lt;code&gt;infergo&lt;/code&gt; is an implementation
-of the &lt;code&gt;Model&lt;/code&gt; interface requiring a single method
-&lt;code&gt;Observe&lt;/code&gt; which accepts a vector (a Go &lt;em&gt;slice&lt;/em&gt;) of
-floats, the parameters to infer, and returns a single float,
-interpreted as unnormalized log-likelihood of the posterior
-distribution. Implementation of model methods can be written
-in virtually unrestricted Go and use any Go libraries.&lt;/p&gt;
-
-&lt;p&gt;For inference, &lt;code&gt;infergo&lt;/code&gt; relies on automatic
-differentiation. The source code of the model is
-translated by a command-line tool provided by &lt;code&gt;infergo&lt;/code&gt;
-into an equivalent model with reverse-mode automatic
-differentiation of the log-likelihood with respect
-to the parameters applied. The differentiation operates
-on the built-in floating-point type and incurs only a small
-computational overhead. However, even this overhead is avoided
-when the model code is executed outside of inference algorithms:
-both the original and the differentiated model are
-simultaneously available to the rest of the program code, so
-the methods can be called on the differentiated model for
-inference, and on the original model for the most efficient
-execution with the inferred parameters.&lt;/p&gt;
-
-&lt;p&gt;The Go programming language and development environment offer
-capabilities which made implementation of &lt;code&gt;infergo&lt;/code&gt;
-affordable.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The Go parser and abstract syntax tree serializer are
-a part of the standard library. Parsing, transforming,
-and generating Go source code is straightforward and
-effortless.&lt;/li&gt;
-&lt;li&gt;Type inference (or &lt;em&gt;type checking&lt;/em&gt; as it is
-called in the Go ecosystem), also provided in the
-standard library, augments parsing and allows to
-selectively apply transformation-based automatic
-differentiation  based on static expression types.&lt;/li&gt;
-&lt;li&gt;Go compiles and runs fast. Fast compilation and
-execution speeds allow to use the same facility for both
-exploratory design of probabilistic models and for
-inference in production environment.&lt;/li&gt;
-&lt;li&gt;Go offers efficient parallel execution as a
-first-class feature, via so-called &lt;em&gt;goroutines&lt;/em&gt;.
-Goroutines streamline implementation of sampling-based
-inference algorithms. Sample generators and consumers
-are run in parallel, communicating through channels.
-Inference is easy to parallelize in order to exploit
-hardware multi-processing, and samples are retrieved
-lazily for postprocessing.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Table 1 provides memory consumption and running time
-measurements on basic models to illustrate  &lt;code&gt;infergo&lt;/code&gt;&amp;rsquo;s
-performance.  The measurements were obtained on a 2.3GHz Intel
-Core 5 CPU with 8GB of memory for 1000 iterations of Hamiltonian
-Monte Carlo with 10 leapfrog steps. Note that log-likelihood
-computation for standard distributions is not optimized yet.
-Quite the opposite: since models in &lt;code&gt;infergo&lt;/code&gt; are fully
-composable, primitive distributions are themselves implemented
-as &lt;code&gt;infergo&lt;/code&gt; models and automatically differentiated.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Table 1: Memory and running times for 1000 iterations of HMC with 10 leapfrog steps.&lt;/em&gt;&lt;/p&gt;
-
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;model&lt;/th&gt;
-&lt;th&gt;compilation time&lt;/th&gt;
-&lt;th&gt;execution time&lt;/th&gt;
-&lt;th&gt;memory&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;8 schools&lt;/td&gt;
-&lt;td&gt;0.15s&lt;/td&gt;
-&lt;td&gt;0.6s&lt;/td&gt;
-&lt;td&gt;5.5MB&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;10D normal, 100 points&lt;/td&gt;
-&lt;td&gt;0.15s&lt;/td&gt;
-&lt;td&gt;2.0s&lt;/td&gt;
-&lt;td&gt;5.7MB&lt;/td&gt;
-&lt;/tr&gt;
-
-&lt;tr&gt;
-&lt;td&gt;50D normal, 100 points&lt;/td&gt;
-&lt;td&gt;0.15s&lt;/td&gt;
-&lt;td&gt;9.0s&lt;/td&gt;
-&lt;td&gt;5.8MB&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;A lightweight probabilistic programming facility similar to
-&lt;code&gt;infergo&lt;/code&gt; can be added to most modern general-purpose
-programming languages, in particular those used in implementing
-large-scale software systems, making probabilistic
-programming inference more accessible in server-side
-applications.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>GoGP</title>
-      <link>http://infergo.org/peers/gogp/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://infergo.org/peers/gogp/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;http://bitbucket.org/dtolpin/gogp&#34;&gt;GoGP&lt;/a&gt; is a
-library for probabilistic programming around Gaussian processes.
-It uses &lt;a href=&#34;http://infergo.org/&#34;&gt;Infergo&lt;/a&gt; for automatic
-differentiation and inference.&lt;/p&gt;
-
-&lt;p&gt;GoGP is built around a dual view on the Gaussian process&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;as a stochastic process,&lt;/li&gt;
-&lt;li&gt;as a probabilistic model with respect to kernel.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;gaussian-process-instance&#34;&gt;Gaussian process instance&lt;/h2&gt;
-
-&lt;p&gt;&lt;code&gt;GP&lt;/code&gt;, the Gaussian process type, encapsulates similarity
-and noise kernels, their parameters, and observation inputs
-and outputs:&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// Type GP is the barebone implementation of GP.
-&lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; GP &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
-	NDim                   &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt;       &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// number of dimensions
-&lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;	Simil, Noise           Kernel    &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// kernels
-&lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;	ThetaSimil, ThetaNoise []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// kernel parameters
-&lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;
-	X [][]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// inputs
-&lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;	Y []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;   &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// outputs
-&lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;Public methods defined on GP fall into two groups: Gaussian
-process fitting and prediction, on one hand, and
-probabilistic model interface, on the other hand.&lt;/p&gt;
-
-&lt;h3 id=&#34;gaussian-process-methods&#34;&gt;Gaussian process methods&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Absorb&lt;/code&gt; updates the GP with observations, &lt;code&gt;Produce&lt;/code&gt; returns
-predicted outputs for unseen inputs.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Absorb&lt;/span&gt;(x [][]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, y []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;)
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Produce&lt;/span&gt;(x [][]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) (mu, sigma []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;When kernel parameters are fixed (known or learned), &lt;code&gt;Absorb&lt;/code&gt;
-and &lt;code&gt;Produce&lt;/code&gt; are all that is needed for posterior GP inference.&lt;/p&gt;
-
-&lt;h3 id=&#34;probabilistic-model-methods&#34;&gt;Probabilistic model methods&lt;/h3&gt;
-
-&lt;p&gt;&lt;code&gt;Observe&lt;/code&gt; and &lt;code&gt;Gradient&lt;/code&gt; turn a GP instance into an elemental
-Infergo model (that is, a model with supplied gradient). The
-model can be passed to inference algorithms or used within
-another model.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Gradient&lt;/span&gt;() []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;//&lt;/span&gt; &lt;span style=&#34;&#34;&gt;`&lt;/span&gt;elemental&lt;span style=&#34;&#34;&gt;&amp;#39;&lt;/span&gt; model&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;If the length of &lt;code&gt;x&lt;/code&gt; is equal to the number of kernel hyperparameters
-(&lt;code&gt;Simil.NTheta() + Noise.NTheta()&lt;/code&gt;) then the gradient of
-marginal likelihood  is computed with respect to kernel
-hyperparameters only. Observations must be provided in the fields
-of the GP instance. Otherwise, if the length of &lt;code&gt;x&lt;/code&gt; is greater
-than the number of parameters, the rest of &lt;code&gt;x&lt;/code&gt; is interpreted
-as observations. In the latter case, the gradient is computed
-with respect to both kernel hyperparameters and observations.&lt;/p&gt;
-
-&lt;h2 id=&#34;kernels&#34;&gt;Kernels&lt;/h2&gt;
-
-&lt;p&gt;There are two kernel kinds:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;similarity kernel;&lt;/li&gt;
-&lt;li&gt;noise kernel.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Both kinds must satisfy the Kernel interface:&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Kernel &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;interface&lt;/span&gt; {
-	&lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;([]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
-	&lt;span style=&#34;color:#06287e&#34;&gt;NTheta&lt;/span&gt;() &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt;
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;p&gt;The &lt;code&gt;Observe&lt;/code&gt; method computes the variance or covariance,
-the &lt;code&gt;NTheta&lt;/code&gt; method returns the number of kernel parameters.&lt;/p&gt;
-
-&lt;p&gt;A similarity (or covariance) kernel receives concanetation
-of kernel parameters and coordinates of two points. A noise
-kernel receives concatenation of kernel parameters and
-coordinates of a single point. Here is an example implementation
-of the RBF (or normal) kernel:&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; RBF &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
-
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (RBF) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
-	l, xa, xb &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; x[&lt;span style=&#34;color:#40a070&#34;&gt;0&lt;/span&gt;], x[&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;], x[&lt;span style=&#34;color:#40a070&#34;&gt;2&lt;/span&gt;]
-	d &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; (xa &lt;span style=&#34;color:#666&#34;&gt;-&lt;/span&gt; xb) &lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt; l
-	&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; math.&lt;span style=&#34;color:#06287e&#34;&gt;Exp&lt;/span&gt;(&lt;span style=&#34;color:#666&#34;&gt;-&lt;/span&gt;d &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt; d &lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#40a070&#34;&gt;2&lt;/span&gt;)
-}
-
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (RBF) &lt;span style=&#34;color:#06287e&#34;&gt;NTheta&lt;/span&gt;() &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt; { &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-&lt;h2 id=&#34;case-studies&#34;&gt;Case studies&lt;/h2&gt;
-
-&lt;p&gt;GoGP includes case
-&lt;a href=&#34;http://bitbucket.org/tolpin/gogp/src/master/tutorial&#34;&gt;studies&lt;/a&gt;,
-illustrating, on simple examples, common patterns of GoGP use.
-We briefly summarize here some of the case studies.&lt;/p&gt;
-
-&lt;h3 id=&#34;basic-usage&#34;&gt;Basic usage&lt;/h3&gt;
-
-&lt;p&gt;In the basic case, similar to that supported by many Gaussian
-process libraries, a GP directly serves as the model for
-inference on hyperparameters (or the hyperparameters can be just
-fixed).&lt;/p&gt;
-
-&lt;p&gt;The library user specifies the kernel:&lt;/p&gt;
-
-&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Basic &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (Basic) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
-    &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; x[&lt;span style=&#34;color:#40a070&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt; kernel.Normal.&lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x[&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;:])
-}
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (Basic) &lt;span style=&#34;color:#06287e&#34;&gt;NTheta&lt;/span&gt;() &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt; { &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#40a070&#34;&gt;2&lt;/span&gt; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-and initializes &lt;code&gt;GP&lt;/code&gt; with a kernel instance:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;gp &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;&amp;amp;&lt;/span&gt;gp.GP{
-    NDim:  &lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;,
-    Simil: Basic{},
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
-
-&lt;p&gt;MLE inference on hyperparameters and prediction can then be performed
-through library functions.&lt;/p&gt;
-
-&lt;h3 id=&#34;priors-on-hyperparameters&#34;&gt;Priors on hyperparameters&lt;/h3&gt;
-
-&lt;p&gt;If priors on hyperparameters are to be specified, the library
-user provides both the kernel and the model.  &lt;code&gt;GP&lt;/code&gt; is
-initialized with the kernel, and then &lt;code&gt;GP&lt;/code&gt; and the
-model are combined for inference in a derived model:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Model &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
-    gp           &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;gp.GP
-    priors       &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;Priors
-    gGrad, pGrad []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
-}
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (m &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;Model) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
-    &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;var&lt;/span&gt; gll, pll &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
-    gll, m.gGrad =
-      m.gp.&lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x), model.&lt;span style=&#34;color:#06287e&#34;&gt;Gradient&lt;/span&gt;(m.gp)
-    pll, m.pGrad = 
-      m.priors.&lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x),model.&lt;span style=&#34;color:#06287e&#34;&gt;Gradient&lt;/span&gt;(m.priors)
-    &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; gll &lt;span style=&#34;color:#666&#34;&gt;+&lt;/span&gt; pll
-}
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (m &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;Model) &lt;span style=&#34;color:#06287e&#34;&gt;Gradient&lt;/span&gt;() []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
-	&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;range&lt;/span&gt; m.pGrad {
-		m.gGrad[i] &lt;span style=&#34;color:#666&#34;&gt;+=&lt;/span&gt; m.pGrad[i]
-	}
-	&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; m.gGrad
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-In &lt;code&gt;Model&lt;/code&gt;, &lt;code&gt;gp&lt;/code&gt; holds a &lt;code&gt;GP&lt;/code&gt;
-instance and &lt;code&gt;priors&lt;/code&gt; holds an instance of the model
-expressing beliefs about hyperparameters. A &lt;code&gt;Model&lt;/code&gt;
-instance is used for inference on hyperparameters, a
-&lt;code&gt;GP&lt;/code&gt; instance &amp;mdash; for prediction.&lt;/p&gt;
-
-&lt;h3 id=&#34;uncertain-observation-inputs&#34;&gt;Uncertain observation inputs&lt;/h3&gt;
-
-&lt;p&gt;When observation inputs are uncertain, beliefs about inputs can
-be specified, and the log-likelihood gradient can be computed
-with respect to both hyperparameters and observation inputs. For
-example, in a time series, one can assume that observation
-inputs come from a renewal process and let the inputs move
-relative to each other. Then, forecasting can be performed
-relative to posterior observation inputs.&lt;/p&gt;
-
-&lt;h3 id=&#34;non-gaussian-noise&#34;&gt;Non-Gaussian noise&lt;/h3&gt;
-
-&lt;p&gt;In basic usage, the observation noise is assumed to be Gaussian.
-This usage is supported by initializing &lt;code&gt;GP&lt;/code&gt; with a noise
-kernel, along with a similarity kernel. When the noise is not
-Gaussian, an analytical solution for posterior Gaussian process
-inference does not always exist. However, non-Gaussian noise is
-straightforwardly supported by GoGP through supplying a
-model for beliefs on observation outputs:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Noise &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
-	Y []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// noisy outputs
-&lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;}
-&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (m &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;Noise) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) (ll &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;){
-	&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// Laplacian noise
-&lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;range&lt;/span&gt; m.Y {
-		ll &lt;span style=&#34;color:#666&#34;&gt;+=&lt;/span&gt; Expon.&lt;span style=&#34;color:#06287e&#34;&gt;Logp&lt;/span&gt;(&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;/&lt;/span&gt;math.&lt;span style=&#34;color:#06287e&#34;&gt;Exp&lt;/span&gt;(x[&lt;span style=&#34;color:#40a070&#34;&gt;0&lt;/span&gt;]),
-			math.&lt;span style=&#34;color:#06287e&#34;&gt;Abs&lt;/span&gt;(m.Y[i]&lt;span style=&#34;color:#666&#34;&gt;-&lt;/span&gt;x[&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#666&#34;&gt;+&lt;/span&gt;i]))
-	}
-	&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; ll
-}&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
 </description>
     </item>
     

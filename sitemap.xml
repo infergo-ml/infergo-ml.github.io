@@ -1,89 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>http://infergo.org/start/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/peers/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/guide/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/examples/</loc>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/</loc>
-    <lastmod>2020-01-24T01:17:00+02:00</lastmod>
-  </url>
-  
-  <url>
+    <lastmod>2021-07-11T18:07:04+03:00</lastmod>
+  </url><url>
     <loc>http://infergo.org/team/</loc>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>http://infergo.org/news/gogp-v1.0.1/</loc>
+    <lastmod>2021-07-11T18:07:04+03:00</lastmod>
+  </url><url>
+    <loc>http://infergo.org/</loc>
+    <lastmod>2021-07-11T18:07:04+03:00</lastmod>
+  </url><url>
+    <loc>http://infergo.org/news/v1.0.1/</loc>
+    <lastmod>2021-07-11T18:07:04+03:00</lastmod>
+  </url><url>
     <loc>http://infergo.org/news/gogp/</loc>
     <lastmod>2020-01-24T01:17:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/v0.7.0/</loc>
     <lastmod>2020-01-24T00:43:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/v0.6.1/</loc>
     <lastmod>2019-04-25T10:56:00+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/v0.5.0/</loc>
     <lastmod>2019-04-01T19:45:20+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/tale-of-goids/</loc>
     <lastmod>2019-04-01T15:19:22+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/v0.3.0/</loc>
     <lastmod>2019-03-20T02:04:30+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/v0.2.2/</loc>
     <lastmod>2018-12-09T01:14:30+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/v0.2.1/</loc>
     <lastmod>2018-11-27T16:19:03+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/news/why/</loc>
     <lastmod>2018-11-26T14:19:13+03:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/peers/gogp/</loc>
-  </url>
-  
-  <url>
-    <loc>http://infergo.org/</loc>
-    <lastmod>2020-01-24T01:17:00+02:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>http://infergo.org/tags/</loc>
-    <priority>0</priority>
   </url>
-  
 </urlset>

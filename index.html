@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
 <title>Infergo — Go programs that learn</title>
 <link rel="alternate" type="application/rss&#43;xml" title="RSS" href="http://infergo.org/index.xml">
-<meta name="created" content="2020-01-24T01:17:00&#43;0200">
-<meta name="modified" content="2020-01-24T01:17:00&#43;0200">
+<meta name="created" content="2021-07-11T18:07:04&#43;0300">
+<meta name="modified" content="2021-07-11T18:07:04&#43;0300">
 <meta name="author" content="David Tolpin">
 <meta name="description" content="">
 <meta property="og:site_name" content="Infergo — Go programs that learn">
 <meta property="og:title" content="Home">
 <meta property="og:url" content="http://infergo.org/">
 
-<meta name="generator" content="Hugo 0.53-DEV" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <link rel="canonical" href="http://infergo.org/">
 <link rel="icon" href="/favicon.png">
@@ -76,8 +76,6 @@
 <main class="main layout__main" role="main">
 <article class="single-view">
 <div class="content">
-
-
 <p><a href="http://bitbucket.org/dtolpin/infergo"><code>Infergo</code></a> is a  probabilistic
 programming facility for the <a href="http://golang.org/">Go language</a>.
 <code>infergo</code> allows to write probabilistic models in almost
@@ -86,16 +84,11 @@ differentiation</a>
 for optimization and inference. Works anywhere where Go does.
 Hosted on <a href="https://bitbucket.org/dtolpin/infergo">Bitbucket</a>.
 Licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>.</p>
-
 <h2 id="example">Example</h2>
-
 <p><a href="examples">more examples</a></p>
-
 <p>Learning parameters of the Normal distribution from
 observations:</p>
-
 <h3 id="model">Model</h3>
-
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Model <span style="color:#007020;font-weight:bold">struct</span> {
     Data []<span style="color:#902000">float64</span>
 }
@@ -108,9 +101,7 @@ observations:</p>
 </span><span style="color:#60a0b0;font-style:italic"></span>	ll <span style="color:#666">+=</span> Normal.<span style="color:#06287e">Logps</span>(x[<span style="color:#40a070">0</span>], math.<span style="color:#06287e">Exp</span>(x[<span style="color:#40a070">1</span>]), m.Data<span style="color:#666">...</span>)
     <span style="color:#007020;font-weight:bold">return</span> ll
 }</code></pre></div>
-
 <h3 id="inference">Inference</h3>
-
 <div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// Data
 </span><span style="color:#60a0b0;font-style:italic"></span>m <span style="color:#666">:=</span> <span style="color:#666">&amp;</span>Model{[]<span style="color:#902000">float64</span>{
 	<span style="color:#666">-</span><span style="color:#40a070">0.854</span>, <span style="color:#40a070">1.067</span>, <span style="color:#666">-</span><span style="color:#40a070">1.220</span>, <span style="color:#40a070">0.818</span>, <span style="color:#666">-</span><span style="color:#40a070">0.749</span>,
@@ -140,9 +131,7 @@ hmc.<span style="color:#06287e">Sample</span>(m, x, samples)
 	x = <span style="color:#666">&lt;-</span>samples
 }
 hmc.<span style="color:#06287e">Stop</span>()</code></pre></div>
-
 <h2 id="acknowledgements">Acknowledgements</h2>
-
 <p>I owe a debt of gratitude to <a href="https://www.cs.ubc.ca/~fwood/">Frank
 Wood</a> who introduced me to
 probabilistic programming and inspired me to pursue
@@ -173,6 +162,8 @@ decision-making in production environment.</p>
 <section>
 <h4 class="menu"><a class="" href="/news/">News</a></h4>
 <ul class="menu">
+<li><a class="" href="/news/gogp-v1.0.1/">gogp v1.0.1</a></li>
+<li><a class="" href="/news/v1.0.1/">infergo v1.0.1</a></li>
 <li><a class="" href="/news/gogp/">gogp v0.1.0</a></li>
 <li><a class="" href="/news/v0.7.0/">infergo v0.7.0</a></li>
 <li><a class="" href="/news/v0.6.1/">infergo v0.6.1</a></li>
