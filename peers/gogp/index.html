@@ -12,7 +12,7 @@
 <meta property="og:title" content="GoGP">
 <meta property="og:url" content="http://infergo.org/peers/gogp/">
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="canonical" href="http://infergo.org/peers/gogp/">
 <link rel="icon" href="/favicon.png">
@@ -95,7 +95,7 @@ differentiation and inference.</p>
 <p><a href="https://pkg.go.dev/bitbucket.org/dtolpin/gogp/gp#GP"><code>GP</code></a>, the Gaussian process type, encapsulates similarity and
 noise kernels, their parameters, and observation inputs and
 outputs:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// Type GP is the barebone implementation of GP.
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// Type GP is the barebone implementation of GP.
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">type</span> GP <span style="color:#007020;font-weight:bold">struct</span> {
 	NDim                   <span style="color:#902000">int</span>       <span style="color:#60a0b0;font-style:italic">// number of dimensions
 </span><span style="color:#60a0b0;font-style:italic"></span>	Simil, Noise           Kernel    <span style="color:#60a0b0;font-style:italic">// kernels
@@ -112,7 +112,7 @@ probabilistic model interface, on the other hand.</p>
 <h3 id="gaussian-process-methods">Gaussian process methods</h3>
 <p><code>Absorb</code> updates <code>GP</code> with observations, <code>Produce</code> returns
 predicted outputs for unseen inputs.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">func</span> (<span style="color:#666">*</span>GP) <span style="color:#06287e">Absorb</span>(x [][]<span style="color:#902000">float64</span>, y []<span style="color:#902000">float64</span>)
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">func</span> (<span style="color:#666">*</span>GP) <span style="color:#06287e">Absorb</span>(x [][]<span style="color:#902000">float64</span>, y []<span style="color:#902000">float64</span>)
 <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#666">*</span>GP) <span style="color:#06287e">Produce</span>(x [][]<span style="color:#902000">float64</span>) (mu, sigma []<span style="color:#902000">float64</span>)</code></pre></div>
 <p>When kernel parameters are fixed (known or learned), <code>Absorb</code>
 and <code>Produce</code> are all that is needed for posterior Gaussian
@@ -122,7 +122,7 @@ process inference.</p>
 Infergo model (that is, a model with supplied gradient). The
 model can be passed to inference algorithms or used within
 another model.</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">func</span> (<span style="color:#666">*</span>GP) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">func</span> (<span style="color:#666">*</span>GP) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
 <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#666">*</span>GP) <span style="color:#06287e">Gradient</span>() []<span style="color:#902000">float64</span> <span style="color:#60a0b0;font-style:italic">// `elemental&#39; model
 </span></code></pre></div>
 <p>If the length of <code>x</code> is equal to the number of kernel hyperparameters
@@ -137,7 +137,7 @@ with respect to both kernel hyperparameters and observations.</p>
 <p>Type
 <a href="https://pkg.go.dev/bitbucket.org/dtolpin/gogp/gp#Model"><code>Model</code></a> is a wrapper model combining a <code>GP</code> instance and
 priors on hyperparameters into an elemental Infergo model.
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Model <span style="color:#007020;font-weight:bold">struct</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Model <span style="color:#007020;font-weight:bold">struct</span> {
 	<span style="color:#666">*</span>GP
 	Priors model.Model
 }</code></pre></div>
@@ -153,7 +153,7 @@ hyperparameters.</p>
 <p>Both kinds must satisfy the
 <a href="https://pkg.go.dev/bitbucket.org/dtolpin/gogp/gp#Kernel"><code>Kernel</code></a>
 interface:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Kernel <span style="color:#007020;font-weight:bold">interface</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Kernel <span style="color:#007020;font-weight:bold">interface</span> {
 	<span style="color:#06287e">Observe</span>([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
 	<span style="color:#06287e">NTheta</span>() <span style="color:#902000">int</span>
 }</code></pre></div>
@@ -164,7 +164,7 @@ of kernel parameters and coordinates of two points. A noise
 kernel receives concatenation of kernel parameters and
 coordinates of a single point. Here is an example implementation
 of the RBF (or normal) kernel:</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> RBF <span style="color:#007020;font-weight:bold">struct</span>{}
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> RBF <span style="color:#007020;font-weight:bold">struct</span>{}
 
 <span style="color:#007020;font-weight:bold">func</span> (RBF) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span> {
 	l, xa, xb <span style="color:#666">:=</span> x[<span style="color:#40a070">0</span>], x[<span style="color:#40a070">1</span>], x[<span style="color:#40a070">2</span>]
@@ -187,13 +187,13 @@ process libraries, a <code>GP</code> instance directly serves as the model
 for inference on hyperparameters (or the hyperparameters can be
 just fixed).</p>
 <p>The library user specifies the kernel:</p>
-<p><div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Basic <span style="color:#007020;font-weight:bold">struct</span>{}
+<p><div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Basic <span style="color:#007020;font-weight:bold">struct</span>{}
 <span style="color:#007020;font-weight:bold">func</span> (Basic) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span> {
     <span style="color:#007020;font-weight:bold">return</span> x[<span style="color:#40a070">0</span>] <span style="color:#666">*</span> kernel.Normal.<span style="color:#06287e">Observe</span>(x[<span style="color:#40a070">1</span>:])
 }
 <span style="color:#007020;font-weight:bold">func</span> (Basic) <span style="color:#06287e">NTheta</span>() <span style="color:#902000">int</span> { <span style="color:#007020;font-weight:bold">return</span> <span style="color:#40a070">2</span> }</code></pre></div>
 and initializes <code>GP</code> with a kernel instance:
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">gp <span style="color:#666">:=</span> <span style="color:#666">&amp;</span>gp.GP{
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">gp <span style="color:#666">:=</span> <span style="color:#666">&amp;</span>gp.GP{
     NDim:  <span style="color:#40a070">1</span>,
     Simil: Basic{},
 }</code></pre></div></p>
@@ -202,7 +202,7 @@ through library functions.</p>
 <h3 id="priors-on-hyperparameters">Priors on hyperparameters</h3>
 <p>If priors on hyperparameters are to be specified, the library
 user provides both the kernel and the prior beliefs:
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// Similarity kernel
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#60a0b0;font-style:italic">// Similarity kernel
 </span><span style="color:#60a0b0;font-style:italic"></span><span style="color:#007020;font-weight:bold">type</span> Simil <span style="color:#007020;font-weight:bold">struct</span>{}
 <span style="color:#007020;font-weight:bold">func</span> (Simil) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span> {
 	<span style="color:#007020;font-weight:bold">const</span> (
@@ -229,7 +229,7 @@ user provides both the kernel and the prior beliefs:
 	<span style="color:#007020;font-weight:bold">return</span> Normal.<span style="color:#06287e">Logps</span>(<span style="color:#40a070">1</span>, <span style="color:#40a070">1</span>, x<span style="color:#666">...</span>)
 }</code></pre></div>
 A <code>Model</code> instance is then used to combine them:
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">m <span style="color:#666">:=</span> <span style="color:#666">&amp;</span>gp.Model{
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">m <span style="color:#666">:=</span> <span style="color:#666">&amp;</span>gp.Model{
 	GP: <span style="color:#666">&amp;</span>gp.GP{
 		NDim:     <span style="color:#40a070">1</span>,
 		Simil:    Simil,
@@ -255,7 +255,7 @@ Gaussian, an analytical solution for posterior Gaussian process
 inference does not always exist. However, non-Gaussian noise is
 straightforwardly supported by GoGP through supplying a
 model for beliefs on observation outputs:
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Noise <span style="color:#007020;font-weight:bold">struct</span> {
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#007020;font-weight:bold">type</span> Noise <span style="color:#007020;font-weight:bold">struct</span> {
 	Y []<span style="color:#902000">float64</span> <span style="color:#60a0b0;font-style:italic">// noisy outputs
 </span><span style="color:#60a0b0;font-style:italic"></span>}
 <span style="color:#007020;font-weight:bold">func</span> (m <span style="color:#666">*</span>Noise) <span style="color:#06287e">Observe</span>(x []<span style="color:#902000">float64</span>) (lp <span style="color:#902000">float64</span>){
@@ -284,6 +284,7 @@ model for beliefs on observation outputs:
 <section>
 <h4 class="menu"><a class="" href="/news/">News</a></h4>
 <ul class="menu">
+<li><a class="" href="/news/v1.2.2/">infergo v1.2.0</a></li>
 <li><a class="" href="/news/gogp-v1.0.1/">gogp v1.0.1</a></li>
 <li><a class="" href="/news/v1.0.1/">infergo v1.0.1</a></li>
 <li><a class="" href="/news/gogp/">gogp v0.1.0</a></li>

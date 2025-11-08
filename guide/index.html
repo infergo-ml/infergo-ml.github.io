@@ -12,7 +12,7 @@
 <meta property="og:title" content="Guide">
 <meta property="og:url" content="http://infergo.org/guide/">
 
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.91.2" />
 
 <link rel="canonical" href="http://infergo.org/guide/">
 <link rel="icon" href="/favicon.png">
@@ -121,15 +121,15 @@ automatic differentiation.</p>
 <h3 id="elementals">Elementals</h3>
 <p>Functions are considered elementals (and must have a
 registered derivative) if their signature is either of kind</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span><span style="color:#666">*</span>) <span style="color:#902000">float64</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span><span style="color:#666">*</span>) <span style="color:#902000">float64</span></code></pre></div>
 <p>that is, one or more non-variadic <code>float64</code> arguments and
 <code>float64</code> return value, or
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> ([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> ([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div></p>
 <p>For example, functions</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">foo</span>(<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">foo</span>(<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
         <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">bar</span>([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div>
 <p>are considered elementals, while functions</p>
-<div class="highlight"><pre style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">fee</span>(<span style="color:#666">...</span><span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">fee</span>(<span style="color:#666">...</span><span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
         <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">buz</span>(<span style="color:#902000">int</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div>
 <p>are not. Gradients for selected functions from the <code>math</code>
 package are pre-defined (<code>Sqrt</code>, <code>Exp</code>, <code>Log</code>, <code>Pow</code>, <code>Sin</code>,
@@ -193,6 +193,7 @@ tree depth.</p>
 <section>
 <h4 class="menu"><a class="" href="/news/">News</a></h4>
 <ul class="menu">
+<li><a class="" href="/news/v1.2.2/">infergo v1.2.0</a></li>
 <li><a class="" href="/news/gogp-v1.0.1/">gogp v1.0.1</a></li>
 <li><a class="" href="/news/v1.0.1/">infergo v1.0.1</a></li>
 <li><a class="" href="/news/gogp/">gogp v0.1.0</a></li>

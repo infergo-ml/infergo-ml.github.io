@@ -25,7 +25,7 @@ differentiation and inference.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://pkg.go.dev/bitbucket.org/dtolpin/gogp/gp#GP&#34;&gt;&lt;code&gt;GP&lt;/code&gt;&lt;/a&gt;, the Gaussian process type, encapsulates similarity and
 noise kernels, their parameters, and observation inputs and
 outputs:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// Type GP is the barebone implementation of GP.
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// Type GP is the barebone implementation of GP.
 &lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; GP &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
 	NDim                   &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt;       &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// number of dimensions
 &lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;	Simil, Noise           Kernel    &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// kernels
@@ -42,7 +42,7 @@ probabilistic model interface, on the other hand.&lt;/p&gt;
 &lt;h3 id=&#34;gaussian-process-methods&#34;&gt;Gaussian process methods&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;Absorb&lt;/code&gt; updates &lt;code&gt;GP&lt;/code&gt; with observations, &lt;code&gt;Produce&lt;/code&gt; returns
 predicted outputs for unseen inputs.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Absorb&lt;/span&gt;(x [][]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, y []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Absorb&lt;/span&gt;(x [][]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;, y []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;)
 &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Produce&lt;/span&gt;(x [][]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) (mu, sigma []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;)&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;When kernel parameters are fixed (known or learned), &lt;code&gt;Absorb&lt;/code&gt;
 and &lt;code&gt;Produce&lt;/code&gt; are all that is needed for posterior Gaussian
@@ -52,7 +52,7 @@ process inference.&lt;/p&gt;
 Infergo model (that is, a model with supplied gradient). The
 model can be passed to inference algorithms or used within
 another model.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
 &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP) &lt;span style=&#34;color:#06287e&#34;&gt;Gradient&lt;/span&gt;() []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// `elemental&amp;#39; model
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;If the length of &lt;code&gt;x&lt;/code&gt; is equal to the number of kernel hyperparameters
@@ -67,7 +67,7 @@ with respect to both kernel hyperparameters and observations.&lt;/p&gt;
 &lt;p&gt;Type
 &lt;a href=&#34;https://pkg.go.dev/bitbucket.org/dtolpin/gogp/gp#Model&#34;&gt;&lt;code&gt;Model&lt;/code&gt;&lt;/a&gt; is a wrapper model combining a &lt;code&gt;GP&lt;/code&gt; instance and
 priors on hyperparameters into an elemental Infergo model.
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Model &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Model &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
 	&lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;GP
 	Priors model.Model
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -83,7 +83,7 @@ hyperparameters.&lt;/p&gt;
 &lt;p&gt;Both kinds must satisfy the
 &lt;a href=&#34;https://pkg.go.dev/bitbucket.org/dtolpin/gogp/gp#Kernel&#34;&gt;&lt;code&gt;Kernel&lt;/code&gt;&lt;/a&gt;
 interface:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Kernel &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;interface&lt;/span&gt; {
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Kernel &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;interface&lt;/span&gt; {
 	&lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;([]&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;
 	&lt;span style=&#34;color:#06287e&#34;&gt;NTheta&lt;/span&gt;() &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt;
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -94,7 +94,7 @@ of kernel parameters and coordinates of two points. A noise
 kernel receives concatenation of kernel parameters and
 coordinates of a single point. Here is an example implementation
 of the RBF (or normal) kernel:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; RBF &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; RBF &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
 
 &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (RBF) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
 	l, xa, xb &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; x[&lt;span style=&#34;color:#40a070&#34;&gt;0&lt;/span&gt;], x[&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;], x[&lt;span style=&#34;color:#40a070&#34;&gt;2&lt;/span&gt;]
@@ -117,13 +117,13 @@ process libraries, a &lt;code&gt;GP&lt;/code&gt; instance directly serves as the
 for inference on hyperparameters (or the hyperparameters can be
 just fixed).&lt;/p&gt;
 &lt;p&gt;The library user specifies the kernel:&lt;/p&gt;
-&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Basic &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
+&lt;p&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Basic &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
 &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (Basic) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
     &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; x[&lt;span style=&#34;color:#40a070&#34;&gt;0&lt;/span&gt;] &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt; kernel.Normal.&lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x[&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;:])
 }
 &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (Basic) &lt;span style=&#34;color:#06287e&#34;&gt;NTheta&lt;/span&gt;() &lt;span style=&#34;color:#902000&#34;&gt;int&lt;/span&gt; { &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#40a070&#34;&gt;2&lt;/span&gt; }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 and initializes &lt;code&gt;GP&lt;/code&gt; with a kernel instance:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;gp &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;&amp;amp;&lt;/span&gt;gp.GP{
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;gp &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;&amp;amp;&lt;/span&gt;gp.GP{
     NDim:  &lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;,
     Simil: Basic{},
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/p&gt;
@@ -132,7 +132,7 @@ through library functions.&lt;/p&gt;
 &lt;h3 id=&#34;priors-on-hyperparameters&#34;&gt;Priors on hyperparameters&lt;/h3&gt;
 &lt;p&gt;If priors on hyperparameters are to be specified, the library
 user provides both the kernel and the prior beliefs:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// Similarity kernel
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// Similarity kernel
 &lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Simil &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt;{}
 &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (Simil) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; {
 	&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;const&lt;/span&gt; (
@@ -159,7 +159,7 @@ user provides both the kernel and the prior beliefs:
 	&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;return&lt;/span&gt; Normal.&lt;span style=&#34;color:#06287e&#34;&gt;Logps&lt;/span&gt;(&lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;, x&lt;span style=&#34;color:#666&#34;&gt;...&lt;/span&gt;)
 }&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 A &lt;code&gt;Model&lt;/code&gt; instance is then used to combine them:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;m &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;&amp;amp;&lt;/span&gt;gp.Model{
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;m &lt;span style=&#34;color:#666&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#666&#34;&gt;&amp;amp;&lt;/span&gt;gp.Model{
 	GP: &lt;span style=&#34;color:#666&#34;&gt;&amp;amp;&lt;/span&gt;gp.GP{
 		NDim:     &lt;span style=&#34;color:#40a070&#34;&gt;1&lt;/span&gt;,
 		Simil:    Simil,
@@ -185,7 +185,7 @@ Gaussian, an analytical solution for posterior Gaussian process
 inference does not always exist. However, non-Gaussian noise is
 straightforwardly supported by GoGP through supplying a
 model for beliefs on observation outputs:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Noise &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;type&lt;/span&gt; Noise &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;struct&lt;/span&gt; {
 	Y []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt; &lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;// noisy outputs
 &lt;/span&gt;&lt;span style=&#34;color:#60a0b0;font-style:italic&#34;&gt;&lt;/span&gt;}
 &lt;span style=&#34;color:#007020;font-weight:bold&#34;&gt;func&lt;/span&gt; (m &lt;span style=&#34;color:#666&#34;&gt;*&lt;/span&gt;Noise) &lt;span style=&#34;color:#06287e&#34;&gt;Observe&lt;/span&gt;(x []&lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;) (lp &lt;span style=&#34;color:#902000&#34;&gt;float64&lt;/span&gt;){
