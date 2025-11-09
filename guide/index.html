@@ -1,87 +1,135 @@
 <!DOCTYPE html>
-<html class="nojs" lang="en" dir="ltr">
+<html class="nojs" lang="en-GB" dir="ltr">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
-<title>Guide – Infergo — Go programs that learn</title>
-<meta name="created" content="0001-01-01T00:00:00&#43;0000">
-<meta name="modified" content="0001-01-01T00:00:00&#43;0000">
+<meta name="viewport" content="width=device-width">
+<title>Guide – Infergo – Go programs that learn</title>
+
+<meta name="created" content="0001-01-01T00:00:00+0000">
+<meta name="modified" content="0001-01-01T00:00:00+0000">
 <meta name="author" content="David Tolpin">
-<meta name="description" content="Code Model A model is defined in it&amp;rsquo;s own package. The model must implement interface model.Model, consisting of a single method Observe([]float64) float64. In the model&amp;rsquo;s source code:  Methods on the type implementing model.Model returning a single float or nothing are differentiated. Within the methods, the following is differentiated:   assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.">
-<meta property="og:site_name" content="Infergo — Go programs that learn">
+<meta name="contact" content="david.tolpin@gmail.com">
+<meta property="og:site_name" content="Infergo – Go programs that learn">
 <meta property="og:title" content="Guide">
-<meta property="og:url" content="http://infergo.org/guide/">
+<meta property="og:url" content="https://infergo.org/guide/">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://infergo.org/apple-touch-icon.png">
+<meta name="generator" content="Hugo 0.152.2">
 
-<meta name="generator" content="Hugo 0.91.2" />
 
-<link rel="canonical" href="http://infergo.org/guide/">
-<link rel="icon" href="/favicon.png">
+
+<link rel="canonical" href="https://infergo.org/guide/">
+
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="stylesheet" href="/css/styles.css">
-<link rel="stylesheet" href="/css/print.css" media="print">
+
+<link rel="stylesheet" href="/css/styles.2510e23120bc6fdddf1f772d1f5b7b85ef5225c695debc06c77b08686be416fd.css">
+<link rel="stylesheet" href="/css/mobilemenu.295c7ca420e20bb22a98ef9b836cdd291aec4bac9f10e6369bd3ef17f539a522.css" media="screen">
+<link rel="stylesheet" href="/css/print.c9925dbab6fd256f753b0319c569e85f28a89b8cbd71238bde2452f74dcdf761.css" media="print">
+
 <script type="application/ld+json">
-  {
+{
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "\"Guide\"",
+    "@type": "WebPage",
+    "headline": "Guide",
     "datePublished": "0001-01-01T00:00:00Z",
     "dateModified": "0001-01-01T00:00:00Z",
-    "url" : "http:\/\/infergo.org\/guide\/",
-    "description": "\"Code Model A model is defined in it\\u0026rsquo;s own package. The model must implement interface model.Model, consisting of a single method Observe([]float64) float64. In the model\\u0026rsquo;s source code:  Methods on the type implementing model.Model returning a single float or nothing are differentiated. Within the methods, the following is differentiated:   assignments to float64 (including parallel assignments if all values are of type float64); returns of float64; standalone calls to methods on the type implementing model.\"",
+    "url" : "https://infergo.org/guide/",
+    
+    "image" : "https://infergo.org/apple-touch-icon.png",
     "author": {
       "@type": "Person",
-      "name": "\"David Tolpin\""
+      "name": "David Tolpin"
     },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": "http:\/\/infergo.org\/"
+      "@id": "https://infergo.org/"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "\"Infergo — Go programs that learn\"",
-      "url": "http:\/\/infergo.org\/",
+      "name": "Infergo – Go programs that learn",
+      "logo" : {
+        "@type": "ImageObject",
+        "url": "https://infergo.org/apple-touch-icon.png"
+      },
+      "url": "https://infergo.org/"
     }
   }
 </script>
 
+<script>
+(()=>{(function(){document.querySelector("html").classList.replace("nojs","js")})();})();
+
+</script>
+
+<script defer src="/js/mobilemenu.7ce1f75fd1d49cd683a008352ad9001f800349629be01d531a19c02b5a84817b.js"></script>
+<script defer src="/js/script.f2979a93a325fecf9605263bd141398a311c8e23388ed7dcff74f92f7e632866.js"></script>
+
+
+
+
+
+
 </head>
 
-<body>
+<body class="single-page">
 <div class="page layout__page layout__sidebar-second">
-<header class="header layout__header" role="banner">
+<header class="header layout__header">
+<a href="/" title="Home" rel="home" class="header__logo">
+<img src="/images/logo.png" width="64" alt="Home" class="header__logo-image">
+</a>
 <h1 class="header__site-name">
-<a href="/" title="Home" rel="home" class="header__logo"><img src="/images/logo.png" alt="Home" class="header__logo-image"></a>
-<a href="/" title="Home" class="header__site-link" rel="home"><span>Infergo — Go programs that learn</span></a>
+<a href="/" title="Home" class="header__site-link" rel="home"><span>Infergo – Go programs that learn</span></a>
 </h1>
 <div class="region header__region">
+</div>
+</header>
 
+<nav class="main-menu mx--xs layout__navigation" aria-label="Main menu">
+<ul class="flex-inline mx--0">
+<li><a href="/"><span>Home</span></a></li>
+<li><a href="/start/"><span>Getting started</span></a></li>
+<li><a href="/guide/" aria-current="page"><span>Guide</span></a></li>
+<li><a href="/examples/"><span>Examples</span></a></li>
+<li><a href="/news/"><span>News</span></a></li>
+<li><a href="/peers/"><span>Peers</span></a></li>
+<li><a href="/team/"><span>Team</span></a></li>
+</ul>
+</nav>
+<div class="mobile-nav" dir="ltr" hidden>
+  <div class="mobile-nav__cover"></div>
+  <button class="mobile-nav__toggle button" aria-expanded="false" aria-controls="sheet">
+    Menu
+    <svg class="mobile-nav__hamburger" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+      <rect width="80" height="12" x="10" y="20" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="45" rx="5"></rect>
+      <rect width="80" height="12" x="10" y="70" rx="5"></rect>
+    </svg>
+  </button>
+  <div class="mobile-nav__sheet link-inverted link-nav" id="sheet" aria-hidden="true">
+    <div class="mobile-nav__region"></div>
+    <nav class="mobile-nav__main-menu" aria-label="Main menu">
+    <ul class="mobile-nav__navbar">
+    <li><a href="/"><span>Home</span></a></li>
+    <li><a href="/start/"><span>Getting started</span></a></li>
+    <li><a href="/guide/" aria-current="page"><span>Guide</span></a></li>
+    <li><a href="/examples/"><span>Examples</span></a></li>
+    <li><a href="/news/"><span>News</span></a></li>
+    <li><a href="/peers/"><span>Peers</span></a></li>
+    <li><a href="/team/"><span>Team</span></a></li>
+    </ul>
+    </nav>
+  </div>
+</div>
+<main class="main layout__main">
+<article class="single-view">
+<header>
+<h1 class="title mb--xxs">Guide</h1>
+<div class="submitted meta">
+<span class="author" itemprop="author">David Tolpin</span>
 
 </div>
 </header>
 
-
-
-
-<nav class="main-menu layout__navigation" role="navigation">
-<h2 class="visually-hidden">Main menu</h2>
-<ul class="navbar">
-<li><a class="" href="/">Home</a></li>
-<li><a class="" href="/start/">Getting started</a></li>
-<li><a class="active" href="/guide/">Guide</a></li>
-<li><a class="" href="/examples/">Examples</a></li>
-<li><a class="" href="/team/">Team</a></li>
-<li><a class="" href="/peers/">Peers</a></li>
-<li><a class="" href="/news/">News</a></li>
-</ul>
-</nav>
-
-
-<main class="main layout__main" role="main">
-<h1 class="title ">Guide</h1>
-<article class="single-view">
-<header>
-</header>
-<div class="content">
 <p><a href="https://godoc.org/bitbucket.org/dtolpin/infergo"><img src="https://godoc.org/bitbucket.org/dtolpin/infergo?status.svg" alt="GoDoc"></a></p>
 <h2 id="code">Code</h2>
 <h3 id="model">Model</h3>
@@ -114,23 +162,23 @@ not registered for an elemental, calling the elemental in a
 differentiated context will cause a run-time error.</p>
 <h4 id="elemental-model">Elemental model</h4>
 <p>If method <code>Gradient() []float64</code> is provided for a model type,
-the model is treated as an &lsquo;elemental&rsquo; model, and the gradient
+the model is treated as an &rsquo;elemental&rsquo; model, and the gradient
 returned by <code>Gradient()</code> is used by inference algorithms. This
 allows to code the gradient by hand instead of relying on
 automatic differentiation.</p>
 <h3 id="elementals">Elementals</h3>
 <p>Functions are considered elementals (and must have a
 registered derivative) if their signature is either of kind</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> (<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span><span style="color:#666">*</span>) <span style="color:#902000">float64</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">func</span><span style="color:#bbb"> </span>(<span style="color:#902000">float64</span>,<span style="color:#bbb"> </span><span style="color:#902000">float64</span><span style="color:#666">*</span>)<span style="color:#bbb"> </span><span style="color:#902000">float64</span></span></span></code></pre></div>
 <p>that is, one or more non-variadic <code>float64</code> arguments and
 <code>float64</code> return value, or
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> ([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">func</span><span style="color:#bbb"> </span>([]<span style="color:#902000">float64</span>)<span style="color:#bbb"> </span><span style="color:#902000">float64</span></span></span></code></pre></div></p>
 <p>For example, functions</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">foo</span>(<span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
-        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">bar</span>([]<span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">func</span><span style="color:#bbb"> </span><span style="color:#06287e">foo</span>(<span style="color:#902000">float64</span>,<span style="color:#bbb"> </span><span style="color:#902000">float64</span>,<span style="color:#bbb"> </span><span style="color:#902000">float64</span>)<span style="color:#bbb"> </span><span style="color:#902000">float64</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">func</span><span style="color:#bbb"> </span><span style="color:#06287e">bar</span>([]<span style="color:#902000">float64</span>)<span style="color:#bbb"> </span><span style="color:#902000">float64</span></span></span></code></pre></div>
 <p>are considered elementals, while functions</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">fee</span>(<span style="color:#666">...</span><span style="color:#902000">float64</span>) <span style="color:#902000">float64</span>
-        <span style="color:#007020;font-weight:bold">func</span> <span style="color:#06287e">buz</span>(<span style="color:#902000">int</span>, <span style="color:#902000">float64</span>) <span style="color:#902000">float64</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f0f0;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">func</span><span style="color:#bbb"> </span><span style="color:#06287e">fee</span>(<span style="color:#666">...</span><span style="color:#902000">float64</span>)<span style="color:#bbb"> </span><span style="color:#902000">float64</span><span style="color:#bbb">
+</span></span></span><span style="display:flex;"><span><span style="color:#bbb">        </span><span style="color:#007020;font-weight:bold">func</span><span style="color:#bbb"> </span><span style="color:#06287e">buz</span>(<span style="color:#902000">int</span>,<span style="color:#bbb"> </span><span style="color:#902000">float64</span>)<span style="color:#bbb"> </span><span style="color:#902000">float64</span></span></span></code></pre></div>
 <p>are not. Gradients for selected functions from the <code>math</code>
 package are pre-defined (<code>Sqrt</code>, <code>Exp</code>, <code>Log</code>, <code>Pow</code>, <code>Sin</code>,
 <code>Cos</code>, <code>Tan</code>, <code>Erf</code>, <code>Erfc</code>). Auxiliary elemental functions with
@@ -155,7 +203,7 @@ The command-line syntax is:</p>
 differentiated model is put into subpackage &ldquo;ad&rdquo; of the model&rsquo;s
 package, with the same name as the original package.</p>
 <h2 id="inference">Inference</h2>
-<p>For inference, <code>infergo</code> offers</p>
+<p>For inference, <code>Infergo</code> offers</p>
 <ul>
 <li>optimization via <a href="https://en.wikipedia.org/wiki/Gradient_descent">gradient
 ascent</a> methods.</li>
@@ -177,48 +225,42 @@ streams or batches).</p>
 tree depth.</p>
 
 
-</div>
 </article>
 </main>
 
 
-
-<aside class="sidebar layout__second-sidebar" role="complementary">
-<section>
-<h4 class="menu"><a class="" href="/peers/">Peers</a></h4>
-<ul class="menu">
-<li><a class="" href="/peers/gogp/">GoGP</a></li>
+<aside class="sidebar layout__second-sidebar">
+<nav class="menu">
+<p class="title"><strong><a href="/peers/">Peers</a></strong></p>
+<ul>
+<li><a href="/peers/gogp/">GoGP</a></li>
 </ul>
-</section>
-<section>
-<h4 class="menu"><a class="" href="/news/">News</a></h4>
-<ul class="menu">
-<li><a class="" href="/news/v1.2.2/">infergo v1.2.0</a></li>
-<li><a class="" href="/news/gogp-v1.0.1/">gogp v1.0.1</a></li>
-<li><a class="" href="/news/v1.0.1/">infergo v1.0.1</a></li>
-<li><a class="" href="/news/gogp/">gogp v0.1.0</a></li>
-<li><a class="" href="/news/v0.7.0/">infergo v0.7.0</a></li>
-<li><a class="" href="/news/v0.6.1/">infergo v0.6.1</a></li>
-<li><a class="" href="/news/v0.5.0/">infergo v0.5.0</a></li>
-<li><a class="" href="/news/tale-of-goids/">The Tale of GoIDs</a></li>
-<li><a class="" href="/news/v0.3.0/">infergo v0.3.0</a></li>
-<li><a class="" href="/news/v0.2.2/">infergo v0.2.2</a></li>
-<li><a class="" href="/news/v0.2.1/">infergo v0.2.1</a></li>
-<li><a class="" href="/news/why/">Why infergo</a></li>
+</nav>
+<nav class="menu">
+<p class="title"><strong><a href="/news/">News</a></strong></p>
+<ul>
+<li><a href="/news/v1.2.2/">infergo v1.2.2</a></li>
+<li><a href="/news/gogp-v1.0.1/">gogp v1.0.1</a></li>
+<li><a href="/news/v1.0.1/">infergo v1.0.1</a></li>
+<li><a href="/news/gogp/">gogp v0.1.0</a></li>
+<li><a href="/news/v0.7.0/">infergo v0.7.0</a></li>
+<li><a href="/news/v0.6.1/">infergo v0.6.1</a></li>
+<li><a href="/news/v0.5.0/">infergo v0.5.0</a></li>
+<li><a href="/news/tale-of-goids/">The Tale of GoIDs</a></li>
+<li><a href="/news/v0.3.0/">infergo v0.3.0</a></li>
+<li><a href="/news/v0.2.2/">infergo v0.2.2</a></li>
+<li><a href="/news/v0.2.1/">infergo v0.2.1</a></li>
+<li><a href="/news/why/">Why infergo</a></li>
 </ul>
-</section>
+</nav>
 </aside>
+<footer class="footer layout__footer mt--l">
+<p><span>© Infergo – Go programs that learn</span></p>
 
-
-<footer class="footer layout__footer" role="contentinfo">
-<p><span>© Infergo — Go programs that learn</span></p>
-
+<p>Powered by <a href="https://gohugo.io/">Hugo</a> and the <a href="https://github.com/frjo/hugo-theme-zen">Zen theme</a>.</p>
 
 </footer>
 
 </div>
-
-
-
 </body>
 </html>

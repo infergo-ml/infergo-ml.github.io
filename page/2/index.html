@@ -195,214 +195,44 @@ decision-making in production environment.</p>
 
 <article class="list-view list-view--news">
 <header>
-<h2 class="title mt--s mb--xxs"><a href="/news/v1.2.2/">infergo v1.2.2</a></h2>
+<h2 class="title mt--s mb--xxs"><a href="/news/v0.2.1/">infergo v0.2.1</a></h2>
 <div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2025-11-07T15:07:04&#43;03:00">7 November, 2025</time>
+<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2018-11-27T16:19:03&#43;03:00">27 November, 2018</time>
 
 </div>
 
 </header>
-<p>Infergo v1.2.2 is <a href="https://bitbucket.org/dtolpin/infergo/src/v1.2.2/">out</a>.</p>
-<p>Infergo has been made to work with Go 1.25. Accompanying repositories (infergo-studies, gogp) have been updated to depend on this version.</p>
-</article>
-
-<article class="list-view list-view--news">
-<header>
-<h2 class="title mt--s mb--xxs"><a href="/news/gogp-v1.0.1/">gogp v1.0.1</a></h2>
-<div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2021-07-11T18:07:04&#43;03:00">11 July, 2021</time>
-
-</div>
-
-</header>
-<p><a href="/peers/gogp">GoGP v1.0.1</a> is
-<a href="http://bitbucket.org/dtolpin/gogp/srv/v1.0.1">out</a>. This is the
-first stable (v1) release of GoGP, a library for Gaussian
-process regression. GoGP has been used in production for over a
-year, and has undergone many changes improving performance and
-robustness.</p>
-</article>
-
-<article class="list-view list-view--news">
-<header>
-<h2 class="title mt--s mb--xxs"><a href="/news/v1.0.1/">infergo v1.0.1</a></h2>
-<div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2021-07-11T18:07:04&#43;03:00">11 July, 2021</time>
-
-</div>
-
-</header>
-<p>Infergo v1.0.1 is <a href="https://bitbucket.org/dtolpin/infergo/src/v1.0.1/">out</a>.</p>
-<p>This is the first stable (v1) release of Infergo. Infergo has
-undergone many changes during the past year, and has been
-used in production for mission-critical computations in the
-cloud.</p>
-</article>
-
-<article class="list-view list-view--news">
-<header>
-<h2 class="title mt--s mb--xxs"><a href="/news/gogp/">gogp v0.1.0</a></h2>
-<div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2020-01-24T01:17:00&#43;02:00">24 January, 2020</time>
-
-</div>
-
-</header>
-<p><a href="/peers/gogp">GoGP</a> is <a href="http://bitbucket.org/dtolpin/gogp">out</a>.
-GoGP is a library for Gaussian process regression in Go and uses
-Infergo for automatic differentiation and inference.</p>
-</article>
-
-<article class="list-view list-view--news">
-<header>
-<h2 class="title mt--s mb--xxs"><a href="/news/v0.7.0/">infergo v0.7.0</a></h2>
-<div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2020-01-24T00:43:00&#43;02:00">24 January, 2020</time>
-
-</div>
-
-</header>
-<p>Infergo v0.7.0 is <a href="https://bitbucket.org/dtolpin/infergo/src/v0.7.0/">out</a>.</p>
-<p>This release is a result of improving and extending Infergo
-along with development of <a href="/peers/gogp">GoGP</a>,
-a library for Gaussian process regression.</p>
+<p><code>infergo v0.2.1</code> is <a href="https://bitbucket.org/dtolpin/infergo/src/v0.2.1/">out</a>.</p>
 <p>What&rsquo;s new:</p>
 <ul>
-<li>model&rsquo;s gradient can be explicitly specified as the
-<code>Gradient()</code> method, instead of through automatic
-differentation.</li>
-<li>An elemental may also be a function which accepts a slice of
-floats (in addition to functions which accept one or more
-float scalars as parameters).</li>
-<li>More kernels in the supplied kernel library.</li>
-<li>As usual, fixes and performance improvements.</li>
+<li><a href="http://infergo.org">infergo.org</a></li>
 </ul>
 </article>
 
 <article class="list-view list-view--news">
 <header>
-<h2 class="title mt--s mb--xxs"><a href="/news/v0.6.1/">infergo v0.6.1</a></h2>
+<h2 class="title mt--s mb--xxs"><a href="/news/why/">Why infergo</a></h2>
 <div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2019-04-25T10:56:00&#43;03:00">25 April, 2019</time>
-
-</div>
-
-</header>
-<p>Infergo v0.6.1 is <a href="https://bitbucket.org/dtolpin/infergo/src/v0.6.1/">out</a>.</p>
-<p>What&rsquo;s new:</p>
-<ul>
-<li>I moved many things around, some in a backward-incompatible way, but should
-only affect a minority of users.</li>
-<li>As a side-effect of using Infergo for a rather involved model, I fixed two
-bugs in the automatic differentiation transformation. The bugs manifested
-in edge cases I didn&rsquo;t even think they exist.</li>
-<li>The accompanying repository
-<a href="https://bitbucket.org/dtolpin/infergo-studies">infergo-studies</a>
-now contains a new case study &mdash; a rewrite of Stan&rsquo;s LDA
-example.</li>
-</ul>
-</article>
-
-<article class="list-view list-view--news">
-<header>
-<h2 class="title mt--s mb--xxs"><a href="/news/v0.5.0/">infergo v0.5.0</a></h2>
-<div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2019-04-01T19:45:20&#43;03:00">1 April, 2019</time>
-
-</div>
-
-</header>
-<p><code>infergo v0.5.0</code> is <a href="https://bitbucket.org/dtolpin/infergo/src/v0.5.0/">out</a>.</p>
-<p>What&rsquo;s new:</p>
-<ul>
-<li>Multithreading support. Differentiation can be performed concurrently in
-multiple goroutines without locking of calls to Observe or Gradient,
-and with little contention.</li>
-<li>Examples and case studies performing inference in parallel, both using
-Infergo&rsquo;s own inference algorithms, or through integration in Gonum.</li>
-</ul>
-</article>
-
-<article class="list-view list-view--news">
-<header>
-<h2 class="title mt--s mb--xxs"><a href="/news/tale-of-goids/">The Tale of GoIDs</a></h2>
-<div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2019-04-01T15:19:22&#43;03:00">1 April, 2019</time>
+<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2018-11-26T14:19:13&#43;03:00">26 November, 2018</time>
 
 </div>
 
 </header>
 <blockquote>
-<p><strong>2.16</strong> And the LORD God commanded the man, saying: &lsquo;Of every tree of the garden
-thou mayest freely eat;</p>
-</blockquote>
-<blockquote>
-<p><strong>2.17</strong> but of the tree of the knowledge of good and evil,
-thou shalt not eat of it; for in the day that thou eatest thereof thou shalt
-surely die.&rsquo;</p>
-<p><em>The Book of Genesis</em></p>
-</blockquote>
-<p><a href="http://golang.org/">Go</a> gives the programmer introspection into every aspect
-of <a href="https://godoc.org/reflect">the language</a>, and of a <a href="https://godoc.org/runtime">running
-program</a>. But to one thing the programmer does not
-have access, and it is the goroutine identifier. Because the day the
-programmers know the goroutine identifier, they create goroutine-local storage
-through shared access and mutexes, and shall surely die.</p>
-</article>
-
-<article class="list-view list-view--news">
-<header>
-<h2 class="title mt--s mb--xxs"><a href="/news/v0.3.0/">infergo v0.3.0</a></h2>
-<div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2019-03-20T02:04:30&#43;02:00">20 March, 2019</time>
-
-</div>
-
-</header>
-<p><code>infergo v0.3.0</code> is <a href="https://bitbucket.org/dtolpin/infergo/src/v0.3.0/">out</a>.</p>
-<p>What&rsquo;s new:</p>
-<ul>
-<li>Only methods returning float64 or nothing are differentiated. This allows
-to define helper methods on the model, such as returning the number of
-parameters, and call the methods outside of differentiated context.</li>
-<li><code>infergo</code> models can be optimized using <a href="https://godoc.org/gonum.org/v1/gonum/optimize">Gonum optimization
-algorithms</a>. This includes
-BFGS and variants. Case study
-<a href="https://bitbucket.org/dtolpin/infergo-studies/src/master/lr-gonum/">lr-gonum</a>
-applies L-BFGS to linear regression.</li>
-<li><a href="https://bitbucket.org/dtolpin/infergo-studies">Case studies</a> have been extended. New
-studies include:
-<ul>
-<li>linear regression, solved using either stochastic gradient descent and BFGS;</li>
-<li>compilation of <code>infergo</code> models and inference into WebAssembly and running in
-the browser;</li>
-<li>integration with Gonum;</li>
-<li>Neal&rsquo;s funnel, a re-parameterization example borrowed from <a href="https://mc-stan.org/users/documentation/">Stan documentation</a>.</li>
-</ul>
-</li>
-</ul>
-</article>
-
-<article class="list-view list-view--news">
-<header>
-<h2 class="title mt--s mb--xxs"><a href="/news/v0.2.2/">infergo v0.2.2</a></h2>
-<div class="submitted meta">
-<span class="author" itemprop="author">David Tolpin</span> - <time class="created-date" datetime="2018-12-09T01:14:30&#43;03:00">9 December, 2018</time>
-
-</div>
-
-</header>
-<p><code>infergo v0.2.2</code> is <a href="https://bitbucket.org/dtolpin/infergo/src/v0.2.2/">out</a>.</p>
-<p>What&rsquo;s new:</p>
-<ul>
-<li>Constant folding.</li>
-<li>Automatic import of packages required for short variable declarations
-(see <a href="https://bitbucket.org/dtolpin/infergo/issues/10">issue #10</a>).</li>
-</ul>
+<p>I share here my experiences from integrating probabilistic
+programming into a server-side software system and
+implementing a  probabilistic programming facility for Go, a
+modern programming language of choice for server-side software
+development.  Server-side application of probabilistic
+programming poses challenges for a probabilistic programming
+system. I discuss the challenges and my experience in
+overcoming them, and suggest guidelines that can help in a
+wider adoption of probabilistic programming in server-side
+software systems.</p>
 </article>
 
 <nav class="pager">
-<a href="/page/2/" rel="next" class="pager__item pager__item--next">Next<span aria-hidden="true"> »</span></a>
+<a href="/" rel="prev" class="pager__item pager__item--prev"><span aria-hidden="true">« </span>Previous</a>
 </nav>
 
 </main>
